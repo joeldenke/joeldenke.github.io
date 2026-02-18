@@ -1,2 +1,2 @@
 # joeldenke.github.io
-GitHub psge
+GitHub Page
