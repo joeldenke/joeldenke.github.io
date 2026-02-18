@@ -1,58 +1,1203 @@
+---
+layout: default
+title: Joel Denke — Senior Android Developer
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional CV</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
-        h1, h2, h3 { color: #333; }
-        .container { max-width: 800px; margin: auto; }
-        .section { margin: 20px 0; }
-        .footer { margin-top: 40px; font-size: 0.9em; color: #777; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joel Denke — Senior Android Developer</title>
+  <meta name="description" content="Senior Android Developer & KMP Consultant. 10+ years building high-performance Android applications at companies like Spotify, Avanza, Truecaller and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0c;
+      --surface: #111114;
+      --surface2: #18181d;
+      --border: rgba(255,255,255,0.07);
+      --accent: #e8ff47;
+      --accent2: #47b8ff;
+      --text: #f0ede8;
+      --muted: #6b6875;
+      --muted2: #9896a0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* Custom cursor */
+    .cursor {
+      width: 10px; height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease;
+      mix-blend-mode: difference;
+    }
+    .cursor-ring {
+      width: 38px; height: 38px;
+      border: 1px solid rgba(232,255,71,0.4);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+    }
+
+    /* Noise overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.35;
+    }
+
+    /* Grid background */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      background: rgba(10,10,12,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--accent); }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+    nav ul a {
+      color: var(--muted2);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    nav ul a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(232,255,71,0.08) 0%, transparent 70%);
+      top: -100px; right: -150px;
+      pointer-events: none;
+      animation: glow-pulse 6s ease-in-out infinite;
+    }
+    .hero-glow2 {
+      position: absolute;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(71,184,255,0.06) 0%, transparent 70%);
+      bottom: 100px; left: -100px;
+      pointer-events: none;
+      animation: glow-pulse 8s ease-in-out infinite reverse;
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.1); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fade-up 0.6s 0.2s ease forwards;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 24px; height: 1px;
+      background: var(--accent);
+    }
+
+    .hero-name {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(52px, 9vw, 110px);
+      font-weight: 800;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fade-up 0.7s 0.35s ease forwards;
+    }
+    .hero-name .italic {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--muted2);
+    }
+
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(18px, 3vw, 28px);
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fade-up 0.7s 0.5s ease forwards;
+    }
+
+    .hero-bio {
+      max-width: 500px;
+      color: var(--muted2);
+      line-height: 1.8;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fade-up 0.7s 0.65s ease forwards;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fade-up 0.7s 0.8s ease forwards;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #0a0a0c;
+      font-weight: 400;
+    }
+    .btn-primary:hover {
+      background: #f4ff80;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(232,255,71,0.25);
+    }
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--muted2);
+    }
+    .btn-outline:hover {
+      border-color: var(--muted2);
+      color: var(--text);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      opacity: 0;
+      animation: fade-left 0.8s 1s ease forwards;
+    }
+    .stat-item {
+      padding: 28px 36px;
+      border-left: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .stat-item:last-child { border-bottom: none; }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-num span { color: var(--accent); }
+    .stat-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade-left {
+      from { opacity: 0; transform: translateY(-50%) translateX(30px); }
+      to { opacity: 1; transform: translateY(-50%) translateX(0); }
+    }
+
+    /* SCROLL INDICATOR */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      animation: fade-up 1s 1.4s ease forwards;
+      opacity: 0;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, transparent, var(--muted));
+      animation: scroll-pulse 2s ease-in-out infinite;
+    }
+    @keyframes scroll-pulse {
+      0%, 100% { transform: scaleY(1); opacity: 1; }
+      50% { transform: scaleY(0.5); opacity: 0.4; }
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 120px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 64px;
+    }
+    .section-num {
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      margin-left: auto;
+    }
+
+    /* EXPERIENCE */
+    .exp-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      transition: background 0.3s;
+    }
+    .exp-item:hover { background: rgba(232,255,71,0.02); }
+    .exp-item:last-child { border-bottom: 1px solid var(--border); }
+    .exp-meta { padding-right: 32px; }
+    .exp-period { font-size: 11px; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 8px; }
+    .exp-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      background: rgba(232,255,71,0.08);
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .exp-company-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .exp-co-logo {
+      width: 32px; height: 32px;
+      background: #1db954;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .exp-co-logo svg {
+      width: 18px; height: 18px;
+      fill: #fff;
+    }
+    .exp-company {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .exp-role { color: var(--muted2); margin-bottom: 12px; font-size: 13px; }
+    .exp-desc { color: var(--muted2); max-width: 580px; line-height: 1.8; font-size: 13px; }
+    .exp-techs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+    .exp-tech {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+    }
+    .exp-tech:hover { border-color: rgba(232,255,71,0.2); color: var(--muted2); }
+    .exp-tech svg { width: 11px; height: 11px; fill: var(--muted); flex-shrink: 0; }
+
+    /* SKILLS */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .skill-category {
+      background: var(--surface);
+      padding: 36px;
+      transition: background 0.3s;
+    }
+    .skill-category:hover { background: var(--surface2); }
+    .skill-cat-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      color: var(--muted2);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+    }
+    .skill-tag svg { width: 13px; height: 13px; fill: var(--muted2); flex-shrink: 0; transition: fill 0.2s; }
+    .skill-tag:hover { border-color: rgba(232,255,71,0.3); color: var(--accent); background: rgba(232,255,71,0.05); }
+    .skill-tag:hover svg { fill: var(--accent); }
+
+    /* FEATURED COMPANIES */
+    .companies-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .company-name {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(16px, 2.5vw, 24px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--muted);
+      transition: color 0.3s;
+    }
+    .company-name:hover { color: var(--text); }
+    .company-sep {
+      width: 4px; height: 4px;
+      background: var(--border);
+      border-radius: 50%;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-tagline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 28px;
+    }
+    .contact-tagline em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--muted2);
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: all 0.2s;
+      group: true;
+    }
+    .contact-link:first-child { border-top: 1px solid var(--border); }
+    .contact-link:hover { color: var(--accent); padding-left: 12px; }
+    .contact-link-arrow {
+      opacity: 0.3;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .contact-link:hover .contact-link-arrow {
+      opacity: 1;
+      transform: translate(4px, -4px);
+    }
+    .contact-link-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+    .contact-link-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      position: relative;
+      z-index: 1;
+    }
+    footer .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* TICKER */
+    .ticker {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+      margin: 0 0 80px;
+    }
+    .ticker-inner {
+      display: flex;
+      gap: 0;
+      animation: ticker 20s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      padding: 0 24px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .ticker-dot {
+      width: 4px; height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-stats {
+        display: none;
+      }
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 20px; }
+      section { padding: 80px 0; }
+      nav ul { display: none; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Your Name</h1>
-        <h2>Contact Information</h2>
-        <p>Email: your.email@example.com</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>LinkedIn: linkedin.com/in/yourprofile</p>
-        <h2>Summary</h2>
-        <p>A brief summary about your professional experience, skills, and achievements.</p>
-        <div class="section">
-            <h2>Work Experience</h2>
-            <h3>Job Title at Company Name</h3>
-            <p>Month YYYY - Present</p>
-            <ul>
-                <li>Your responsibility or accomplishment.</li>
-                <li>Another responsibility or accomplishment.</li>
-            </ul>
-            <h3>Previous Job Title at Previous Company Name</h3>
-            <p>Month YYYY - Month YYYY</p>
-            <ul>
-                <li>Your responsibility or accomplishment.</li>
-                <li>Another responsibility or accomplishment.</li>
-            </ul>
-        </div>
-        <div class="section">
-            <h2>Education</h2>
-            <h3>Degree in Field of Study</h3>
-            <p>University Name - Month YYYY</p>
-        </div>
-        <div class="section">
-            <h2>Skills</h2>
-            <ul>
-                <li>Skill One</li>
-                <li>Skill Two</li>
-                <li>Skill Three</li>
-                <li>Jekyll</li>
-            </ul>
-        </div>
-        <div class="footer">
-            <p>References available upon request.</p>
-        </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Nav -->
+  <nav>
+    <div class="inner">
+      <a href="#" class="nav-logo">JD<span>.</span></a>
+      <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-name">
+          Joel<br>
+          <span class="italic">Denke</span>
+        </h1>
+        <div class="hero-title">Senior Android Developer</div>
+        <p class="hero-bio">
+          KTH-educated engineer with 10+ years building high-performance Android applications. 
+          Independent consultant operating through <strong style="color:var(--text)">Gravity Free Consulting</strong> and placed via <strong style="color:var(--text)">Coody.io</strong> — currently on assignment at Spotify. Expert in Kotlin, Compose, KMP and modern Android architecture.
+        </p>
+        <div class="hero-cta">
+          <a href="mailto:me@joeldenke.se" class="btn btn-primary">Get in touch →</a>
+          <a href="https://www.linkedin.com/in/joeldenke-35591a5b" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">10<span>+</span></div>
+          <div class="stat-label">Years experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">8<span>+</span></div>
+          <div class="stat-label">Companies</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">01<span>.</span></div>
+          <div class="stat-label">Eksjö, Sweden</div>
+        </div>
+        <div class="stat-item">
+          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Consulting via</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--muted2);margin-bottom:2px;">Gravity Free</div>
+          <div style="font-size:11px;color:var(--muted);">Placed by Coody.io</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      scroll
+    </div>
+  </section>
+
+  <!-- Companies ticker -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item"><span class="ticker-dot"></span>Spotify</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Truecaller</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Avanza</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Kivra</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>SBAB</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Glooko</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Paf</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>KTH</span>
+      <!-- repeat for seamless loop -->
+      <span class="ticker-item"><span class="ticker-dot"></span>Spotify</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Truecaller</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Avanza</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Kivra</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>SBAB</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Glooko</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Paf</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>KTH</span>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-num">01 /</span>
+        <h2 class="section-title">Experience</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="experience-grid">
+
+        <!-- Spotify current -->
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-period">Nov 2025 — Present</div>
+            <div class="exp-tag">Current</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-row">
+              <div class="exp-co-logo">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+              </div>
+              <div class="exp-company">Spotify</div>
+            </div>
+            <div class="exp-role">Android Engineer II — Assignment via Coody.io</div>
+            <div class="exp-desc">Working on Spotify's Android platform in Stockholm, continuing to push the boundaries of mobile audio experiences at global scale.</div>
+            <div class="exp-techs">
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M2 2h10.535l9.465 10-9.465 10H2l9.465-10z"/></svg>Kotlin</span>
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M17.523 15.341a1.135 1.135 0 1 1-2.27 0 1.135 1.135 0 0 1 2.27 0zm-8.777 0a1.135 1.135 0 1 1-2.27 0 1.135 1.135 0 0 1 2.27 0zM3.608 8.316l-1.8-3.117a.478.478 0 0 1 .829-.479l1.823 3.157A11.946 11.946 0 0 1 12 6.484c2.804 0 5.37.962 7.54 2.393l1.823-3.157a.478.478 0 1 1 .829.479l-1.8 3.117C22.535 10.82 24 13.432 24 16.379H0c0-2.947 1.464-5.559 3.608-7.063zM12 0l2.4 4.147H9.6z"/></svg>Android</span>
+              <span class="exp-tech">Jetpack Compose</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Truecaller -->
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-period">Aug — Nov 2025</div>
+            <div class="exp-tag">Consultant</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-row">
+              <div class="exp-co-logo" style="background:#008CF0;">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+              </div>
+              <div class="exp-company">Truecaller</div>
+            </div>
+            <div class="exp-role">Senior Android Developer — Remote</div>
+            <div class="exp-desc">Android development for a new team initiative within Truecaller's app ecosystem.</div>
+            <div class="exp-techs">
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M2 2h10.535l9.465 10-9.465 10H2l9.465-10z"/></svg>Kotlin</span>
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M17.523 15.341a1.135 1.135 0 1 1-2.27 0 1.135 1.135 0 0 1 2.27 0zm-8.777 0a1.135 1.135 0 1 1-2.27 0 1.135 1.135 0 0 1 2.27 0zM3.608 8.316l-1.8-3.117a.478.478 0 0 1 .829-.479l1.823 3.157A11.946 11.946 0 0 1 12 6.484c2.804 0 5.37.962 7.54 2.393l1.823-3.157a.478.478 0 1 1 .829.479l-1.8 3.117C22.535 10.82 24 13.432 24 16.379H0c0-2.947 1.464-5.559 3.608-7.063zM12 0l2.4 4.147H9.6z"/></svg>Android</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paf -->
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-period">Mar 2024 — Jul 2025</div>
+            <div class="exp-tag">Consultant</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-row">
+              <div class="exp-co-logo" style="background:#E30613;">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><text x="2" y="17" font-size="13" font-weight="bold" fill="#fff" font-family="sans-serif">PAF</text></svg>
+              </div>
+              <div class="exp-company">Paf</div>
+            </div>
+            <div class="exp-role">Senior Android Developer — Games Sport Casino</div>
+            <div class="exp-desc">Built white label Android apps from scratch, established CI/CD pipeline, designed scalable architecture and design systems. Mentored team members on modern Android patterns.</div>
+            <div class="exp-techs">
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M2 2h10.535l9.465 10-9.465 10H2l9.465-10z"/></svg>Kotlin</span>
+              <span class="exp-tech">Compose</span>
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.852 0 1.266.64 1.266 1.408 0 .858-.546 2.141-.828 3.329-.236.995.499 1.806 1.476 1.806 1.772 0 3.137-1.867 3.137-4.563 0-2.39-1.716-4.061-4.168-4.061-2.837 0-4.501 2.128-4.501 4.327 0 .856.33 1.773.741 2.274a.3.3 0 0 1 .069.284c-.076.309-.244.995-.276 1.134-.044.183-.145.222-.334.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.938.29 1.931.446 2.962.446C17.523 22 22 17.523 22 12S17.523 2 12 2z"/></svg>Pinterest</span>
+              <span class="exp-tech">CI/CD</span>
+              <span class="exp-tech">Design Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Glooko -->
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-period">May 2023 — Jan 2024</div>
+            <div class="exp-tag">Consultant</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-row">
+              <div class="exp-co-logo" style="background:#00A878;">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 3a7 7 0 1 1 0 14A7 7 0 0 1 12 5zm0 2a5 5 0 1 0 0 10A5 5 0 0 0 12 7z"/></svg>
+              </div>
+              <div class="exp-company">Glooko</div>
+            </div>
+            <div class="exp-role">Senior Android Developer — Göteborg</div>
+            <div class="exp-desc">Worked with the full Bluetooth, NFC and USB stack as well as embedded NDK/JNI in both native Android and C++ layers for medical device connectivity.</div>
+            <div class="exp-techs">
+              <span class="exp-tech">Bluetooth</span>
+              <span class="exp-tech">NFC</span>
+              <span class="exp-tech">NDK / JNI</span>
+              <span class="exp-tech">C++</span>
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M2 2h10.535l9.465 10-9.465 10H2l9.465-10z"/></svg>Kotlin</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spotify 2022 -->
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-period">Oct 2022 — Apr 2023</div>
+            <div class="exp-tag">Consultant</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-row">
+              <div class="exp-co-logo">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+              </div>
+              <div class="exp-company">Spotify</div>
+            </div>
+            <div class="exp-role">Senior Android Developer — Remote</div>
+            <div class="exp-desc">Partner activation team. Media browser session, music app and SDKs. Contributed Jetpack Compose expertise to the design system.</div>
+            <div class="exp-techs">
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M2 2h10.535l9.465 10-9.465 10H2l9.465-10z"/></svg>Kotlin</span>
+              <span class="exp-tech">Compose</span>
+              <span class="exp-tech">Media SDK</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kivra -->
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-period">Aug 2020 — Oct 2022</div>
+            <div class="exp-tag">Full-time</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-row">
+              <div class="exp-co-logo" style="background:#0D1321;">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><text x="3" y="17" font-size="11" font-weight="bold" fill="#4AE97A" font-family="sans-serif">KVR</text></svg>
+              </div>
+              <div class="exp-company">Kivra</div>
+            </div>
+            <div class="exp-role">Senior Android Developer — Stockholm</div>
+            <div class="exp-desc">Payments, content/sender communication services, and design system. GitHub Actions, Kotlin, Coroutines, Compose, GraphQL. Part of recruitment and architectural decisions.</div>
+            <div class="exp-techs">
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M2 2h10.535l9.465 10-9.465 10H2l9.465-10z"/></svg>Kotlin</span>
+              <span class="exp-tech">Compose</span>
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"/></svg>GraphQL</span>
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub Actions</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SBAB -->
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-period">Apr 2019 — Aug 2020</div>
+            <div class="exp-tag">Full-time</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-row">
+              <div class="exp-co-logo" style="background:#003087;">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><text x="1" y="17" font-size="9" font-weight="bold" fill="#fff" font-family="sans-serif">SBAB</text></svg>
+              </div>
+              <div class="exp-company">SBAB Bank</div>
+            </div>
+            <div class="exp-role">Senior Android Developer — Stockholm</div>
+            <div class="exp-desc">Consumer app covering savings, personal loans, home insurance and mortgages. Part of recruitment, security work, and architecture decisions.</div>
+            <div class="exp-techs">
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M2 2h10.535l9.465 10-9.465 10H2l9.465-10z"/></svg>Kotlin</span>
+              <span class="exp-tech">AndroidX</span>
+              <span class="exp-tech">Coroutines</span>
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M22.379 12.37c0-5.747-4.66-10.407-10.407-10.407S1.565 6.623 1.565 12.37c0 4.92 3.415 9.055 8.033 10.124V15.37H7.172V12.37h2.426v-2.108c0-2.394 1.43-3.718 3.613-3.718 1.046 0 2.14.187 2.14.187v2.352h-1.206c-1.188 0-1.558.737-1.558 1.493v1.794h2.651l-.424 3h-2.227v7.124c4.618-1.069 8.033-5.204 8.033-10.124z"/></svg>Azure</span>
+              <span class="exp-tech">Navigation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Avanza -->
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-period">Jan 2015 — Apr 2019</div>
+            <div class="exp-tag">Lead</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-company-row">
+              <div class="exp-co-logo" style="background:#FF5500;">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><text x="2" y="17" font-size="10" font-weight="bold" fill="#fff" font-family="sans-serif">AVZ</text></svg>
+              </div>
+              <div class="exp-company">Avanza Bank</div>
+            </div>
+            <div class="exp-role">Lead Android Developer — Stockholm</div>
+            <div class="exp-desc">Built Avanza's native app from scratch. One of the first in Sweden to adopt Kotlin and Material Design. Migrated entire codebase to Kotlin. Led hiring and architecture across loans, stocks, funds, payments.</div>
+            <div class="exp-techs">
+              <span class="exp-tech"><svg viewBox="0 0 24 24"><path d="M2 2h10.535l9.465 10-9.465 10H2l9.465-10z"/></svg>Kotlin</span>
+              <span class="exp-tech">RxJava</span>
+              <span class="exp-tech">WebSockets</span>
+              <span class="exp-tech">Material Design</span>
+              <span class="exp-tech">GitLab</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-num">02 /</span>
+        <h2 class="section-title">Skills</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-container reveal">
+        <div class="skill-category">
+          <div class="skill-cat-title">Mobile</div>
+          <div class="skill-tags">
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.523 15.341a1.135 1.135 0 1 1-2.27 0 1.135 1.135 0 0 1 2.27 0zm-8.777 0a1.135 1.135 0 1 1-2.27 0 1.135 1.135 0 0 1 2.27 0zM3.608 8.316l-1.8-3.117a.478.478 0 0 1 .829-.479l1.823 3.157A11.946 11.946 0 0 1 12 6.484c2.804 0 5.37.962 7.54 2.393l1.823-3.157a.478.478 0 1 1 .829.479l-1.8 3.117C22.535 10.82 24 13.432 24 16.379H0c0-2.947 1.464-5.559 3.608-7.063zM12 0l2.4 4.147H9.6z"/></svg>
+              Android SDK
+            </span>
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.523 15.341a1.135 1.135 0 1 1-2.27 0 1.135 1.135 0 0 1 2.27 0zm-8.777 0a1.135 1.135 0 1 1-2.27 0 1.135 1.135 0 0 1 2.27 0zM3.608 8.316l-1.8-3.117a.478.478 0 0 1 .829-.479l1.823 3.157A11.946 11.946 0 0 1 12 6.484c2.804 0 5.37.962 7.54 2.393l1.823-3.157a.478.478 0 1 1 .829.479l-1.8 3.117C22.535 10.82 24 13.432 24 16.379H0c0-2.947 1.464-5.559 3.608-7.063zM12 0l2.4 4.147H9.6z"/></svg>
+              Jetpack Compose
+            </span>
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 2h10.535l9.465 10-9.465 10H2l9.465-10z"/></svg>
+              KMP
+            </span>
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 2h10.535l9.465 10-9.465 10H2l9.465-10z"/></svg>
+              Kotlin
+            </span>
+            <span class="skill-tag">Coroutines</span>
+            <span class="skill-tag">Flow</span>
+            <span class="skill-tag">NDK / JNI</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">Architecture</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Clean Architecture</span>
+            <span class="skill-tag">MVVM</span>
+            <span class="skill-tag">MVI</span>
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.523 15.341a1.135 1.135 0 1 1-2.27 0 1.135 1.135 0 0 1 2.27 0zm-8.777 0a1.135 1.135 0 1 1-2.27 0 1.135 1.135 0 0 1 2.27 0zM3.608 8.316l-1.8-3.117a.478.478 0 0 1 .829-.479l1.823 3.157A11.946 11.946 0 0 1 12 6.484c2.804 0 5.37.962 7.54 2.393l1.823-3.157a.478.478 0 1 1 .829.479l-1.8 3.117C22.535 10.82 24 13.432 24 16.379H0c0-2.947 1.464-5.559 3.608-7.063zM12 0l2.4 4.147H9.6z"/></svg>
+              Hilt / DI
+            </span>
+            <span class="skill-tag">Modularization</span>
+            <span class="skill-tag">Design Systems</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">Connectivity</div>
+          <div class="skill-tags">
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.8c3.978 0 7.2 3.222 7.2 7.2s-3.222 7.2-7.2 7.2-7.2-3.222-7.2-7.2S8.022 4.8 12 4.8zm0 2.4c-2.649 0-4.8 2.151-4.8 4.8s2.151 4.8 4.8 4.8 4.8-2.151 4.8-4.8-2.151-4.8-4.8-4.8zm0 2.4c1.325 0 2.4 1.075 2.4 2.4s-1.075 2.4-2.4 2.4-2.4-1.075-2.4-2.4 1.075-2.4 2.4-2.4z"/></svg>
+              Bluetooth
+            </span>
+            <span class="skill-tag">NFC</span>
+            <span class="skill-tag">USB Stack</span>
+            <span class="skill-tag">WebSockets</span>
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.254 8.412l-1.31 1.31a5.19 5.19 0 0 0-3.944-1.79 5.19 5.19 0 0 0-3.944 1.79l-1.31-1.31A7.026 7.026 0 0 1 12 5.978a7.026 7.026 0 0 1 5.254 2.434zM12 17.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3.76-3.23l-1.31 1.31a2.29 2.29 0 0 0-2.45-.5v-2.85l3.76 2.04zm-5.07 1.31l-1.31-1.31 3.76-2.04v2.85a2.29 2.29 0 0 0-2.45.5z"/></svg>
+              GraphQL
+            </span>
+            <span class="skill-tag">REST</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">DevOps &amp; Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub Actions
+            </span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.223 0h3.752l3.532 7.412L11.105 0h3.699L8.912 12.513 12.038 24h-3.75l-3.65-8.038L.891 24H-2.76l3.48-11.64L.223 0zm16.06 0h4.029L24 24h-3.784l-.685-2.95H15.7L15.02 24h-3.784L16.283 0zm1.94 5.49l-1.684 10.822h3.368L19.63 5.49z"/></svg>
+              Gradle
+            </span>
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.379 12.37c0-5.747-4.66-10.407-10.407-10.407S1.565 6.623 1.565 12.37c0 4.92 3.415 9.055 8.033 10.124V15.37H7.172V12.37h2.426v-2.108c0-2.394 1.43-3.718 3.613-3.718 1.046 0 2.14.187 2.14.187v2.352h-1.206c-1.188 0-1.558.737-1.558 1.493v1.794h2.651l-.424 3h-2.227v7.124c4.618-1.069 8.033-5.204 8.033-10.124z"/></svg>
+              Azure
+            </span>
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.19 2.38a9.344 9.344 0 0 0-9.234 6.893c.053-.02.107-.04.161-.059a9.065 9.065 0 0 1 2.56-.691 9.343 9.343 0 0 1 .776-.043c.656 0 1.29.09 1.898.242a9.393 9.393 0 0 1 1.845.695 9.344 9.344 0 0 1 2.994 2.544 9.378 9.378 0 0 1 1.37 2.831c.09.355.152.721.186 1.094a9.42 9.42 0 0 1 .028.715 9.36 9.36 0 0 1-.156 1.726 9.344 9.344 0 0 1-1.43 3.344 9.343 9.343 0 0 0 6.57-8.953c0-5.166-4.172-9.338-9.568-9.338zm-2.1 2.932a6.913 6.913 0 0 0-6.905 7.5l.006.095.165-.08a6.86 6.86 0 0 1 1.906-.524 6.9 6.9 0 0 1 .75-.04c.625 0 1.228.096 1.797.272l.228.07-.017-.075a6.897 6.897 0 0 0-5.037-5.037 6.9 6.9 0 0 1 6.9-6.9c.13 0 .257.003.384.01a9.344 9.344 0 0 0-1.177 4.71"/></svg>
+              GCP
+            </span>
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.89 15.672L6.255.461A.542.542 0 0 1 7.27.288l2.543 4.771zm16.794 3.692l-2.25-14a.54.54 0 0 0-.919-.295L3.316 19.365l7.856 4.427a1.621 1.621 0 0 0 1.588 0zM14.3 7.147l-1.82-3.482a.542.542 0 0 0-.96 0L3.53 17.984z"/></svg>
+              Firebase
+            </span>
+            <span class="skill-tag">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M1 2.5h22V21H1V2.5zm2 2V19h18V4.5H3zm2 2h14v2H5v-2zm0 4h14v2H5v-2zm0 4h8v2H5v-2z"/></svg>
+              GitLab
+            </span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">Leadership</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Mentoring</span>
+            <span class="skill-tag">Recruitment</span>
+            <span class="skill-tag">Architecture Review</span>
+            <span class="skill-tag">Code Review</span>
+            <span class="skill-tag">Onboarding</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">Education</div>
+          <div class="skill-tags">
+            <span class="skill-tag">KTH BEng CS</span>
+            <span class="skill-tag">KTH MEng Design</span>
+            <span class="skill-tag">NTI Gymnasiet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-num">03 /</span>
+        <h2 class="section-title">Contact</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="contact-tagline">
+            Let's build<br>
+            something <em>great</em><br>
+            together.
+          </div>
+          <p style="color: var(--muted2); line-height: 1.8; max-width: 360px; font-size: 13px;">
+            Independent consultant operating through <span style="color:var(--muted2);font-style:normal">Gravity Free Consulting</span>, placed on assignments via Coody.io. Based in Eksjö, Sweden — remote-friendly. Open to architecture reviews, mentoring, and long-term contracts.
+          </p>
+        </div>
+
+        <div class="contact-links reveal">
+          <a href="mailto:me@joeldenke.se" class="contact-link">
+            <div class="contact-link-left">
+              Email
+              <span class="contact-link-sub">me@joeldenke.se</span>
+            </div>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/joeldenke-35591a5b" target="_blank" class="contact-link">
+            <div class="contact-link-left">
+              LinkedIn
+              <span class="contact-link-sub">joeldenke-35591a5b</span>
+            </div>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <a href="https://github.com/joeldenke" target="_blank" class="contact-link">
+            <div class="contact-link-left">
+              GitHub
+              <span class="contact-link-sub">github.com/joeldenke</span>
+            </div>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="inner">
+        <div class="footer-logo">Joel Denke.</div>
+        <div class="footer-copy">© 2025 · Eksjö, Sweden</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx + 'px';
+      cursor.style.top = my + 'px';
+    });
+
+    function animRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(animRing);
+    }
+    animRing();
+
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        ring.style.width = '56px';
+        ring.style.height = '56px';
+        ring.style.opacity = '0.6';
+      });
+      el.addEventListener('mouseleave', () => {
+        ring.style.width = '38px';
+        ring.style.height = '38px';
+        ring.style.opacity = '1';
+      });
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Nav active states on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav ul a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--accent)' : '';
+      });
+    });
+  </script>
 </body>
 </html>
