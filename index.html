@@ -26,6 +26,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--tx);overf
 #cur-r{position:fixed;top:0;left:0;z-index:9998;pointer-events:none;width:22px;height:22px;border-radius:50%;border:1px solid rgba(225,238,240,.22);transform:translate(-50%,-50%)}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;display:flex;align-items:center;padding:0 52px;background:rgba(5,7,14,.72);border-bottom:1px solid rgba(255,255,255,.06)}
+#nl{opacity:0;transform:translateX(-8px);transition:opacity .5s ease,transform .5s ease}#nl.vis{opacity:1;transform:translateX(0)}
 .nl{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:400;color:var(--tx);margin-right:auto}
 .nl em{font-style:italic;font-weight:300;opacity:.38}
 nav ul{display:flex;list-style:none}
@@ -176,7 +177,7 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
 <div id="vig"></div>
 <canvas id="mx"></canvas>
 <nav>
-  <div class="nl">Joel <em>Denke</em></div>
+  <div class="nl" id="nl">Joel <em>Denke</em></div>
   <ul>
     <li><a href="#hero">Home</a></li>
     <li><a href="#exp">Work</a></li>
@@ -268,7 +269,7 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
       <div class="ec g r">
         <div class="eb">
           <div class="et">
-            <div class="logo" style="background:#f0fafa"><svg viewBox="0 0 200 200" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" rx="44" fill="#ffffff"/><path d="M100 22 C100 22 48 78 48 118 C48 148 71 172 100 172 C129 172 152 148 152 118 C152 78 100 22 100 22 Z" fill="#009BA4"/><text x="100" y="138" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="58" font-weight="900" fill="white">G</text></svg></div>
+            <div class="logo" style="background:#00838F"><img src="https://glooko.com/wp-content/themes/glooko-two/assets/images/brand/glooko_logotype_wtagline_white.png" style="width:100%;height:100%;object-fit:contain;padding:8px;display:block;box-sizing:border-box;"/></div>
             <div class="em"><a class="en" href="https://glooko.com" target="_blank">Glooko</a><div class="ep">May 2023 – Jan 2024</div><div class="er">Senior Android Developer · Göteborg</div></div>
           </div>
           <div class="ed">Full BT, NFC and USB hardware stack. Deep native work via NDK/JNI in C++ for medical device connectivity.</div>
@@ -281,7 +282,7 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
       <div class="ec g r2">
         <div class="eb">
           <div class="et">
-            <div class="logo" style="background:#f0eef8"><svg viewBox="0 0 200 200" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" rx="44" fill="#ffffff"/><rect x="55" y="40" width="24" height="120" rx="6" fill="#6C3DC8"/><path d="M79 100 L155 40 H155 L130 40 L79 87 Z" fill="#6C3DC8"/><path d="M79 100 L155 160 H130 L79 113 Z" fill="#6C3DC8"/></svg></div>
+            <div class="logo" style="background:#ffffff"><img src="https://images.ctfassets.net/7jy2i7elrvww/15AzrukrqCFevLPmpsvJ7d/1783a0e023e8f005381398cd76967ce0/logotype_img.jpg" style="width:100%;height:100%;object-fit:contain;padding:4px;display:block;box-sizing:border-box;"/></div>
             <div class="em"><a class="en" href="https://kivra.se" target="_blank">Kivra</a><div class="ep">Aug 2020 – Oct 2022</div><div class="er">Senior Android Developer · Stockholm</div></div>
           </div>
           <div class="ed">Payments, content delivery, sender services. Compose, GraphQL, GitHub Actions. Architecture and recruitment.</div>
@@ -294,7 +295,7 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
       <div class="ec g r">
         <div class="eb">
           <div class="et">
-            <div class="logo" style="background:#f5f5f5"><svg viewBox="0 0 200 200" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" rx="44" fill="#ffffff"/><text x="100" y="122" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="44" font-weight="900" fill="#003087" letter-spacing="-1">SBAB</text></svg></div>
+            <div class="logo" style="background:#ffffff"><img src="https://www.sbab.se/images/18.1f81472418f76c7c850184/1715867477502/SBAB_Logotyp_Svart_Orange_RGB_500_.png" style="width:100%;height:100%;object-fit:contain;padding:6px;display:block;box-sizing:border-box;"/></div>
             <div class="em"><a class="en" href="https://sbab.se" target="_blank">SBAB Bank</a><div class="ep">Apr 2019 – Aug 2020</div><div class="er">Senior Android Developer · Stockholm</div></div>
           </div>
           <div class="ed">Consumer banking — savings, loans, home insurance, mortgages. Security lead, recruiting, architecture.</div>
@@ -308,7 +309,7 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
         <div class="eb" style="display:grid;grid-template-columns:1fr auto;gap:28px;align-items:start">
           <div>
             <div class="et">
-              <div class="logo" style="background:#f5f5f5"><svg viewBox="0 0 200 200" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" rx="44" fill="#ffffff"/><path d="M30 155 L75 85 L100 115 L125 70 L170 70" fill="none" stroke="#00B259" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><path d="M148 46 L172 70 L148 70" fill="#00B259"/></svg></div>
+              <div class="logo" style="background:#ffffff"><img src="https://investors.avanza.se/files/Avanza_ir_logo.svg" style="width:100%;height:100%;object-fit:contain;padding:7px;display:block;box-sizing:border-box;"/></div>
               <div class="em"><a class="en" href="https://avanza.se" target="_blank">Avanza Bank</a><div class="ep">Jun 2014 – Apr 2019</div><div class="er">Lead Android Developer · Stockholm</div></div>
             </div>
             <div class="ed">Built Avanza's Android app from scratch. Among the first in Sweden to adopt Kotlin and Material Design. Led hiring, migrated the entire codebase, achieved top Play Store ratings. Stocks, funds, dividends, loans, payments.</div>
@@ -430,6 +431,17 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
 <div id="cur"></div><div id="cur-r"></div>
 
 <script>
+// Nav name reveal
+const nlEl = document.getElementById('nl');
+const heroEl = document.getElementById('hero');
+function checkNavName(){
+  const heroBottom = heroEl.getBoundingClientRect().bottom;
+  if(heroBottom < 80) nlEl.classList.add('vis');
+  else nlEl.classList.remove('vis');
+}
+window.addEventListener('scroll', checkNavName, {passive:true});
+checkNavName();
+
 const scenes=[document.getElementById("s0"),document.getElementById("s1"),document.getElementById("s2"),document.getElementById("s3"),document.getElementById("s4")];
 const sIds=["hero","exp","skills","contact"];
 const sMap=[0,1,2,4];
