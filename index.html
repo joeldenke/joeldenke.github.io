@@ -25,10 +25,12 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(-
 #cur{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;width:7px;height:7px;border-radius:50%;background:rgba(225,238,240,.9);transform:translate(-50%,-50%);transition:width .14s,height .14s}
 #cur-r{position:fixed;top:0;left:0;z-index:9998;pointer-events:none;width:22px;height:22px;border-radius:50%;border:1px solid rgba(225,238,240,.22);transform:translate(-50%,-50%)}
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;display:flex;align-items:center;padding:0 52px;background:rgba(255,255,255,.04);backdrop-filter:saturate(190%) brightness(1.06) contrast(1.03);-webkit-backdrop-filter:saturate(190%) brightness(1.06) contrast(1.03);border-bottom:1px solid rgba(255,255,255,.20);box-shadow:inset 0 -1px 0 rgba(255,255,255,.07),0 1px 28px rgba(0,0,0,.18)}
-#nl{opacity:0;transform:translateX(-8px);transition:opacity .5s ease,transform .5s ease}#nl.vis{opacity:1;transform:translateX(0)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;display:flex;align-items:center;padding:0 52px;background:rgba(3,6,16,.82);backdrop-filter:saturate(240%) brightness(1.09) contrast(1.06) blur(22px);-webkit-backdrop-filter:saturate(240%) brightness(1.09) contrast(1.06) blur(22px);border-bottom:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -1px 0 rgba(255,255,255,.04),0 2px 40px rgba(0,0,0,.5);transition:background .35s ease}nav.scrolled{background:rgba(3,6,16,.94)}
+#nl{opacity:0;transform:translateX(-8px);transition:opacity .3s ease,transform .3s ease}#nl.vis{opacity:1;transform:translateX(0)}
+#name-fly{position:fixed;z-index:97;pointer-events:none;font-family:"Plus Jakarta Sans",sans-serif;font-weight:300;color:#ffffff;white-space:nowrap;opacity:0;line-height:1;letter-spacing:-.02em;will-change:transform,opacity;transform:translateY(-50%);text-shadow:0 1px 12px rgba(0,0,0,.6)}
+#name-fly em{font-style:italic;color:var(--ac);font-weight:200}
 .nl{font-family:"Plus Jakarta Sans",sans-serif;font-size:16px;font-weight:500;color:var(--tx);margin-right:auto}
-.nl em{font-style:italic;font-weight:300;opacity:.72}
+.nl em{font-style:italic;font-weight:300;opacity:.9}
 nav ul{display:flex;list-style:none}
 nav a{display:flex;align-items:center;gap:7px;padding:0 16px;height:52px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(220,236,238,.95);text-decoration:none;border-left:1px solid rgba(255,255,255,.055);transition:color .2s}
 nav a svg{opacity:.7;flex-shrink:0;transition:opacity .2s}nav a:hover svg{opacity:1}
@@ -77,13 +79,13 @@ h1 em{font-style:italic;color:var(--ac)}
 /* HUD */
 .hud{padding:28px 30px;animation:fu .9s .5s both;position:relative;z-index:3}
 .hudh{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.06)}
-.hudl{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(220,236,238,.98);text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.hudl{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(235,248,250,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
 .hudp{font-family:"JetBrains Mono",monospace;font-size:8px;color:rgba(142,207,204,1);display:flex;align-items:center;gap:5px}
 .hudp::before{content:"";width:4px;height:4px;border-radius:50%;background:rgba(125,184,181,.65);animation:pg 2.4s infinite}
 @keyframes pg{0%,100%{opacity:1}50%{opacity:.12}}
 .hr{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.035)}
 .hr:last-child{border:none;padding-bottom:0}
-.hk{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(210,232,234,.95);text-shadow:0 1px 5px rgba(0,0,0,.8)}
+.hk{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(220,240,242,1);text-shadow:0 1px 6px rgba(0,0,0,.9)}
 .hv{font-family:"JetBrains Mono",monospace;font-size:13px;color:#ffffff;text-align:right;line-height:1.3;text-shadow:0 1px 5px rgba(0,0,0,.8)}
 .hv.a{color:var(--ac)}
 .mb{margin-top:4px;height:1.5px;width:96px;background:rgba(255,255,255,.06);border-radius:1px;overflow:hidden;margin-left:auto}
@@ -112,11 +114,11 @@ h1 em{font-style:italic;color:var(--ac)}
 .em{flex:1;min-width:0}
 .en{font-family:"Plus Jakarta Sans",sans-serif;font-size:26px;font-weight:400;color:var(--tx);text-decoration:none;display:block;line-height:1;margin-bottom:4px;transition:color .2s;text-shadow:0 1px 12px rgba(0,0,0,.8),0 2px 4px rgba(0,0,0,.6)}
 .en:hover{color:rgba(233,239,240,.7)}
-.ep{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(220,236,238,.95);margin-bottom:3px;text-shadow:0 1px 6px rgba(0,0,0,.8)}
-.er{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(168,219,216,1);text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.ep{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(230,244,246,1);margin-bottom:3px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+.er{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(185,232,229,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
 .ed{font-family:"Plus Jakarta Sans",sans-serif;font-size:17px;font-weight:300;line-height:1.66;color:#f0f7f8;margin-bottom:16px;opacity:1;text-shadow:0 1px 8px rgba(0,0,0,.9),0 2px 16px rgba(0,0,0,.7)}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
-.tag{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:1px solid rgba(255,255,255,.32);color:#edf6f7;background:rgba(4,7,14,.68);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
+.tag{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:1px solid rgba(255,255,255,.38);color:#f0f8f9;background:rgba(4,7,14,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
 .tag.hi{border-color:rgba(125,184,181,.6);color:rgba(168,219,216,1);background:rgba(20,60,58,.65)}
 .lnks{display:flex;gap:8px}
 .lnk{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#e8f4f5;padding:4px 10px;border:1px solid rgba(255,255,255,.38);border-radius:2px;transition:all .2s;background:rgba(10,14,22,.78);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
@@ -201,6 +203,7 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
     <li><a href="#contact"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact</a></li>
   </ul>
 </nav>
+<div id="name-fly" aria-hidden="true">Joel <em>Denke</em></div>
 
 <section id="hero">
   <div class="wrap">
@@ -220,12 +223,12 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
         <div class="hudh"><div class="hudl">Developer Profile</div><div class="hudp">Online</div></div>
         <div class="hr"><div class="hk">Location</div><div class="hv">Eksjö, Sweden</div></div>
         <div class="hr"><div class="hk">Speciality</div><div class="hv a">Android Platform</div></div>
-        <div class="hr"><div class="hk">Experience</div><div class="hv">10+ Years<div class="mb"><div class="mf" style="--w:93%"></div></div></div></div>
-        <div class="hr"><div class="hk">Architecture</div><div class="hv">Expert<div class="mb"><div class="mf" style="--w:96%"></div></div></div></div>
+        <div class="hr"><div class="hk">Experience</div><div class="hv">10+ Years</div></div>
+        <div class="hr"><div class="hk">Architecture</div><div class="hv">Expert</div></div>
         <div class="hr"><div class="hk">Users reached</div><div class="hv">600M+</div></div>
         <div class="hr"><div class="hk">Consulting via</div><a class="hv a" href="https://www.coody.io" target="_blank" style="text-decoration:none;color:var(--ac)">Coody.io ↗</a></div>
         <div class="hr"><div class="hk">Languages</div><div class="hv" style="font-size:10px">Kotlin · Java · C++</div></div>
-        <div class="hr"><div class="hk">Kotlin pioneer</div><div class="hv">Sweden, 2015<div class="mb"><div class="mf" style="--w:88%"></div></div></div></div>
+        <div class="hr"><div class="hk">Kotlin pioneer</div><div class="hv">Sweden, 2015</div></div>
       </div>
     </div>
   </div>
@@ -251,98 +254,82 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
             <div class="tags"><span class="tag hi">▸ Current</span><span class="tag">Platform</span><span class="tag">600M users</span><span class="tag">Kotlin</span></div>
             <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.spotify.music" target="_blank">▸ Google Play</a><a class="lnk" href="https://spotify.com" target="_blank">↗ spotify.com</a></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:linear-gradient(175deg,#060e06 0%,#0d3d1f 40%,#1DB954 200%)"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <defs>
-    <linearGradient id="spbg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1a3a1a"/>
-      <stop offset="100%" stop-color="#0a0f0a"/>
-    </linearGradient>
-    <radialGradient id="spalb" cx="50%" cy="35%">
-      <stop offset="0%" stop-color="#2d6e2d"/>
-      <stop offset="100%" stop-color="#0d1a0d"/>
-    </radialGradient>
-  </defs>
-  <!-- bg -->
-  <rect width="102" height="214" fill="url(#spbg)"/>
+          <div class="ph"><div class="psh"><div class="psc" style="background:#121212"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <!-- Spotify — Home screen: Your Mix cards -->
+  <rect width="102" height="214" fill="#121212"/>
   <!-- status bar -->
-  <text x="7" y="12" font-size="5.5" fill="rgba(255,255,255,.6)" font-weight="600">9:41</text>
-  <g fill="rgba(255,255,255,.6)">
-    <rect x="82" y="7" width="12" height="5.5" rx="1.5" fill="none" stroke="rgba(255,255,255,.5)" stroke-width=".8"/>
-    <rect x="83" y="8" width="8" height="3.5" rx=".8" fill="#1DB954"/>
-    <rect x="95.5" y="8" width="1.2" height="3" rx=".5"/>
-    <!-- signal -->
-    <rect x="68" y="9" width="1.5" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
-    <rect x="70.5" y="8" width="1.5" height="4" rx=".5" fill="rgba(255,255,255,.55)"/>
-    <rect x="73" y="7" width="1.5" height="5" rx=".5"/>
-    <rect x="75.5" y="6" width="1.5" height="6" rx=".5"/>
-  </g>
-  <!-- album art square -->
-  <rect x="14" y="20" width="74" height="74" rx="6" fill="url(#spalb)"/>
-  <!-- vinyl grooves on album -->
-  <circle cx="51" cy="57" r="28" fill="none" stroke="rgba(0,0,0,.2)" stroke-width=".8"/>
-  <circle cx="51" cy="57" r="20" fill="none" stroke="rgba(0,0,0,.2)" stroke-width=".8"/>
-  <circle cx="51" cy="57" r="5" fill="rgba(0,0,0,.4)"/>
-  <!-- waveform visualizer across art -->
-  <g fill="#1DB954" opacity=".5">
-    <rect x="18" y="82" width="2" height="6" rx="1"/>
-    <rect x="22" y="80" width="2" height="9" rx="1"/>
-    <rect x="26" y="83" width="2" height="5" rx="1"/>
-    <rect x="30" y="79" width="2" height="10" rx="1"/>
-    <rect x="34" y="81" width="2" height="8" rx="1"/>
-    <rect x="38" y="84" width="2" height="5" rx="1"/>
-    <rect x="42" y="78" width="2" height="11" rx="1"/>
-    <rect x="46" y="82" width="2" height="7" rx="1"/>
-    <rect x="50" y="80" width="2" height="9" rx="1"/>
-    <rect x="54" y="76" width="2" height="13" rx="1"/>
-    <rect x="58" y="82" width="2" height="7" rx="1"/>
-    <rect x="62" y="83" width="2" height="5" rx="1"/>
-    <rect x="66" y="79" width="2" height="10" rx="1"/>
-    <rect x="70" y="81" width="2" height="8" rx="1"/>
-    <rect x="74" y="84" width="2" height="5" rx="1"/>
-    <rect x="78" y="80" width="2" height="9" rx="1"/>
-  </g>
-  <!-- track info -->
-  <text x="51" y="112" text-anchor="middle" font-size="8.5" font-weight="700" fill="white">Currents</text>
-  <text x="51" y="122" text-anchor="middle" font-size="6" fill="rgba(255,255,255,.5)">Tame Impala</text>
-  <!-- heart + add -->
-  <text x="13" y="122" font-size="9" fill="#1DB954">♥</text>
-  <text x="85" y="122" font-size="9" fill="rgba(255,255,255,.35)">⊕</text>
-  <!-- progress bar -->
-  <rect x="10" y="129" width="82" height="2" rx="1" fill="rgba(255,255,255,.15)"/>
-  <rect x="10" y="129" width="52" height="2" rx="1" fill="#1DB954"/>
-  <circle cx="62" cy="130" r="3" fill="white"/>
-  <!-- times -->
-  <text x="10" y="139" font-size="5" fill="rgba(255,255,255,.4)">1:52</text>
-  <text x="92" y="139" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">4:12</text>
-  <!-- controls -->
-  <g fill="rgba(255,255,255,.7)" transform="translate(0,2)">
-    <!-- shuffle -->
-    <text x="10" y="154" font-size="10">⇄</text>
-    <!-- prev -->
-    <text x="28" y="155" font-size="13">⏮</text>
-    <!-- play (green circle) -->
-    <circle cx="51" cy="149" r="12" fill="#1DB954"/>
-    <polygon points="47,144 47,154 59,149" fill="white"/>
-    <!-- next -->
-    <text x="62" y="155" font-size="13">⏭</text>
-    <!-- repeat -->
-    <text x="81" y="154" font-size="10">↺</text>
-  </g>
-  <!-- volume -->
-  <g fill="rgba(255,255,255,.2)">
-    <text x="9" y="172" font-size="8">🔈</text>
-    <rect x="20" y="168" width="58" height="2" rx="1"/>
-    <rect x="20" y="168" width="38" height="2" rx="1" fill="rgba(255,255,255,.5)"/>
-    <text x="82" y="172" font-size="8">🔊</text>
-  </g>
-  <!-- bottom nav -->
-  <rect x="0" y="196" width="102" height="18" fill="rgba(0,0,0,.5)"/>
-  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.08)" stroke-width=".5"/>
-  <text x="14" y="207" text-anchor="middle" font-size="7" fill="#1DB954">⌂</text>
-  <text x="34" y="207" text-anchor="middle" font-size="7" fill="rgba(255,255,255,.3)">🔍</text>
-  <text x="51" y="207" text-anchor="middle" font-size="7" fill="rgba(255,255,255,.3)">⊞</text>
-  <text x="68" y="207" text-anchor="middle" font-size="7" fill="rgba(255,255,255,.3)">♪</text>
-  <text x="88" y="207" text-anchor="middle" font-size="7" fill="rgba(255,255,255,.3)">👤</text>
+  <text x="7" y="11" font-size="5.5" fill="rgba(255,255,255,.75)" font-weight="700">9:41</text>
+  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.45)" stroke-width=".7"/>
+  <rect x="81" y="7.5" width="9" height="3" rx=".8" fill="#1DB954"/>
+  <rect x="94.2" y="7.5" width="1" height="3" rx=".4" fill="rgba(255,255,255,.45)"/>
+  <rect x="68" y="9" width="1.5" height="3" rx=".4" fill="rgba(255,255,255,.4)"/>
+  <rect x="70.5" y="8" width="1.5" height="4" rx=".4" fill="rgba(255,255,255,.6)"/>
+  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,255,255,.8)"/>
+  <!-- Top greeting -->
+  <text x="10" y="26" font-size="9" font-weight="700" fill="white">Good evening</text>
+  <!-- Quick picks row -->
+  <rect x="10" y="32" width="38" height="14" rx="3" fill="rgba(255,255,255,.1)"/>
+  <rect x="10" y="32" width="14" height="14" rx="3 0 0 3" fill="#1DB954"/>
+  <text x="17" y="41.5" text-anchor="middle" font-size="7" fill="white">♪</text>
+  <text x="36" y="41" text-anchor="middle" font-size="5.5" fill="white" font-weight="600">Liked Songs</text>
+  <rect x="54" y="32" width="38" height="14" rx="3" fill="rgba(255,255,255,.1)"/>
+  <rect x="54" y="32" width="14" height="14" rx="3 0 0 3" fill="#4B0082"/>
+  <text x="61" y="41.5" text-anchor="middle" font-size="7" fill="white">♬</text>
+  <text x="79" y="41" text-anchor="middle" font-size="5.5" fill="white" font-weight="600">Daily Mix 1</text>
+  <!-- Second row -->
+  <rect x="10" y="50" width="38" height="14" rx="3" fill="rgba(255,255,255,.1)"/>
+  <rect x="10" y="50" width="14" height="14" rx="3 0 0 3" fill="#333"/>
+  <text x="17" y="59.5" text-anchor="middle" font-size="7" fill="white">⊞</text>
+  <text x="36" y="59" text-anchor="middle" font-size="5.5" fill="white" font-weight="600">Your Mix 3</text>
+  <rect x="54" y="50" width="38" height="14" rx="3" fill="rgba(255,255,255,.1)"/>
+  <rect x="54" y="50" width="14" height="14" rx="3 0 0 3" fill="#8B1A1A"/>
+  <text x="61" y="59.5" text-anchor="middle" font-size="7" fill="white">♫</text>
+  <text x="79" y="59" text-anchor="middle" font-size="5.5" fill="white" font-weight="600">Rock Classics</text>
+  <!-- Section: Featured Charts -->
+  <text x="10" y="76" font-size="7.5" font-weight="700" fill="white">Featured Charts</text>
+  <!-- Chart cards row -->
+  <rect x="10" y="81" width="36" height="36" rx="3" fill="#1a1a2e"/>
+  <rect x="10" y="81" width="36" height="18" fill="#16213e"/>
+  <rect x="10" y="81" width="36" height="9" fill="#0f3460"/>
+  <text x="28" y="91" text-anchor="middle" font-size="6" fill="white" font-weight="700">Top 50</text>
+  <text x="28" y="98" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.7)">Global</text>
+  <rect x="10" y="117" width="36" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+  <text x="28" y="121" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)">Spotify Charts</text>
+  <rect x="50" y="81" width="36" height="36" rx="3" fill="#1e0533"/>
+  <rect x="50" y="81" width="36" height="18" fill="#2d0b4e"/>
+  <rect x="50" y="81" width="36" height="9" fill="#3d1165"/>
+  <text x="68" y="91" text-anchor="middle" font-size="6" fill="white" font-weight="700">Viral 50</text>
+  <text x="68" y="98" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.7)">Sweden</text>
+  <rect x="50" y="117" width="36" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+  <text x="68" y="121" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)">Spotify Charts</text>
+  <!-- Section: Recently Played -->
+  <text x="10" y="135" font-size="7.5" font-weight="700" fill="white">Recently played</text>
+  <!-- Album grid -->
+  <rect x="10" y="140" width="26" height="26" rx="3" fill="#1a472a"/>
+  <text x="23" y="157" text-anchor="middle" font-size="10" fill="#1DB954">♪</text>
+  <rect x="40" y="140" width="26" height="26" rx="3" fill="#0d2137"/>
+  <text x="53" y="157" text-anchor="middle" font-size="10" fill="#4fc3f7">♫</text>
+  <rect x="70" y="140" width="26" height="26" rx="3" fill="#3b1a3a"/>
+  <text x="83" y="157" text-anchor="middle" font-size="10" fill="#ce93d8">♬</text>
+  <text x="23" y="170" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)">Chill Vibes</text>
+  <text x="53" y="170" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)">Lo-fi Beats</text>
+  <text x="83" y="170" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)">Indie Pop</text>
+  <!-- Now Playing mini bar -->
+  <rect x="4" y="178" width="94" height="16" rx="6" fill="#282828"/>
+  <rect x="8" y="181" width="10" height="10" rx="2" fill="#1DB954"/>
+  <text x="13" y="188" text-anchor="middle" font-size="7" fill="white">♪</text>
+  <text x="25" y="185" font-size="5" fill="white" font-weight="600">Blinding Lights</text>
+  <text x="25" y="191" font-size="4" fill="rgba(255,255,255,.55)">The Weeknd</text>
+  <text x="89" y="188" text-anchor="middle" font-size="10" fill="white">▶</text>
+  <rect x="82" y="184" width="1" height="6" rx=".5" fill="rgba(255,255,255,.4)"/>
+  <!-- Bottom navigation -->
+  <rect x="0" y="196" width="102" height="18" fill="#000"/>
+  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+  <rect x="7" y="198" width="18" height="1.5" rx=".75" fill="#1DB954"/>
+  <text x="16" y="207" text-anchor="middle" font-size="5.5" fill="#1DB954" font-weight="600">Home</text>
+  <text x="36" y="207" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)">Search</text>
+  <text x="56" y="207" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)">Library</text>
+  <text x="76" y="207" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)">Premium</text>
 </svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
         </div>
       </div>
@@ -359,53 +346,85 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
             <div class="tags"><span class="tag">Compose</span><span class="tag">Architecture</span><span class="tag">Remote</span></div>
             <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.truecaller" target="_blank">▸ Google Play</a><a class="lnk" href="https://truecaller.com" target="_blank">↗ truecaller.com</a></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:linear-gradient(175deg,#001529 0%,#0a2744 50%,#0d47a1 100%)"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <defs>
-    <radialGradient id="tcbg" cx="50%" cy="30%">
-      <stop offset="0%" stop-color="#0d2a4a"/>
-      <stop offset="100%" stop-color="#020c18"/>
-    </radialGradient>
-    <radialGradient id="tcavatar" cx="50%" cy="40%">
-      <stop offset="0%" stop-color="#1565C0"/>
-      <stop offset="100%" stop-color="#0d47a1"/>
-    </radialGradient>
-  </defs>
-  <rect width="102" height="214" fill="url(#tcbg)"/>
-  <!-- status bar -->
-  <text x="7" y="12" font-size="5.5" fill="rgba(255,255,255,.6)" font-weight="600">9:41</text>
-  <text x="72" y="12" font-size="6" fill="rgba(255,255,255,.5)">📶 🔋</text>
-  <!-- incoming label -->
-  <text x="51" y="30" text-anchor="middle" font-size="6" fill="rgba(255,255,255,.5)" letter-spacing=".08em">INCOMING CALL</text>
-  <!-- avatar circle -->
-  <circle cx="51" cy="68" r="28" fill="url(#tcavatar)"/>
-  <text x="51" y="75" text-anchor="middle" font-size="22" font-weight="700" fill="white">E</text>
-  <!-- verified badge -->
-  <circle cx="72" cy="88" r="7" fill="#1DB954"/>
-  <text x="72" y="92" text-anchor="middle" font-size="7" fill="white">✓</text>
-  <!-- caller name -->
-  <text x="51" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="white">Erik Karlsson</text>
-  <text x="51" y="119" text-anchor="middle" font-size="6" fill="rgba(255,255,255,.45)">+46 70 123 45 67</text>
-  <!-- safe badge -->
-  <rect x="29" y="124" width="44" height="13" rx="6.5" fill="rgba(76,175,80,.18)" stroke="rgba(76,175,80,.4)" stroke-width=".8"/>
-  <text x="51" y="133" text-anchor="middle" font-size="5.5" fill="#81c784">✓ Safe · Sweden</text>
-  <!-- spam info card -->
-  <rect x="10" y="142" width="82" height="22" rx="5" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
-  <text x="18" y="152" font-size="5" fill="rgba(144,202,249,.7)" letter-spacing=".05em">CALLER INSIGHTS</text>
-  <text x="18" y="161" font-size="5.5" fill="rgba(255,255,255,.55)">248 users identified · Business</text>
-  <!-- action buttons row -->
-  <g transform="translate(0,8)">
-    <!-- decline -->
-    <circle cx="28" cy="184" r="14" fill="#c62828"/>
-    <text x="28" y="188" text-anchor="middle" font-size="12" fill="white">✕</text>
-    <text x="28" y="202" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.45)">Decline</text>
-    <!-- message -->
-    <circle cx="51" cy="184" r="10" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.2)" stroke-width=".8"/>
-    <text x="51" y="188" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.6)">✉</text>
-    <!-- accept -->
-    <circle cx="74" cy="184" r="14" fill="#2e7d32"/>
-    <text x="74" y="189" text-anchor="middle" font-size="14" fill="white">📞</text>
-    <text x="74" y="202" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.45)">Accept</text>
-  </g>
+          <div class="ph"><div class="psh"><div class="psc" style="background:#0a0a0a"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <!-- Truecaller — Recents screen -->
+  <rect width="102" height="214" fill="#0d0d0d"/>
+  <!-- Status bar -->
+  <text x="7" y="11" font-size="5.5" fill="rgba(255,255,255,.8)" font-weight="700">9:41</text>
+  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".7"/>
+  <rect x="81" y="7.5" width="9" height="3" rx=".8" fill="#4CAF50"/>
+  <rect x="94.2" y="7.5" width="1" height="3" rx=".4" fill="rgba(255,255,255,.4)"/>
+  <rect x="68" y="9" width="1.5" height="3" rx=".4" fill="rgba(255,255,255,.4)"/>
+  <rect x="70.5" y="8" width="1.5" height="4" rx=".4" fill="rgba(255,255,255,.65)"/>
+  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,255,255,.85)"/>
+  <!-- Top bar -->
+  <rect x="0" y="14" width="102" height="18" fill="#1a1a1a"/>
+  <text x="10" y="26" font-size="8.5" font-weight="700" fill="white">Recents</text>
+  <circle cx="88" cy="23" r="7" fill="#0288D1"/>
+  <text x="88" y="26.5" text-anchor="middle" font-size="6.5" fill="white" font-weight="700">T</text>
+  <!-- Search bar -->
+  <rect x="8" y="35" width="86" height="10" rx="5" fill="#252525"/>
+  <text x="20" y="42.5" font-size="5.5" fill="rgba(255,255,255,.35)">Search calls and contacts...</text>
+  <!-- Call list items -->
+  <!-- Item 1: incoming -->
+  <rect x="0" y="48" width="102" height="20" fill="#0d0d0d"/>
+  <circle cx="18" cy="58" r="8" fill="#1565C0"/>
+  <text x="18" y="61.5" text-anchor="middle" font-size="7" fill="white" font-weight="700">E</text>
+  <text x="32" y="55" font-size="6" fill="white" font-weight="600">Erik Karlsson</text>
+  <text x="32" y="63" font-size="5" fill="#4CAF50">↙ Incoming · 3 min ago</text>
+  <text x="92" y="59" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">2:34</text>
+  <line x1="28" y1="68" x2="102" y2="68" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+  <!-- Item 2: outgoing -->
+  <rect x="0" y="68" width="102" height="20" fill="#0d0d0d"/>
+  <circle cx="18" cy="78" r="8" fill="#6A1B9A"/>
+  <text x="18" y="81.5" text-anchor="middle" font-size="7" fill="white" font-weight="700">M</text>
+  <text x="32" y="75" font-size="6" fill="white" font-weight="600">Maria Svensson</text>
+  <text x="32" y="83" font-size="5" fill="rgba(255,255,255,.45)">↗ Outgoing · 1 hr ago</text>
+  <text x="92" y="79" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">8:21</text>
+  <line x1="28" y1="88" x2="102" y2="88" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+  <!-- Item 3: missed -->
+  <rect x="0" y="88" width="102" height="20" fill="#0d0d0d"/>
+  <circle cx="18" cy="98" r="8" fill="#37474F"/>
+  <text x="18" y="101.5" text-anchor="middle" font-size="7" fill="white" font-weight="700">J</text>
+  <text x="32" y="95" font-size="6" fill="#EF5350" font-weight="600">Johan Berg</text>
+  <text x="32" y="103" font-size="5" fill="#EF5350">↙ Missed · 2 hr ago</text>
+  <text x="92" y="99" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">11:07</text>
+  <line x1="28" y1="108" x2="102" y2="108" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+  <!-- Item 4: spam blocked -->
+  <rect x="0" y="108" width="102" height="20" fill="#1a0a0a"/>
+  <circle cx="18" cy="118" r="8" fill="#B71C1C"/>
+  <text x="18" y="121.5" text-anchor="middle" font-size="7" fill="white" font-weight="700">!</text>
+  <text x="32" y="115" font-size="6" fill="#EF9A9A" font-weight="600">Spam · +46812345</text>
+  <text x="32" y="123" font-size="5" fill="rgba(239,154,154,.7)">⛔ Blocked · 3 hr ago</text>
+  <rect x="72" y="113" width="22" height="8" rx="2" fill="rgba(183,28,28,.3)" stroke="#B71C1C" stroke-width=".5"/>
+  <text x="83" y="119" text-anchor="middle" font-size="5" fill="#EF9A9A" font-weight="600">SPAM</text>
+  <line x1="28" y1="128" x2="102" y2="128" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+  <!-- Item 5 -->
+  <rect x="0" y="128" width="102" height="20" fill="#0d0d0d"/>
+  <circle cx="18" cy="138" r="8" fill="#2E7D32"/>
+  <text x="18" y="141.5" text-anchor="middle" font-size="7" fill="white" font-weight="700">A</text>
+  <text x="32" y="135" font-size="6" fill="white" font-weight="600">Anna Lindqvist</text>
+  <text x="32" y="143" font-size="5" fill="rgba(255,255,255,.45)">↗ Outgoing · Yesterday</text>
+  <text x="92" y="139" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">5:48</text>
+  <line x1="28" y1="148" x2="102" y2="148" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+  <!-- Item 6 -->
+  <rect x="0" y="148" width="102" height="20" fill="#0d0d0d"/>
+  <circle cx="18" cy="158" r="8" fill="#1565C0"/>
+  <text x="18" y="161.5" text-anchor="middle" font-size="7" fill="white" font-weight="700">P</text>
+  <text x="32" y="155" font-size="6" fill="white" font-weight="600">Peter Nilsson</text>
+  <text x="32" y="163" font-size="5" fill="rgba(255,255,255,.45)">↙ Incoming · Yesterday</text>
+  <text x="92" y="159" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">18:22</text>
+  <!-- FAB dial button -->
+  <circle cx="80" cy="178" r="11" fill="#0288D1"/>
+  <text x="80" y="182.5" text-anchor="middle" font-size="12" fill="white">✆</text>
+  <!-- Bottom navigation -->
+  <rect x="0" y="196" width="102" height="18" fill="#1a1a1a"/>
+  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+  <text x="13" y="207" text-anchor="middle" font-size="5" fill="#0288D1" font-weight="600">Recents</text>
+  <text x="36" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Contacts</text>
+  <text x="60" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Discover</text>
+  <text x="83" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Profile</text>
+  <rect x="5" y="194" width="16" height="2" rx="1" fill="#0288D1"/>
 </svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
         </div>
       </div>
@@ -422,67 +441,69 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
             <div class="tags"><span class="tag">White-label</span><span class="tag">CI/CD</span><span class="tag">Design System</span></div>
             <div class="lnks"><a class="lnk" href="https://play.google.com/store/search?q=paf&c=apps" target="_blank">▸ Google Play</a><a class="lnk" href="https://paf.com" target="_blank">↗ paf.com</a></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:linear-gradient(175deg,#1a0500 0%,#3d0e00 40%,#7b1a00 100%)"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <defs>
-    <linearGradient id="pafbg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1a0800"/>
-      <stop offset="60%" stop-color="#0f0400"/>
-      <stop offset="100%" stop-color="#050200"/>
-    </linearGradient>
-    <radialGradient id="pafjackpot" cx="50%" cy="50%">
-      <stop offset="0%" stop-color="#ff6f00" stop-opacity=".3"/>
-      <stop offset="100%" stop-color="transparent"/>
-    </radialGradient>
-  </defs>
-  <rect width="102" height="214" fill="url(#pafbg)"/>
-  <!-- status bar -->
-  <text x="7" y="12" font-size="5.5" fill="rgba(255,200,100,.6)" font-weight="600">9:41</text>
-  <text x="72" y="12" font-size="6" fill="rgba(255,200,100,.4)">📶 🔋</text>
-  <!-- paf logo area -->
-  <rect x="0" y="0" width="102" height="26" fill="rgba(0,0,0,.4)"/>
-  <text x="51" y="22" text-anchor="middle" font-size="11" font-weight="900" fill="#ff6d00" letter-spacing=".1em">PAF</text>
-  <!-- balance pill -->
-  <rect x="24" y="30" width="54" height="16" rx="8" fill="rgba(255,152,0,.15)" stroke="rgba(255,152,0,.35)" stroke-width=".8"/>
-  <text x="51" y="41" text-anchor="middle" font-size="6" fill="rgba(255,200,80,.9)" font-weight="700">€ 250.00</text>
-  <!-- slots reel preview -->
-  <rect x="8" y="52" width="86" height="52" rx="6" fill="rgba(0,0,0,.5)" stroke="rgba(255,150,0,.2)" stroke-width=".8"/>
-  <rect x="9" y="53" width="84" height="50" rx="5" fill="url(#pafjackpot)"/>
-  <!-- reel separators -->
-  <line x1="36" y1="53" x2="36" y2="103" stroke="rgba(255,150,0,.25)" stroke-width=".8"/>
-  <line x1="66" y1="53" x2="66" y2="103" stroke="rgba(255,150,0,.25)" stroke-width=".8"/>
-  <!-- payline -->
-  <line x1="9" y1="78" x2="93" y2="78" stroke="rgba(255,200,0,.4)" stroke-width=".8" stroke-dasharray="3,2"/>
-  <!-- symbols -->
-  <text x="22" y="83" text-anchor="middle" font-size="18">🍒</text>
-  <text x="51" y="83" text-anchor="middle" font-size="18">7️⃣</text>
-  <text x="80" y="83" text-anchor="middle" font-size="18">🍋</text>
-  <!-- SPIN button -->
-  <rect x="18" y="110" width="66" height="18" rx="9" fill="#e65100"/>
-  <rect x="18" y="110" width="66" height="9" rx="9" fill="rgba(255,255,255,.12)"/>
-  <text x="51" y="122" text-anchor="middle" font-size="7.5" font-weight="700" fill="white" letter-spacing=".08em">SPIN</text>
-  <!-- bet selector -->
-  <text x="51" y="137" text-anchor="middle" font-size="5.5" fill="rgba(255,200,100,.5)">BET: € 0.50  ▾</text>
-  <!-- nav tabs -->
-  <rect x="0" y="143" width="102" height="1" fill="rgba(255,150,0,.15)"/>
-  <rect x="0" y="143" width="102" height="30" fill="rgba(0,0,0,.5)"/>
-  <g text-anchor="middle" font-size="5">
-    <text x="13" y="154" fill="#ff6d00">🎰</text>
-    <text x="13" y="162" fill="#ff6d00">Slots</text>
-    <text x="33" y="154" fill="rgba(255,200,100,.4)">🎮</text>
-    <text x="33" y="162" fill="rgba(255,200,100,.35)">Live</text>
-    <text x="51" y="154" fill="rgba(255,200,100,.4)">🃏</text>
-    <text x="51" y="162" fill="rgba(255,200,100,.35)">Table</text>
-    <text x="69" y="154" fill="rgba(255,200,100,.4)">⚽</text>
-    <text x="69" y="162" fill="rgba(255,200,100,.35)">Sport</text>
-    <text x="89" y="154" fill="rgba(255,200,100,.4)">👤</text>
-    <text x="89" y="162" fill="rgba(255,200,100,.35)">Account</text>
-  </g>
-  <!-- jackpot ticker -->
-  <rect x="8" y="178" width="86" height="14" rx="4" fill="rgba(255,100,0,.12)" stroke="rgba(255,100,0,.25)" stroke-width=".5"/>
-  <text x="51" y="188" text-anchor="middle" font-size="5.5" fill="#ffa726" font-weight="600">🏆 JACKPOT  €124,582.40</text>
-  <!-- bottom home indicator -->
-  <rect x="36" y="207" width="30" height="2.5" rx="1.25" fill="rgba(255,255,255,.2)"/>
-</svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
+          <div class="ph"><div class="psh"><div class="psc" style="background:#0a0008"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <!-- PAF — Casino lobby screen -->
+  <rect width="102" height="214" fill="#0d0010"/>
+  <!-- Status bar -->
+  <text x="7" y="11" font-size="5.5" fill="rgba(255,200,100,.85)" font-weight="700">9:41</text>
+  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,200,100,.4)" stroke-width=".7"/>
+  <rect x="81" y="7.5" width="9" height="3" rx=".8" fill="#FF6D00"/>
+  <rect x="68" y="9" width="1.5" height="3" rx=".4" fill="rgba(255,200,100,.4)"/>
+  <rect x="70.5" y="8" width="1.5" height="4" rx=".4" fill="rgba(255,200,100,.65)"/>
+  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,200,100,.9)"/>
+  <!-- Header bar -->
+  <rect x="0" y="14" width="102" height="20" fill="#1a0020"/>
+  <text x="12" y="27.5" font-size="10" font-weight="900" fill="#FF6D00" letter-spacing=".08em">paf</text>
+  <!-- Balance chip -->
+  <rect x="55" y="18" width="42" height="12" rx="6" fill="rgba(255,152,0,.15)" stroke="rgba(255,152,0,.4)" stroke-width=".7"/>
+  <text x="76" y="26.5" text-anchor="middle" font-size="5.5" fill="#FFB300" font-weight="700">€ 250.00</text>
+  <!-- Nav tabs -->
+  <rect x="0" y="34" width="102" height="14" fill="#120015"/>
+  <text x="13" y="43.5" text-anchor="middle" font-size="5.5" fill="#FF6D00" font-weight="700">Slots</text>
+  <rect x="5" y="47" width="16" height="1.5" rx=".75" fill="#FF6D00"/>
+  <text x="33" y="43.5" text-anchor="middle" font-size="5.5" fill="rgba(255,200,100,.4)">Live</text>
+  <text x="51" y="43.5" text-anchor="middle" font-size="5.5" fill="rgba(255,200,100,.4)">Table</text>
+  <text x="69" y="43.5" text-anchor="middle" font-size="5.5" fill="rgba(255,200,100,.4)">Sport</text>
+  <text x="89" y="43.5" text-anchor="middle" font-size="5.5" fill="rgba(255,200,100,.4)">More</text>
+  <!-- Featured banner -->
+  <rect x="8" y="52" width="86" height="26" rx="5" fill="#2a0035"/>
+  <rect x="8" y="52" width="86" height="26" rx="5" fill="url(#pafbanner)" opacity=".6"/>
+  <defs><linearGradient id="pafbanner" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF6D00" stop-opacity=".3"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+  <text x="18" y="63" font-size="6" fill="#FFB300" font-weight="700">🏆 JACKPOT</text>
+  <text x="18" y="72" font-size="8" fill="white" font-weight="900">€ 124,582</text>
+  <text x="80" y="66" text-anchor="middle" font-size="8" fill="#FFD600">🎰</text>
+  <!-- Game grid: 2 columns × 3 rows -->
+  <!-- Row 1 -->
+  <rect x="8" y="82" width="41" height="32" rx="4" fill="#1e0028"/>
+  <text x="28.5" y="103" text-anchor="middle" font-size="18">🍒</text>
+  <text x="28.5" y="110" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Book of Ra</text>
+  <rect x="53" y="82" width="41" height="32" rx="4" fill="#001e28"/>
+  <text x="73.5" y="103" text-anchor="middle" font-size="18">🃏</text>
+  <text x="73.5" y="110" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Blackjack</text>
+  <!-- Row 2 -->
+  <rect x="8" y="118" width="41" height="32" rx="4" fill="#1e1a00"/>
+  <text x="28.5" y="139" text-anchor="middle" font-size="18">7️⃣</text>
+  <text x="28.5" y="146" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Lucky Sevens</text>
+  <rect x="53" y="118" width="41" height="32" rx="4" fill="#1e0012"/>
+  <text x="73.5" y="139" text-anchor="middle" font-size="18">🎰</text>
+  <text x="73.5" y="146" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Mega Fortune</text>
+  <!-- Row 3 -->
+  <rect x="8" y="154" width="41" height="32" rx="4" fill="#001e0e"/>
+  <text x="28.5" y="175" text-anchor="middle" font-size="18">🍀</text>
+  <text x="28.5" y="182" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Irish Luck</text>
+  <rect x="53" y="154" width="41" height="32" rx="4" fill="#0a001e"/>
+  <text x="73.5" y="175" text-anchor="middle" font-size="18">💎</text>
+  <text x="73.5" y="182" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Diamond King</text>
+  <!-- Bottom navigation -->
+  <rect x="0" y="196" width="102" height="18" fill="#100015"/>
+  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,150,0,.15)" stroke-width=".5"/>
+  <text x="13" y="207" text-anchor="middle" font-size="5" fill="#FF6D00" font-weight="600">Lobby</text>
+  <text x="33" y="207" text-anchor="middle" font-size="5" fill="rgba(255,200,100,.4)">My Games</text>
+  <text x="55" y="207" text-anchor="middle" font-size="5" fill="rgba(255,200,100,.4)">Offers</text>
+  <text x="75" y="207" text-anchor="middle" font-size="5" fill="rgba(255,200,100,.4)">Cashier</text>
+  <text x="92" y="207" text-anchor="middle" font-size="5" fill="rgba(255,200,100,.4)">Account</text>
+  <rect x="5" y="194" width="16" height="2" rx="1" fill="#FF6D00"/>
+</svg></div></svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
         </div>
       </div>
 
@@ -498,80 +519,75 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
             <div class="tags"><span class="tag">BT / NFC / USB</span><span class="tag">NDK / JNI</span><span class="tag">C++</span></div>
             <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.glooko.logbook" target="_blank">▸ Google Play</a><a class="lnk" href="https://glooko.com" target="_blank">↗ glooko.com</a></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:linear-gradient(175deg,#001a1a 0%,#003535 50%,#005555 100%)"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <defs>
-    <linearGradient id="glbg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#001e1e"/>
-      <stop offset="100%" stop-color="#000d0d"/>
-    </linearGradient>
-    <linearGradient id="glarea" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#00bfa5" stop-opacity=".45"/>
-      <stop offset="100%" stop-color="#00bfa5" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <rect width="102" height="214" fill="url(#glbg)"/>
-  <!-- status bar -->
-  <text x="7" y="12" font-size="5.5" fill="rgba(255,255,255,.5)" font-weight="600">9:41</text>
-  <circle cx="83" cy="8" r="3.5" fill="rgba(0,230,180,.2)" stroke="rgba(0,230,180,.5)" stroke-width=".8"/>
-  <text x="83" y="11" text-anchor="middle" font-size="5" fill="#00e5b4">⬤</text>
-  <text x="90" y="12" font-size="5.5" fill="rgba(255,255,255,.4)">🔋</text>
-  <!-- header -->
-  <text x="7" y="26" font-size="5.5" fill="rgba(0,230,180,.6)" letter-spacing=".1em">GLOOKO</text>
-  <text x="95" y="26" text-anchor="end" font-size="6" fill="rgba(255,255,255,.3)">⚙</text>
-  <!-- big glucose reading -->
-  <text x="10" y="52" font-size="6" fill="rgba(255,255,255,.4)" letter-spacing=".08em">GLUCOSE</text>
-  <text x="10" y="72" font-size="26" font-weight="700" fill="white">6.2</text>
-  <text x="48" y="67" font-size="7" fill="rgba(255,255,255,.4)">mmol/L</text>
-  <!-- trend arrow -->
-  <text x="48" y="78" font-size="10" fill="#26c6da">→</text>
-  <text x="60" y="78" font-size="5.5" fill="#26c6da">Stable</text>
-  <!-- time in range pill -->
-  <rect x="10" y="80" width="42" height="11" rx="5.5" fill="rgba(0,191,165,.15)" stroke="rgba(0,191,165,.35)" stroke-width=".7"/>
-  <text x="31" y="88" text-anchor="middle" font-size="5.5" fill="#80cbc4">TIR: 78%</text>
-  <!-- chart area -->
-  <rect x="6" y="96" width="90" height="54" rx="4" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
-  <!-- grid lines -->
-  <line x1="6" y1="114" x2="96" y2="114" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
-  <line x1="6" y1="128" x2="96" y2="128" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
-  <!-- target range band -->
-  <rect x="6" y="108" width="90" height="20" fill="rgba(0,191,165,.07)"/>
-  <!-- glucose line path -->
-  <polyline points="8,136 17,128 26,122 35,118 44,124 53,112 62,108 71,114 80,106 89,108 96,110"
-    fill="none" stroke="#00bfa5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- area fill -->
-  <polygon points="8,136 17,128 26,122 35,118 44,124 53,112 62,108 71,114 80,106 89,108 96,110 96,150 8,150"
-    fill="url(#glarea)"/>
-  <!-- latest dot -->
-  <circle cx="96" cy="110" r="3" fill="#00bfa5" stroke="white" stroke-width=".8"/>
-  <!-- x axis labels -->
-  <text x="8" y="156" font-size="4" fill="rgba(255,255,255,.25)">8h</text>
-  <text x="35" y="156" font-size="4" fill="rgba(255,255,255,.25)">6h</text>
-  <text x="62" y="156" font-size="4" fill="rgba(255,255,255,.25)">3h</text>
-  <text x="88" y="156" font-size="4" fill="rgba(255,255,255,.25)">now</text>
-  <!-- device status row -->
-  <rect x="6" y="160" width="90" height="22" rx="5" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.07)" stroke-width=".5"/>
-  <g font-size="4.5" text-anchor="middle">
-    <text x="22" y="170" fill="rgba(0,230,180,.6)">BT</text>
-    <circle cx="22" cy="175" r="2.5" fill="#00e5b4"/>
-    <text x="22" y="179" fill="rgba(255,255,255,.3)">●</text>
-    <line x1="36" y1="161" x2="36" y2="182" stroke="rgba(255,255,255,.07)" stroke-width=".5"/>
-    <text x="51" y="170" fill="rgba(0,230,180,.6)">USB</text>
-    <text x="51" y="178" fill="#69f0ae">⚡Charging</text>
-    <line x1="66" y1="161" x2="66" y2="182" stroke="rgba(255,255,255,.07)" stroke-width=".5"/>
-    <text x="82" y="170" fill="rgba(0,230,180,.6)">NFC</text>
-    <text x="82" y="178" fill="rgba(255,255,255,.4)">Ready</text>
-  </g>
-  <!-- bottom nav -->
-  <rect x="0" y="196" width="102" height="18" fill="rgba(0,0,0,.6)"/>
-  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(0,191,165,.15)" stroke-width=".5"/>
-  <g text-anchor="middle" font-size="5">
-    <text x="13" y="206" fill="#00bfa5">📊</text><text x="13" y="212" fill="#00bfa5">Log</text>
-    <text x="33" y="206" fill="rgba(255,255,255,.3)">📅</text><text x="33" y="212" fill="rgba(255,255,255,.25)">History</text>
-    <text x="51" y="206" fill="rgba(255,255,255,.3)">💊</text><text x="51" y="212" fill="rgba(255,255,255,.25)">Insulin</text>
-    <text x="69" y="206" fill="rgba(255,255,255,.3)">📡</text><text x="69" y="212" fill="rgba(255,255,255,.25)">Devices</text>
-    <text x="89" y="206" fill="rgba(255,255,255,.3)">👤</text><text x="89" y="212" fill="rgba(255,255,255,.25)">Profile</text>
-  </g>
-</svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
+          <div class="ph"><div class="psh"><div class="psc" style="background:#051212"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <!-- Glooko — Glucose Logbook screen -->
+  <rect width="102" height="214" fill="#071515"/>
+  <!-- Status bar -->
+  <text x="7" y="11" font-size="5.5" fill="rgba(255,255,255,.8)" font-weight="700">9:41</text>
+  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".7"/>
+  <rect x="81" y="7.5" width="10" height="3" rx=".8" fill="#00BCD4"/>
+  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,255,255,.85)"/>
+  <!-- Header -->
+  <rect x="0" y="14" width="102" height="18" fill="#0a1e1e"/>
+  <text x="10" y="26" font-size="8" font-weight="700" fill="white">Logbook</text>
+  <text x="90" y="26" text-anchor="end" font-size="6" fill="#26C6DA">Today</text>
+  <!-- Current reading hero card -->
+  <rect x="8" y="35" width="86" height="46" rx="6" fill="#0d2626"/>
+  <rect x="8" y="35" width="86" height="46" rx="6" fill="url(#glgrad)" opacity=".4"/>
+  <defs><linearGradient id="glgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00BCD4" stop-opacity=".3"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+  <text x="20" y="50" font-size="5.5" fill="rgba(255,255,255,.6)" letter-spacing=".08em">CURRENT BLOOD GLUCOSE</text>
+  <text x="20" y="65" font-size="18" font-weight="700" fill="#26C6DA">7.4</text>
+  <text x="46" y="68" font-size="7" fill="rgba(255,255,255,.55)">mmol/L</text>
+  <rect x="65" y="50" width="22" height="10" rx="3" fill="rgba(255,193,7,.15)" stroke="rgba(255,193,7,.4)" stroke-width=".7"/>
+  <text x="76" y="57" text-anchor="middle" font-size="5" fill="#FFD54F" font-weight="600">IN RANGE</text>
+  <text x="20" y="76" font-size="4.5" fill="rgba(255,255,255,.4)">Last reading: 12 min ago · Dexcom G7</text>
+  <!-- Mini chart -->
+  <rect x="8" y="85" width="86" height="38" rx="5" fill="#0d2020"/>
+  <text x="14" y="95" font-size="5" fill="rgba(255,255,255,.5)" letter-spacing=".06em">24H TREND</text>
+  <!-- Chart grid lines -->
+  <line x1="14" y1="101" x2="88" y2="101" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
+  <line x1="14" y1="109" x2="88" y2="109" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
+  <line x1="14" y1="117" x2="88" y2="117" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
+  <!-- Target range band -->
+  <rect x="14" y="104" width="74" height="10" fill="rgba(76,175,80,.1)"/>
+  <!-- Glucose line -->
+  <polyline points="14,116 22,112 30,108 38,104 46,107 54,110 62,106 70,103 78,107 86,108" fill="none" stroke="#26C6DA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Dots -->
+  <circle cx="14" cy="116" r="1.5" fill="#26C6DA"/>
+  <circle cx="46" cy="107" r="1.5" fill="#26C6DA"/>
+  <circle cx="86" cy="108" r="2" fill="#26C6DA" stroke="#0d2020" stroke-width="1"/>
+  <!-- High/Low labels -->
+  <text x="14" y="101" font-size="4" fill="rgba(255,100,100,.6)">High</text>
+  <text x="14" y="119" font-size="4" fill="rgba(100,200,255,.6)">Low</text>
+  <!-- Today's readings list -->
+  <text x="10" y="133" font-size="6.5" font-weight="700" fill="white">Today's readings</text>
+  <!-- Reading rows -->
+  <rect x="8" y="137" width="86" height="13" rx="3" fill="#0d2020"/>
+  <circle cx="17" cy="143.5" r="4" fill="rgba(38,198,218,.2)" stroke="#26C6DA" stroke-width=".8"/>
+  <text x="17" y="146" text-anchor="middle" font-size="5" fill="#26C6DA" font-weight="700">●</text>
+  <text x="28" y="141" font-size="5.5" fill="white" font-weight="600">7.4 mmol/L</text>
+  <text x="28" y="148" font-size="4.5" fill="rgba(255,255,255,.4)">09:28 · Before meal</text>
+  <text x="88" y="145" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">Now</text>
+  <rect x="8" y="153" width="86" height="13" rx="3" fill="#0d2020"/>
+  <circle cx="17" cy="159.5" r="4" fill="rgba(102,187,106,.2)" stroke="#66BB6A" stroke-width=".8"/>
+  <text x="28" y="157" font-size="5.5" fill="white" font-weight="600">6.8 mmol/L</text>
+  <text x="28" y="164" font-size="4.5" fill="rgba(255,255,255,.4)">07:45 · Fasting</text>
+  <text x="88" y="161" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">2h ago</text>
+  <rect x="8" y="169" width="86" height="13" rx="3" fill="#0d2020"/>
+  <circle cx="17" cy="175.5" r="4" fill="rgba(255,183,77,.2)" stroke="#FFB74D" stroke-width=".8"/>
+  <text x="28" y="173" font-size="5.5" fill="white" font-weight="600">9.2 mmol/L</text>
+  <text x="28" y="180" font-size="4.5" fill="rgba(255,255,255,.4)">06:10 · After meal</text>
+  <text x="88" y="177" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">3h ago</text>
+  <!-- Bottom navigation -->
+  <rect x="0" y="196" width="102" height="18" fill="#0a1a1a"/>
+  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+  <text x="13" y="207" text-anchor="middle" font-size="5" fill="#26C6DA" font-weight="600">Log</text>
+  <text x="33" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Reports</text>
+  <text x="54" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Devices</text>
+  <text x="75" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Insights</text>
+  <text x="92" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Profile</text>
+  <rect x="5" y="194" width="16" height="2" rx="1" fill="#26C6DA"/>
+</svg></div></svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
         </div>
       </div>
 
@@ -587,75 +603,89 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
             <div class="tags"><span class="tag">GraphQL</span><span class="tag">Payments</span><span class="tag">Compose</span></div>
             <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.kivra" target="_blank">▸ Google Play</a><a class="lnk" href="https://kivra.se" target="_blank">↗ kivra.se</a></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:linear-gradient(175deg,#0d0a14 0%,#1a1025 50%,#2d1535 100%)"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <defs>
-    <linearGradient id="kvbg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#100a1a"/>
-      <stop offset="100%" stop-color="#06040e"/>
-    </linearGradient>
-  </defs>
-  <rect width="102" height="214" fill="url(#kvbg)"/>
-  <!-- status -->
-  <text x="7" y="12" font-size="5.5" fill="rgba(255,255,255,.5)" font-weight="600">9:41</text>
-  <text x="72" y="12" font-size="6" fill="rgba(255,255,255,.4)">📶 🔋</text>
-  <!-- header -->
-  <rect x="0" y="0" width="102" height="26" fill="rgba(80,40,120,.35)"/>
-  <text x="51" y="18" text-anchor="middle" font-size="9" font-weight="700" fill="white" letter-spacing=".05em">Kivra</text>
-  <!-- unread badge -->
-  <circle cx="88" cy="12" r="6" fill="#7e57c2"/>
-  <text x="88" y="16" text-anchor="middle" font-size="6" font-weight="700" fill="white">3</text>
-  <!-- section label -->
-  <text x="8" y="36" font-size="6" fill="rgba(255,255,255,.4)" letter-spacing=".08em">INBOX</text>
-  <text x="94" y="36" text-anchor="end" font-size="6" fill="rgba(180,130,255,.6)">Filter</text>
-  <!-- mail items -->
-  <!-- item 1 - unread (bright) -->
-  <rect x="5" y="40" width="92" height="28" rx="5" fill="rgba(126,87,194,.18)" stroke="rgba(126,87,194,.3)" stroke-width=".7"/>
-  <rect x="5" y="40" width="3" height="28" rx="1.5" fill="#7e57c2"/>
-  <circle cx="18" cy="50" r="6" fill="#5c35a0"/>
-  <text x="18" y="54" text-anchor="middle" font-size="7" fill="white">S</text>
-  <text x="28" y="50" font-size="6" font-weight="700" fill="white">Skatteverket</text>
-  <text x="28" y="58" font-size="5" fill="rgba(255,255,255,.45)">Årsbesked 2024</text>
-  <text x="93" y="50" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.3)">Idag</text>
-  <text x="93" y="58" text-anchor="end" font-size="5" fill="#ab47bc">PDF ▸</text>
-  <!-- item 2 - unread -->
-  <rect x="5" y="72" width="92" height="28" rx="5" fill="rgba(171,71,188,.12)" stroke="rgba(171,71,188,.2)" stroke-width=".7"/>
-  <rect x="5" y="72" width="3" height="28" rx="1.5" fill="#ab47bc"/>
-  <circle cx="18" cy="82" r="6" fill="#1a3a6e"/>
-  <text x="18" y="86" text-anchor="middle" font-size="7" fill="white">N</text>
-  <text x="28" y="82" font-size="6" font-weight="700" fill="white">Nordea Bank</text>
-  <text x="28" y="90" font-size="5" fill="rgba(255,255,255,.45)">Kontoutdrag Feb</text>
-  <text x="93" y="82" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.3)">Igår</text>
-  <!-- item 3 - read -->
-  <rect x="5" y="104" width="92" height="26" rx="5" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/>
-  <circle cx="18" cy="113" r="6" fill="rgba(100,150,100,.3)"/>
-  <text x="18" y="117" text-anchor="middle" font-size="6" fill="rgba(255,255,255,.5)">F</text>
-  <text x="28" y="113" font-size="5.5" fill="rgba(255,255,255,.5)">Försäkringskassan</text>
-  <text x="28" y="121" font-size="4.5" fill="rgba(255,255,255,.3)">Beslut om ersättning</text>
-  <text x="93" y="113" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.2)">3 feb</text>
-  <!-- item 4 -->
-  <rect x="5" y="134" width="92" height="26" rx="5" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <circle cx="18" cy="143" r="6" fill="rgba(255,100,100,.2)"/>
-  <text x="18" y="147" text-anchor="middle" font-size="6" fill="rgba(255,255,255,.4)">V</text>
-  <text x="28" y="143" font-size="5.5" fill="rgba(255,255,255,.4)">Vimla</text>
-  <text x="28" y="151" font-size="4.5" fill="rgba(255,255,255,.25)">Faktura mars · 249 kr</text>
-  <text x="93" y="143" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.18)">1 feb</text>
-  <!-- item 5 -->
-  <rect x="5" y="164" width="92" height="24" rx="5" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
-  <circle cx="18" cy="173" r="6" fill="rgba(100,100,200,.2)"/>
-  <text x="18" y="177" text-anchor="middle" font-size="6" fill="rgba(255,255,255,.3)">T</text>
-  <text x="28" y="173" font-size="5.5" fill="rgba(255,255,255,.3)">Transportstyrelsen</text>
-  <text x="28" y="180" font-size="4.5" fill="rgba(255,255,255,.2)">Fordonsregistrering</text>
-  <!-- bottom nav -->
-  <rect x="0" y="196" width="102" height="18" fill="rgba(0,0,0,.7)"/>
-  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(126,87,194,.2)" stroke-width=".5"/>
-  <g text-anchor="middle" font-size="5">
-    <text x="13" y="206" fill="#9c27b0">✉</text><text x="13" y="212" fill="#ce93d8">Inbox</text>
-    <text x="33" y="206" fill="rgba(255,255,255,.3)">🔍</text><text x="33" y="212" fill="rgba(255,255,255,.25)">Search</text>
-    <text x="51" y="206" fill="rgba(255,255,255,.3)">📁</text><text x="51" y="212" fill="rgba(255,255,255,.25)">Archive</text>
-    <text x="69" y="206" fill="rgba(255,255,255,.3)">💳</text><text x="69" y="212" fill="rgba(255,255,255,.25)">Pay</text>
-    <text x="89" y="206" fill="rgba(255,255,255,.3)">⚙</text><text x="89" y="212" fill="rgba(255,255,255,.25)">Settings</text>
-  </g>
-</svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
+          <div class="ph"><div class="psh"><div class="psc" style="background:#0e0717"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <!-- Kivra — Inbox screen -->
+  <rect width="102" height="214" fill="#100a1e"/>
+  <!-- Status bar -->
+  <text x="7" y="11" font-size="5.5" fill="rgba(255,255,255,.8)" font-weight="700">9:41</text>
+  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".7"/>
+  <rect x="81" y="7.5" width="10" height="3" rx=".8" fill="#7C4DFF"/>
+  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,255,255,.85)"/>
+  <!-- Header -->
+  <rect x="0" y="14" width="102" height="18" fill="#160e28"/>
+  <text x="10" y="26" font-size="8.5" font-weight="700" fill="white">Inbox</text>
+  <!-- Unread badge -->
+  <circle cx="42" cy="23" r="5" fill="#7C4DFF"/>
+  <text x="42" y="26" text-anchor="middle" font-size="5.5" fill="white" font-weight="700">3</text>
+  <text x="92" y="26" text-anchor="end" font-size="6" fill="#9C78FF">Filter</text>
+  <!-- Filter tabs -->
+  <rect x="0" y="32" width="102" height="12" fill="#130c22"/>
+  <text x="15" y="40.5" text-anchor="middle" font-size="5.5" fill="#9C78FF" font-weight="700">All</text>
+  <rect x="5" y="43" width="20" height="1.5" rx=".75" fill="#7C4DFF"/>
+  <text x="38" y="40.5" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)">Unread</text>
+  <text x="62" y="40.5" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)">Mail</text>
+  <text x="84" y="40.5" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)">Invoices</text>
+  <!-- Mail items -->
+  <!-- Item 1: unread -->
+  <rect x="0" y="47" width="102" height="22" fill="#1a1030"/>
+  <rect x="8" y="51" width="14" height="14" rx="3" fill="#E53935"/>
+  <text x="15" y="60.5" text-anchor="middle" font-size="6.5" fill="white" font-weight="700">S</text>
+  <text x="30" y="56" font-size="6" fill="white" font-weight="700">Skatteverket</text>
+  <text x="30" y="63" font-size="5" fill="rgba(255,255,255,.55)">Beslut om skattereduktion</text>
+  <text x="94" y="56" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.4)">08:14</text>
+  <circle cx="96" cy="63" r="2.5" fill="#7C4DFF"/>
+  <line x1="8" y1="69" x2="102" y2="69" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+  <!-- Item 2: unread -->
+  <rect x="0" y="69" width="102" height="22" fill="#1a1030"/>
+  <rect x="8" y="73" width="14" height="14" rx="3" fill="#1565C0"/>
+  <text x="15" y="82.5" text-anchor="middle" font-size="6.5" fill="white" font-weight="700">F</text>
+  <text x="30" y="78" font-size="6" fill="white" font-weight="700">Försäkringskassan</text>
+  <text x="30" y="85" font-size="5" fill="rgba(255,255,255,.55)">Utbetalning 4 600 kr</text>
+  <text x="94" y="78" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.4)">Igår</text>
+  <circle cx="96" cy="85" r="2.5" fill="#7C4DFF"/>
+  <line x1="8" y1="91" x2="102" y2="91" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+  <!-- Item 3: unread -->
+  <rect x="0" y="91" width="102" height="22" fill="#1a1030"/>
+  <rect x="8" y="95" width="14" height="14" rx="3" fill="#2E7D32"/>
+  <text x="15" y="104.5" text-anchor="middle" font-size="6.5" fill="white" font-weight="700">N</text>
+  <text x="30" y="100" font-size="6" fill="white" font-weight="700">Nordea</text>
+  <text x="30" y="107" font-size="5" fill="rgba(255,255,255,.55)">Kontoutdrag november</text>
+  <text x="94" y="100" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.4)">Mån</text>
+  <circle cx="96" cy="107" r="2.5" fill="#7C4DFF"/>
+  <line x1="8" y1="113" x2="102" y2="113" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+  <!-- Item 4: read -->
+  <rect x="0" y="113" width="102" height="22" fill="#100a1e"/>
+  <rect x="8" y="117" width="14" height="14" rx="3" fill="#455A64"/>
+  <text x="15" y="126.5" text-anchor="middle" font-size="6.5" fill="white" font-weight="700">V</text>
+  <text x="30" y="122" font-size="6" fill="rgba(255,255,255,.7)">Vattenfall</text>
+  <text x="30" y="129" font-size="5" fill="rgba(255,255,255,.4)">Faktura 843 kr · Förfaller 15 dec</text>
+  <text x="94" y="122" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.3)">Sön</text>
+  <line x1="8" y1="135" x2="102" y2="135" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
+  <!-- Item 5: read -->
+  <rect x="0" y="135" width="102" height="22" fill="#100a1e"/>
+  <rect x="8" y="139" width="14" height="14" rx="3" fill="#6A1B9A"/>
+  <text x="15" y="148.5" text-anchor="middle" font-size="6.5" fill="white" font-weight="700">T</text>
+  <text x="30" y="144" font-size="6" fill="rgba(255,255,255,.7)">Telia</text>
+  <text x="30" y="151" font-size="5" fill="rgba(255,255,255,.4)">Din faktura är klar</text>
+  <text x="94" y="144" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.3)">Lör</text>
+  <line x1="8" y1="157" x2="102" y2="157" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
+  <!-- Item 6: read -->
+  <rect x="0" y="157" width="102" height="22" fill="#100a1e"/>
+  <rect x="8" y="161" width="14" height="14" rx="3" fill="#E65100"/>
+  <text x="15" y="170.5" text-anchor="middle" font-size="5" fill="white" font-weight="700">ICA</text>
+  <text x="30" y="166" font-size="6" fill="rgba(255,255,255,.7)">ICA Banken</text>
+  <text x="30" y="173" font-size="5" fill="rgba(255,255,255,.4)">Ditt årliga kontoutdrag</text>
+  <text x="94" y="166" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.3)">Fre</text>
+  <!-- Bottom navigation -->
+  <rect x="0" y="196" width="102" height="18" fill="#160e28"/>
+  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+  <text x="13" y="207" text-anchor="middle" font-size="5" fill="#9C78FF" font-weight="600">Inbox</text>
+  <text x="33" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Files</text>
+  <text x="54" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Payments</text>
+  <text x="76" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Settings</text>
+  <text x="93" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Profile</text>
+  <rect x="5" y="194" width="16" height="2" rx="1" fill="#7C4DFF"/>
+</svg></div></svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
         </div>
       </div>
 
@@ -671,67 +701,61 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
             <div class="tags"><span class="tag">Banking</span><span class="tag">Security</span><span class="tag">Architecture</span></div>
             <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.sbab.bankapp" target="_blank">▸ Google Play</a><a class="lnk" href="https://sbab.se" target="_blank">↗ sbab.se</a></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:linear-gradient(175deg,#03080f 0%,#060d1a 50%,#0a1628 100%)"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <defs>
-    <linearGradient id="sbbg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#020810"/>
-      <stop offset="100%" stop-color="#010509"/>
-    </linearGradient>
-  </defs>
-  <rect width="102" height="214" fill="url(#sbbg)"/>
-  <!-- status -->
-  <text x="7" y="12" font-size="5.5" fill="rgba(255,255,255,.5)" font-weight="600">9:41</text>
-  <text x="72" y="12" font-size="6" fill="rgba(255,255,255,.4)">📶 🔋</text>
-  <!-- orange top bar -->
-  <rect x="0" y="0" width="102" height="24" fill="rgba(230,100,0,.22)"/>
-  <rect x="0" y="23.5" width="102" height=".5" fill="rgba(255,120,0,.3)"/>
-  <text x="51" y="16" text-anchor="middle" font-size="8" font-weight="700" fill="white">SBAB</text>
-  <!-- total overview -->
-  <text x="8" y="34" font-size="5.5" fill="rgba(255,255,255,.35)" letter-spacing=".08em">BOLÅN</text>
-  <text x="8" y="52" font-size="20" font-weight="700" fill="white">2 450 000</text>
-  <text x="8" y="60" font-size="5.5" fill="rgba(255,255,255,.35)">kronor utestående</text>
-  <!-- rate card -->
-  <rect x="6" y="65" width="42" height="34" rx="5" fill="rgba(230,100,0,.12)" stroke="rgba(230,100,0,.25)" stroke-width=".7"/>
-  <text x="27" y="75" text-anchor="middle" font-size="5" fill="rgba(255,150,50,.6)" letter-spacing=".06em">RÄNTA</text>
-  <text x="27" y="87" text-anchor="middle" font-size="13" font-weight="700" fill="white">3.89%</text>
-  <text x="27" y="94" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.3)">rörlig</text>
-  <!-- payment card -->
-  <rect x="54" y="65" width="42" height="34" rx="5" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.1)" stroke-width=".7"/>
-  <text x="75" y="75" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)" letter-spacing=".06em">MÅN.KOSTNAD</text>
-  <text x="75" y="87" text-anchor="middle" font-size="11" font-weight="700" fill="white">8 943</text>
-  <text x="75" y="94" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.3)">kr/mån</text>
-  <!-- savings account -->
-  <rect x="6" y="104" width="90" height="22" rx="5" fill="rgba(0,180,130,.1)" stroke="rgba(0,180,130,.22)" stroke-width=".7"/>
-  <text x="12" y="114" font-size="5" fill="rgba(100,220,180,.6)" letter-spacing=".06em">SPARKONTO</text>
-  <text x="12" y="122" font-size="8" font-weight="600" fill="white">185 200 kr</text>
-  <text x="91" y="119" text-anchor="end" font-size="5.5" fill="#69f0ae">+2.55%</text>
-  <!-- transaction list -->
-  <text x="8" y="136" font-size="5" fill="rgba(255,255,255,.3)" letter-spacing=".08em">TRANSAKTIONER</text>
-  <line x1="6" y1="139" x2="96" y2="139" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- tx rows -->
-  <g font-size="5.5">
-    <text x="8" y="148" fill="rgba(255,255,255,.65)">Amortering</text>
-    <text x="94" y="148" text-anchor="end" fill="#ff6b6b">-3 500 kr</text>
-    <line x1="6" y1="152" x2="96" y2="152" stroke="rgba(255,255,255,.04)" stroke-width=".4"/>
-    <text x="8" y="161" fill="rgba(255,255,255,.65)">Räntebetalning</text>
-    <text x="94" y="161" text-anchor="end" fill="#ff6b6b">-5 443 kr</text>
-    <line x1="6" y1="165" x2="96" y2="165" stroke="rgba(255,255,255,.04)" stroke-width=".4"/>
-    <text x="8" y="174" fill="rgba(255,255,255,.65)">Insättning</text>
-    <text x="94" y="174" text-anchor="end" fill="#69f0ae">+20 000 kr</text>
-  </g>
-  <!-- bankid secure bar -->
-  <rect x="6" y="180" width="90" height="12" rx="4" fill="rgba(230,100,0,.15)" stroke="rgba(230,100,0,.28)" stroke-width=".6"/>
-  <text x="51" y="189" text-anchor="middle" font-size="5" fill="#ffa040" letter-spacing=".06em">🔒 BANKID VERIFIERAT</text>
-  <!-- bottom nav -->
-  <rect x="0" y="196" width="102" height="18" fill="rgba(0,0,0,.7)"/>
-  <g text-anchor="middle" font-size="5">
-    <text x="13" y="206" fill="#ff6d00">🏠</text><text x="13" y="212" fill="#ff8c42">Bolån</text>
-    <text x="33" y="206" fill="rgba(255,255,255,.3)">💰</text><text x="33" y="212" fill="rgba(255,255,255,.25)">Spara</text>
-    <text x="51" y="206" fill="rgba(255,255,255,.3)">📊</text><text x="51" y="212" fill="rgba(255,255,255,.25)">Översikt</text>
-    <text x="69" y="206" fill="rgba(255,255,255,.3)">📞</text><text x="69" y="212" fill="rgba(255,255,255,.25)">Service</text>
-    <text x="89" y="206" fill="rgba(255,255,255,.3)">👤</text><text x="89" y="212" fill="rgba(255,255,255,.25)">Konto</text>
-  </g>
-</svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
+          <div class="ph"><div class="psh"><div class="psc" style="background:#050b18"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <!-- SBAB — My accounts overview -->
+  <rect width="102" height="214" fill="#060e1e"/>
+  <!-- Status bar -->
+  <text x="7" y="11" font-size="5.5" fill="rgba(255,255,255,.8)" font-weight="700">9:41</text>
+  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".7"/>
+  <rect x="81" y="7.5" width="9" height="3" rx=".8" fill="#1565C0"/>
+  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,255,255,.85)"/>
+  <!-- Header -->
+  <rect x="0" y="14" width="102" height="18" fill="#081426"/>
+  <text x="10" y="26" font-size="8.5" font-weight="700" fill="white">SBAB</text>
+  <text x="92" y="26" text-anchor="end" font-size="6" fill="rgba(255,255,255,.5)">⬡</text>
+  <!-- Savings card -->
+  <rect x="8" y="36" width="86" height="44" rx="6" fill="#0d2040"/>
+  <text x="18" y="49" font-size="5" fill="rgba(255,255,255,.5)" letter-spacing=".07em">SPARKONTO PREMIUM</text>
+  <text x="18" y="64" font-size="15" font-weight="700" fill="white">241 450 kr</text>
+  <text x="18" y="73" font-size="4.5" fill="rgba(100,180,255,.75)">+3 482 kr denna månad  · 2,15% ränta</text>
+  <text x="84" y="49" text-anchor="end" font-size="5" fill="rgba(255,255,255,.3)">••••</text>
+  <!-- Mortgage card -->
+  <rect x="8" y="84" width="86" height="36" rx="6" fill="#081a30"/>
+  <text x="18" y="96" font-size="5" fill="rgba(255,255,255,.5)" letter-spacing=".07em">BOLÅN</text>
+  <text x="18" y="109" font-size="13" font-weight="700" fill="white">2 850 000 kr</text>
+  <text x="18" y="117" font-size="4.5" fill="rgba(255,150,100,.7)">4,62% rörlig ränta · 30 år</text>
+  <!-- Transactions section -->
+  <text x="10" y="130" font-size="6.5" font-weight="700" fill="white">Senaste händelser</text>
+  <!-- Transactions -->
+  <rect x="8" y="134" width="86" height="13" rx="3" fill="#0a1830"/>
+  <text x="16" y="143" font-size="5.5" fill="white">Inbetalning</text>
+  <text x="16" y="149" font-size="4" fill="rgba(255,255,255,.4)">28 nov · Lön november</text>
+  <text x="88" y="143" text-anchor="end" font-size="5.5" fill="#81C784" font-weight="600">+45 200 kr</text>
+  <rect x="8" y="150" width="86" height="13" rx="3" fill="#0a1830"/>
+  <text x="16" y="159" font-size="5.5" fill="white">Autogiro</text>
+  <text x="16" y="165" font-size="4" fill="rgba(255,255,255,.4)">25 nov · SBAB Bolån</text>
+  <text x="88" y="159" text-anchor="end" font-size="5.5" fill="#EF9A9A">-9 438 kr</text>
+  <rect x="8" y="166" width="86" height="13" rx="3" fill="#0a1830"/>
+  <text x="16" y="175" font-size="5.5" fill="white">Ränta insatt</text>
+  <text x="16" y="181" font-size="4" fill="rgba(255,255,255,.4)">25 nov · Sparkonto Premium</text>
+  <text x="88" y="175" text-anchor="end" font-size="5.5" fill="#81C784" font-weight="600">+432 kr</text>
+  <!-- Quick actions row -->
+  <rect x="8" y="183" width="26" height="9" rx="4.5" fill="rgba(21,101,192,.3)" stroke="rgba(21,101,192,.5)" stroke-width=".7"/>
+  <text x="21" y="189.5" text-anchor="middle" font-size="5" fill="#90CAF9">Överför</text>
+  <rect x="38" y="183" width="26" height="9" rx="4.5" fill="rgba(21,101,192,.15)" stroke="rgba(21,101,192,.3)" stroke-width=".7"/>
+  <text x="51" y="189.5" text-anchor="middle" font-size="5" fill="rgba(144,202,249,.7)">Betala</text>
+  <rect x="68" y="183" width="26" height="9" rx="4.5" fill="rgba(21,101,192,.15)" stroke="rgba(21,101,192,.3)" stroke-width=".7"/>
+  <text x="81" y="189.5" text-anchor="middle" font-size="5" fill="rgba(144,202,249,.7)">Ränta</text>
+  <!-- Bottom navigation -->
+  <rect x="0" y="196" width="102" height="18" fill="#081426"/>
+  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+  <text x="13" y="207" text-anchor="middle" font-size="5" fill="#64B5F6" font-weight="600">Overview</text>
+  <text x="33" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Savings</text>
+  <text x="54" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Mortgage</text>
+  <text x="75" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Payments</text>
+  <text x="93" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Profile</text>
+  <rect x="5" y="194" width="16" height="2" rx="1" fill="#1565C0"/>
+</svg></div></svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
         </div>
       </div>
 
@@ -747,78 +771,75 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
             <div class="tags"><span class="tag hi">Lead</span><span class="tag">Kotlin Pioneer</span><span class="tag">Fintech</span><span class="tag">4+ years</span></div>
             <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.avanza.phone" target="_blank">▸ Google Play</a><a class="lnk" href="https://avanza.se" target="_blank">↗ avanza.se</a></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:linear-gradient(175deg,#020d02 0%,#0a2e0a 50%,#1a5c1a 100%)"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <defs>
-    <linearGradient id="avbg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#011004"/>
-      <stop offset="100%" stop-color="#000802"/>
-    </linearGradient>
-    <linearGradient id="avarea" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#4caf50" stop-opacity=".4"/>
-      <stop offset="100%" stop-color="#4caf50" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <rect width="102" height="214" fill="url(#avbg)"/>
-  <!-- status -->
-  <text x="7" y="12" font-size="5.5" fill="rgba(255,255,255,.5)" font-weight="600">9:41</text>
-  <text x="72" y="12" font-size="6" fill="rgba(255,255,255,.4)">📶 🔋</text>
-  <!-- avanza header -->
-  <rect x="0" y="0" width="102" height="24" fill="rgba(0,40,10,.6)"/>
-  <rect x="0" y="23.5" width="102" height=".5" fill="rgba(80,200,80,.15)"/>
-  <text x="10" y="16" font-size="8" font-weight="700" fill="#4caf50" letter-spacing=".04em">Avanza</text>
-  <text x="92" y="16" text-anchor="end" font-size="7" fill="rgba(255,255,255,.3)">🔔</text>
-  <!-- portfolio total -->
-  <text x="8" y="32" font-size="5" fill="rgba(255,255,255,.3)" letter-spacing=".08em">TOTALT PORTFÖLJVÄRDE</text>
-  <text x="8" y="50" font-size="20" font-weight="700" fill="white">542 680 kr</text>
-  <!-- today change -->
-  <rect x="8" y="54" width="46" height="10" rx="5" fill="rgba(76,175,80,.18)"/>
-  <text x="31" y="62" text-anchor="middle" font-size="5.5" fill="#81c784">▲ +2 340 kr (+2.34%)</text>
-  <!-- mini chart -->
-  <rect x="6" y="68" width="90" height="46" rx="4" fill="rgba(0,0,0,.3)"/>
-  <!-- chart grid -->
-  <line x1="6" y1="82" x2="96" y2="82" stroke="rgba(255,255,255,.04)" stroke-width=".5"/>
-  <line x1="6" y1="96" x2="96" y2="96" stroke="rgba(255,255,255,.04)" stroke-width=".5"/>
-  <!-- chart line -->
-  <polyline points="8,106 18,100 28,102 38,90 48,93 58,84 68,86 78,76 88,74 96,72"
-    fill="none" stroke="#4caf50" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="8,106 18,100 28,102 38,90 48,93 58,84 68,86 78,76 88,74 96,72 96,114 8,114"
-    fill="url(#avarea)"/>
-  <!-- last dot -->
-  <circle cx="96" cy="72" r="2.5" fill="#4caf50" stroke="white" stroke-width=".8"/>
-  <!-- time labels -->
-  <text x="8" y="120" font-size="4" fill="rgba(255,255,255,.2)">1m</text>
-  <text x="28" y="120" font-size="4" fill="rgba(255,255,255,.2)">3m</text>
-  <text x="50" y="120" font-size="4" fill="rgba(255,255,255,.35)" font-weight="600">1år</text>
-  <text x="72" y="120" font-size="4" fill="rgba(255,255,255,.2)">3år</text>
-  <text x="90" y="120" font-size="4" fill="rgba(255,255,255,.2)">Max</text>
-  <!-- holdings list -->
-  <text x="8" y="130" font-size="5" fill="rgba(255,255,255,.3)" letter-spacing=".08em">INNEHAV</text>
-  <line x1="6" y1="133" x2="96" y2="133" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- stock rows -->
-  <g font-size="5.5">
-    <text x="8" y="142" fill="white" font-weight="600">Ericsson B</text>
-    <text x="94" y="142" text-anchor="end" fill="#81c784">+1.8%</text>
-    <text x="8" y="150" fill="rgba(255,255,255,.35)" font-size="4.5">82 st · 87 340 kr</text>
-    <line x1="6" y1="153" x2="96" y2="153" stroke="rgba(255,255,255,.04)" stroke-width=".4"/>
-    <text x="8" y="162" fill="white" font-weight="600">Volvo B</text>
-    <text x="94" y="162" text-anchor="end" fill="#ef5350">-0.4%</text>
-    <text x="8" y="170" fill="rgba(255,255,255,.35)" font-size="4.5">45 st · 110 250 kr</text>
-    <line x1="6" y1="173" x2="96" y2="173" stroke="rgba(255,255,255,.04)" stroke-width=".4"/>
-    <text x="8" y="182" fill="white" font-weight="600">Spotify Tech</text>
-    <text x="94" y="182" text-anchor="end" fill="#81c784">+3.2%</text>
-    <text x="8" y="190" fill="rgba(255,255,255,.35)" font-size="4.5">12 st · 52 400 kr</text>
-  </g>
-  <!-- bottom nav -->
-  <rect x="0" y="196" width="102" height="18" fill="rgba(0,0,0,.7)"/>
-  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(76,175,80,.15)" stroke-width=".5"/>
-  <g text-anchor="middle" font-size="5">
-    <text x="13" y="206" fill="#4caf50">📈</text><text x="13" y="212" fill="#81c784">Portfölj</text>
-    <text x="33" y="206" fill="rgba(255,255,255,.3)">🔍</text><text x="33" y="212" fill="rgba(255,255,255,.25)">Sök</text>
-    <text x="51" y="206" fill="rgba(255,255,255,.3)">🏠</text><text x="51" y="212" fill="rgba(255,255,255,.25)">Hem</text>
-    <text x="69" y="206" fill="rgba(255,255,255,.3)">📰</text><text x="69" y="212" fill="rgba(255,255,255,.25)">Nyheter</text>
-    <text x="89" y="206" fill="rgba(255,255,255,.3)">👤</text><text x="89" y="212" fill="rgba(255,255,255,.25)">Konto</text>
-  </g>
-</svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
+          <div class="ph"><div class="psh"><div class="psc" style="background:#020a02"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <!-- Avanza — Portfolio screen -->
+  <rect width="102" height="214" fill="#030e04"/>
+  <!-- Status bar -->
+  <text x="7" y="11" font-size="5.5" fill="rgba(255,255,255,.8)" font-weight="700">9:41</text>
+  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".7"/>
+  <rect x="81" y="7.5" width="10" height="3" rx=".8" fill="#43A047"/>
+  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,255,255,.85)"/>
+  <!-- Header -->
+  <rect x="0" y="14" width="102" height="18" fill="#031205"/>
+  <text x="10" y="26" font-size="8.5" font-weight="700" fill="white">Portfolio</text>
+  <text x="92" y="26" text-anchor="end" font-size="6" fill="rgba(255,255,255,.4)">↻</text>
+  <!-- Portfolio total card -->
+  <rect x="8" y="36" width="86" height="42" rx="6" fill="#051a06"/>
+  <text x="18" y="48" font-size="5" fill="rgba(255,255,255,.45)" letter-spacing=".07em">TOTAL VALUE</text>
+  <text x="18" y="63" font-size="16" font-weight="700" fill="white">834 210 kr</text>
+  <text x="18" y="72" font-size="5" fill="#66BB6A" font-weight="600">▲ +4 820 kr  (+0,58%)  idag</text>
+  <!-- Mini sparkline in card -->
+  <polyline points="60,70 64,65 68,68 72,60 76,55 80,58 84,52 88,46 92,50" fill="none" stroke="#43A047" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/>
+  <!-- Holdings list header -->
+  <text x="10" y="89" font-size="6.5" font-weight="700" fill="white">Holdings</text>
+  <text x="92" y="89" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">Sort ▾</text>
+  <!-- Holdings -->
+  <!-- ERIC B -->
+  <rect x="8" y="93" width="86" height="18" rx="3" fill="#061408"/>
+  <rect x="10" y="97" width="12" height="10" rx="2" fill="#1B5E20"/>
+  <text x="16" y="103.5" text-anchor="middle" font-size="4.5" fill="#A5D6A7" font-weight="700">EB</text>
+  <text x="28" y="99" font-size="6" fill="white" font-weight="600">Ericsson B</text>
+  <text x="28" y="107" font-size="4.5" fill="rgba(255,255,255,.4)">500 aktier</text>
+  <text x="88" y="99" text-anchor="end" font-size="5.5" fill="white" font-weight="600">34 500 kr</text>
+  <text x="88" y="107" text-anchor="end" font-size="5" fill="#66BB6A">+2,4%</text>
+  <!-- Volvo B -->
+  <rect x="8" y="114" width="86" height="18" rx="3" fill="#061408"/>
+  <rect x="10" y="118" width="12" height="10" rx="2" fill="#283593"/>
+  <text x="16" y="124.5" text-anchor="middle" font-size="4.5" fill="#9FA8DA" font-weight="700">VO</text>
+  <text x="28" y="120" font-size="6" fill="white" font-weight="600">Volvo B</text>
+  <text x="28" y="128" font-size="4.5" fill="rgba(255,255,255,.4)">120 aktier</text>
+  <text x="88" y="120" text-anchor="end" font-size="5.5" fill="white" font-weight="600">28 440 kr</text>
+  <text x="88" y="128" text-anchor="end" font-size="5" fill="#66BB6A">+1,1%</text>
+  <!-- Investor A -->
+  <rect x="8" y="135" width="86" height="18" rx="3" fill="#061408"/>
+  <rect x="10" y="139" width="12" height="10" rx="2" fill="#4A148C"/>
+  <text x="16" y="145.5" text-anchor="middle" font-size="4" fill="#CE93D8" font-weight="700">INV</text>
+  <text x="28" y="141" font-size="6" fill="white" font-weight="600">Investor A</text>
+  <text x="28" y="149" font-size="4.5" fill="rgba(255,255,255,.4)">75 aktier</text>
+  <text x="88" y="141" text-anchor="end" font-size="5.5" fill="white" font-weight="600">67 500 kr</text>
+  <text x="88" y="149" text-anchor="end" font-size="5" fill="#EF9A9A">-0,3%</text>
+  <!-- Spotify -->
+  <rect x="8" y="156" width="86" height="18" rx="3" fill="#061408"/>
+  <rect x="10" y="160" width="12" height="10" rx="2" fill="#1DB954"/>
+  <text x="16" y="166.5" text-anchor="middle" font-size="5" fill="white" font-weight="700">♪</text>
+  <text x="28" y="162" font-size="6" fill="white" font-weight="600">Spotify</text>
+  <text x="28" y="170" font-size="4.5" fill="rgba(255,255,255,.4)">20 aktier</text>
+  <text x="88" y="162" text-anchor="end" font-size="5.5" fill="white" font-weight="600">53 200 kr</text>
+  <text x="88" y="170" text-anchor="end" font-size="5" fill="#66BB6A">+5,8%</text>
+  <!-- Annual return row -->
+  <rect x="8" y="178" width="86" height="12" rx="4" fill="rgba(67,160,71,.12)" stroke="rgba(67,160,71,.3)" stroke-width=".7"/>
+  <text x="18" y="186" font-size="5" fill="rgba(255,255,255,.55)">Annual return:</text>
+  <text x="88" y="186" text-anchor="end" font-size="5.5" fill="#66BB6A" font-weight="700">+18,4%  ▲</text>
+  <!-- Bottom navigation -->
+  <rect x="0" y="196" width="102" height="18" fill="#031205"/>
+  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+  <text x="13" y="207" text-anchor="middle" font-size="5" fill="#66BB6A" font-weight="600">Portfolio</text>
+  <text x="33" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Trade</text>
+  <text x="54" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Market</text>
+  <text x="75" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Watchlist</text>
+  <text x="93" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Profile</text>
+  <rect x="5" y="194" width="16" height="2" rx="1" fill="#43A047"/>
+</svg></div></svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
         </div>
       </div>
 
@@ -934,16 +955,70 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
 <div id="cur"></div><div id="cur-r"></div>
 
 <script>
-// Nav name reveal
-const nlEl = document.getElementById('nl');
-const heroEl = document.getElementById('hero');
-function checkNavName(){
-  const heroBottom = heroEl.getBoundingClientRect().bottom;
-  if(heroBottom < 80) nlEl.classList.add('vis');
-  else nlEl.classList.remove('vis');
+// Elements
+const nlEl  = document.getElementById('nl');
+const heroEl= document.getElementById('hero');
+const navEl = document.querySelector('nav');
+const nameFly = document.getElementById('name-fly');
+
+// ── Nav: become more opaque as user scrolls ──────────────────────────────
+function updateNavGlass(){
+  navEl.classList.toggle('scrolled', window.scrollY > 20);
 }
-window.addEventListener('scroll', checkNavName, {passive:true});
-checkNavName();
+window.addEventListener('scroll', updateNavGlass, {passive:true});
+updateNavGlass();
+
+// ── Parallax: "Joel Denke" travels from hero h1 → nav corner ────────────
+const h1El = document.querySelector('#hero h1');
+function updateNameFly(){
+  const h1R   = h1El.getBoundingClientRect();
+  const NAV_H = 52;
+
+  // h1 well below the nav — fly is hidden, h1 fully visible
+  if(h1R.top > NAV_H + 120){
+    nameFly.style.opacity = '0';
+    nlEl.classList.remove('vis');
+    h1El.style.opacity = '';
+    return;
+  }
+  // h1 completely past the nav — show static nav name
+  if(h1R.bottom < NAV_H){
+    nameFly.style.opacity = '0';
+    nlEl.classList.add('vis');
+    h1El.style.opacity = '0';
+    return;
+  }
+  nlEl.classList.remove('vis');
+
+  // raw progress: 0 = h1 top at NAV_H+120, 1 = h1 top at NAV_H-80
+  const raw      = (NAV_H + 120 - h1R.top) / 200;
+  const progress = Math.max(0, Math.min(1, raw));
+  // ease-out cubic for a crisp snap into place
+  const eased    = 1 - Math.pow(1 - progress, 3);
+
+  // Start: position of h1 text in viewport (top-left corner, cap at nav height)
+  const h1FontSize = parseFloat(getComputedStyle(h1El).fontSize);
+  const startX = h1R.left;
+  const startY = Math.max(NAV_H + 4, h1R.top + h1FontSize * 0.08);
+
+  // End: nav name (52px padding, centred in 52px nav)
+  const endX = 52;
+  const endY = NAV_H / 2;
+  const endFontSize = 16;
+
+  const x    = startX + (endX - startX) * eased;
+  const y    = startY + (endY - startY) * eased;
+  const size = h1FontSize + (endFontSize - h1FontSize) * eased;
+
+  nameFly.style.left      = x + 'px';
+  nameFly.style.top       = y + 'px';
+  nameFly.style.fontSize  = size + 'px';
+  nameFly.style.opacity   = String(Math.min(1, progress * 3));
+  // Fade h1 out proportionally so there's no duplicate
+  h1El.style.opacity = String(Math.max(0, 1 - progress * 2));
+}
+window.addEventListener('scroll', updateNameFly, {passive:true});
+updateNameFly();
 
 
 // video background active
