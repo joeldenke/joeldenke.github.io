@@ -16,16 +16,23 @@ if lsof -ti :"$PORT" >/dev/null 2>&1; then
   sleep 1
 fi
 
-# Start Python HTTP server in background serving the static site
-echo "Starting preview server on port $PORT..."
+# Start browser-sync with live-reload in background
+echo "Starting live-reload preview server on port $PORT..."
 cd "$PROJECT_DIR"
-nohup python3 -m http.server "$PORT" --bind 0.0.0.0 > /tmp/preview-server.log 2>&1 &
+nohup npx --yes browser-sync start \
+  --server \
+  --files "*.html,*.css,*.js" \
+  --port "$PORT" \
+  --no-open \
+  --no-notify \
+  > /tmp/preview-server.log 2>&1 &
 echo $! > /tmp/preview-server.pid
 
-# Wait briefly to confirm it started
-sleep 2
+# Wait for server to start
+sleep 3
 if kill -0 "$(cat /tmp/preview-server.pid)" 2>/dev/null; then
-  echo "Preview server running at http://localhost:$PORT (PID: $(cat /tmp/preview-server.pid))"
+  echo "Live-reload preview server running at http://localhost:$PORT (PID: $(cat /tmp/preview-server.pid))"
+  echo "Page reloads automatically when HTML/CSS/JS files change."
 else
   echo "ERROR: Preview server failed to start. Check /tmp/preview-server.log"
   cat /tmp/preview-server.log || true
