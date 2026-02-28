@@ -20,12 +20,12 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(-
 
 /* NATURE CANVAS BG */
 #bgv{position:fixed;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
-#vig{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 140% 140% at 50% 50%,transparent 15%,rgba(3,5,10,.45) 58%,rgba(3,5,10,.82) 100%)}
+#vig{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 120% 100% at 50% 30%,transparent 20%,rgba(3,5,10,.22) 55%,rgba(3,5,10,.52) 100%)}
 /* CURSOR */
 #cur{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;width:7px;height:7px;border-radius:50%;background:rgba(225,238,240,.9);transform:translate(-50%,-50%);transition:width .14s,height .14s}
 #cur-r{position:fixed;top:0;left:0;z-index:9998;pointer-events:none;width:22px;height:22px;border-radius:50%;border:1px solid rgba(225,238,240,.22);transform:translate(-50%,-50%)}
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;display:flex;align-items:center;padding:0 52px;background:linear-gradient(180deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,.07) 100%);backdrop-filter:blur(52px) saturate(220%) brightness(1.06);-webkit-backdrop-filter:blur(52px) saturate(220%) brightness(1.06);border-bottom:1px solid rgba(255,255,255,.28);box-shadow:0 1px 0 rgba(255,255,255,.06),0 4px 24px rgba(0,0,0,.2)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;display:flex;align-items:center;padding:0 52px;background:linear-gradient(180deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.06) 100%);backdrop-filter:blur(28px) saturate(180%) brightness(1.04);-webkit-backdrop-filter:blur(28px) saturate(180%) brightness(1.04);border-bottom:1px solid rgba(255,255,255,.28);box-shadow:0 1px 0 rgba(255,255,255,.06),0 4px 24px rgba(0,0,0,.2)}
 #nl{opacity:0;transform:translateX(-8px);transition:opacity .5s ease,transform .5s ease}#nl.vis{opacity:1;transform:translateX(0)}
 .nl{font-family:"Plus Jakarta Sans",sans-serif;font-size:16px;font-weight:500;color:var(--tx);margin-right:auto}
 .nl em{font-style:italic;font-weight:300;opacity:.72}
@@ -46,12 +46,12 @@ h2{font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(36px,4.8vw,58px);f
 h2 em{font-style:italic;color:var(--ac);font-weight:200}
 .rule{width:52px;height:1px;background:rgba(255,255,255,.22);margin-bottom:60px}
 /* Section header block gets subtle dark scrim so h2 is always legible over video */
-.sec-head{display:inline-block;background:linear-gradient(145deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.06) 45%,rgba(255,255,255,.10) 100%);backdrop-filter:blur(52px) saturate(220%) brightness(1.06);-webkit-backdrop-filter:blur(52px) saturate(220%) brightness(1.06);padding:24px 32px 28px;border-radius:12px;border:1px solid rgba(255,255,255,.28);margin-bottom:60px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.55),inset 1px 0 0 rgba(255,255,255,.14)}
+.sec-head{display:inline-block;background:linear-gradient(145deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.05) 45%,rgba(255,255,255,.08) 100%);backdrop-filter:blur(28px) saturate(180%) brightness(1.04);-webkit-backdrop-filter:blur(28px) saturate(180%) brightness(1.04);padding:24px 32px 28px;border-radius:12px;border:1px solid rgba(255,255,255,.28);margin-bottom:60px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.55),inset 1px 0 0 rgba(255,255,255,.14)}
 .sec-head .lbl{margin-bottom:10px}
 .sec-head h2{margin-bottom:14px}
 .sec-head .rule{margin-bottom:0}
 /* REAL GLASS — frosted glass with strong blur, gradient fill and specular highlights */
-.g{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.11) 45%,rgba(255,255,255,.17) 100%);backdrop-filter:blur(52px) saturate(220%) brightness(1.07);-webkit-backdrop-filter:blur(52px) saturate(220%) brightness(1.07)}
+.g{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,.07) 50%,rgba(255,255,255,.11) 100%);backdrop-filter:blur(28px) saturate(180%) brightness(1.04);-webkit-backdrop-filter:blur(28px) saturate(180%) brightness(1.04)}
 .g::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 2%,rgba(255,255,255,.9) 25%,rgba(255,255,255,1) 50%,rgba(255,255,255,.9) 75%,transparent 98%);z-index:1}
 .g::after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6),inset 1.5px 0 0 rgba(255,255,255,.18),inset -1px 0 0 rgba(255,255,255,.07),inset 0 -1px 0 rgba(0,0,0,.12);z-index:2;pointer-events:none}
 /* HERO */
@@ -147,7 +147,7 @@ h1 em{font-style:italic;color:var(--ac)}
 /* AI Agents */
 .ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media(max-width:1024px){.ai-grid{grid-template-columns:1fr}}
-.ai-card{border:1px solid rgba(255,255,255,.24);border-radius:10px;padding:14px 16px;background:linear-gradient(145deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,.06) 100%);backdrop-filter:blur(40px) saturate(200%);-webkit-backdrop-filter:blur(40px) saturate(200%);position:relative;overflow:hidden}
+.ai-card{border:1px solid rgba(255,255,255,.24);border-radius:10px;padding:14px 16px;background:linear-gradient(145deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.05) 100%);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);position:relative;overflow:hidden}
 .ai-card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 5%,rgba(255,255,255,.85) 30%,rgba(255,255,255,.95) 50%,rgba(255,255,255,.85) 70%,transparent 95%)}
 .ai-name{font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;font-weight:500;color:#ffffff;margin-bottom:5px;text-shadow:0 1px 6px rgba(0,0,0,.8)}
 .ai-desc{font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:300;line-height:1.56;color:#e8f4f5;text-shadow:0 1px 6px rgba(0,0,0,.8)}
@@ -169,7 +169,7 @@ h1 em{font-style:italic;color:var(--ac)}
 .cg{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
 @media(max-width:1024px){.cg{grid-template-columns:1fr}}
 /* Contact left col gets same real glass treatment as .g cards */
-.contact-panel{background:linear-gradient(145deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.11) 45%,rgba(255,255,255,.17) 100%);backdrop-filter:blur(52px) saturate(220%) brightness(1.07);-webkit-backdrop-filter:blur(52px) saturate(220%) brightness(1.07);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:36px 40px;box-shadow:0 4px 16px rgba(0,0,0,.28),0 16px 48px rgba(0,0,0,.22)}
+.contact-panel{background:linear-gradient(145deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,.07) 50%,rgba(255,255,255,.11) 100%);backdrop-filter:blur(28px) saturate(180%) brightness(1.04);-webkit-backdrop-filter:blur(28px) saturate(180%) brightness(1.04);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:36px 40px;box-shadow:0 4px 12px rgba(0,0,0,.25),0 12px 40px rgba(0,0,0,.18)}
 .contact-panel::before{content:"";position:absolute;top:0;left:4%;right:4%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent)}
 .contact-panel{position:relative;overflow:hidden;width:100%;box-sizing:border-box}@media(max-width:640px){.contact-panel{padding:28px 24px;border-radius:14px}}
 .cbio{font-family:"Plus Jakarta Sans",sans-serif;font-size:21px;font-weight:300;line-height:1.72;color:#f0f7f8;margin:16px 0 30px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
@@ -185,7 +185,7 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
 .r2{opacity:0;transform:translateY(18px);transition:opacity .8s .14s ease,transform .8s .14s ease}
 .r.v,.r2.v{opacity:1;transform:translateY(0)}
 /* REAL GLASS SHADOWS — clean depth, no neumorphism */
-.g{box-shadow:0 4px 16px rgba(0,0,0,.28),0 16px 48px rgba(0,0,0,.22),0 32px 80px rgba(0,0,0,.12)}
+.g{box-shadow:0 4px 12px rgba(0,0,0,.25),0 12px 40px rgba(0,0,0,.18),0 24px 60px rgba(0,0,0,.10)}
 .g::after{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6),inset 1.5px 0 0 rgba(255,255,255,.18),inset -1px 0 0 rgba(255,255,255,.07),inset 0 -1px 0 rgba(0,0,0,.12)}
 .ec:hover{box-shadow:0 8px 24px rgba(0,0,0,.35),0 24px 64px rgba(0,0,0,.28),0 40px 100px rgba(0,0,0,.15);background:linear-gradient(145deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.10) 45%,rgba(255,255,255,.16) 100%)}
 .sec-head{box-shadow:0 4px 16px rgba(0,0,0,.28),0 16px 48px rgba(0,0,0,.18)}
@@ -198,13 +198,6 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
 .htag,.hrol{box-shadow:0 1px 4px rgba(0,0,0,.3),0 2px 8px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.1)}
 .btn-p:active,.btn-s:active{transform:translateY(1px)!important;box-shadow:inset 2px 2px 6px rgba(0,0,0,.45),inset -1px -1px 3px rgba(255,255,255,.06)!important}
 nav{box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 -1px 0 rgba(255,255,255,.055)}
-/* LIGHT ORBS — colorful atmosphere that shows through glass */
-#orbs{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
-.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:1}
-.orb-1{width:800px;height:800px;top:-15%;left:-10%;background:radial-gradient(circle,rgba(80,200,190,.55) 0%,rgba(40,140,180,.3) 40%,transparent 70%)}
-.orb-2{width:700px;height:700px;top:15%;right:-12%;background:radial-gradient(circle,rgba(60,90,230,.5) 0%,rgba(80,60,200,.28) 40%,transparent 70%)}
-.orb-3{width:600px;height:600px;bottom:5%;left:5%;background:radial-gradient(circle,rgba(150,70,220,.45) 0%,rgba(100,50,180,.25) 40%,transparent 70%)}
-.orb-4{width:500px;height:500px;top:40%;left:35%;background:radial-gradient(circle,rgba(168,219,216,.4) 0%,rgba(80,180,175,.2) 40%,transparent 70%)}
 </style>
 </head>
 <body>
@@ -213,7 +206,6 @@ nav{box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 -1px 0 rgba(255,255,255,.055)}
   <source src="bg-video.mp4" type="video/mp4">
 </video>
 <div id="vig"></div>
-<div id="orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div></div>
 <nav>
   <div class="nl" id="nl">Joel <em>Denke</em></div>
   <ul>
