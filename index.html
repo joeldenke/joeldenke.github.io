@@ -51,7 +51,7 @@ h2 em{font-style:italic;color:var(--ac);font-weight:200}
 .sec-head h2{margin-bottom:14px}
 .sec-head .rule{margin-bottom:0}
 /* REAL GLASS — frosted glass with strong blur, gradient fill and specular highlights */
-.g{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.08) 45%,rgba(255,255,255,.13) 100%);backdrop-filter:blur(52px) saturate(220%) brightness(1.07);-webkit-backdrop-filter:blur(52px) saturate(220%) brightness(1.07)}
+.g{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.11) 45%,rgba(255,255,255,.17) 100%);backdrop-filter:blur(52px) saturate(220%) brightness(1.07);-webkit-backdrop-filter:blur(52px) saturate(220%) brightness(1.07)}
 .g::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 2%,rgba(255,255,255,.9) 25%,rgba(255,255,255,1) 50%,rgba(255,255,255,.9) 75%,transparent 98%);z-index:1}
 .g::after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6),inset 1.5px 0 0 rgba(255,255,255,.18),inset -1px 0 0 rgba(255,255,255,.07),inset 0 -1px 0 rgba(0,0,0,.12);z-index:2;pointer-events:none}
 /* HERO */
@@ -169,7 +169,7 @@ h1 em{font-style:italic;color:var(--ac)}
 .cg{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
 @media(max-width:1024px){.cg{grid-template-columns:1fr}}
 /* Contact left col gets same real glass treatment as .g cards */
-.contact-panel{background:linear-gradient(145deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.08) 45%,rgba(255,255,255,.13) 100%);backdrop-filter:blur(52px) saturate(220%) brightness(1.07);-webkit-backdrop-filter:blur(52px) saturate(220%) brightness(1.07);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:36px 40px;box-shadow:0 4px 16px rgba(0,0,0,.28),0 16px 48px rgba(0,0,0,.22)}
+.contact-panel{background:linear-gradient(145deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.11) 45%,rgba(255,255,255,.17) 100%);backdrop-filter:blur(52px) saturate(220%) brightness(1.07);-webkit-backdrop-filter:blur(52px) saturate(220%) brightness(1.07);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:36px 40px;box-shadow:0 4px 16px rgba(0,0,0,.28),0 16px 48px rgba(0,0,0,.22)}
 .contact-panel::before{content:"";position:absolute;top:0;left:4%;right:4%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent)}
 .contact-panel{position:relative;overflow:hidden;width:100%;box-sizing:border-box}@media(max-width:640px){.contact-panel{padding:28px 24px;border-radius:14px}}
 .cbio{font-family:"Plus Jakarta Sans",sans-serif;font-size:21px;font-weight:300;line-height:1.72;color:#f0f7f8;margin:16px 0 30px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
@@ -198,6 +198,13 @@ footer{position:relative;z-index:4;padding:18px 52px;border-top:1px solid rgba(2
 .htag,.hrol{box-shadow:0 1px 4px rgba(0,0,0,.3),0 2px 8px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.1)}
 .btn-p:active,.btn-s:active{transform:translateY(1px)!important;box-shadow:inset 2px 2px 6px rgba(0,0,0,.45),inset -1px -1px 3px rgba(255,255,255,.06)!important}
 nav{box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 -1px 0 rgba(255,255,255,.055)}
+/* LIGHT ORBS — colorful atmosphere that shows through glass */
+#orbs{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:1}
+.orb-1{width:800px;height:800px;top:-15%;left:-10%;background:radial-gradient(circle,rgba(80,200,190,.55) 0%,rgba(40,140,180,.3) 40%,transparent 70%)}
+.orb-2{width:700px;height:700px;top:15%;right:-12%;background:radial-gradient(circle,rgba(60,90,230,.5) 0%,rgba(80,60,200,.28) 40%,transparent 70%)}
+.orb-3{width:600px;height:600px;bottom:5%;left:5%;background:radial-gradient(circle,rgba(150,70,220,.45) 0%,rgba(100,50,180,.25) 40%,transparent 70%)}
+.orb-4{width:500px;height:500px;top:40%;left:35%;background:radial-gradient(circle,rgba(168,219,216,.4) 0%,rgba(80,180,175,.2) 40%,transparent 70%)}
 </style>
 </head>
 <body>
@@ -206,6 +213,7 @@ nav{box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 -1px 0 rgba(255,255,255,.055)}
   <source src="bg-video.mp4" type="video/mp4">
 </video>
 <div id="vig"></div>
+<div id="orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div></div>
 <nav>
   <div class="nl" id="nl">Joel <em>Denke</em></div>
   <ul>
