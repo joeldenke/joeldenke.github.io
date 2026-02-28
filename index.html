@@ -53,9 +53,9 @@ h2 em{font-style:italic;color:var(--ac);font-weight:200}
 .sec-head h2{margin-bottom:14px}
 .sec-head .rule{margin-bottom:0}
 /* LIQUID GLASS - true glass, no blur, full optical depth */
-.g{position:relative;border-radius:20px;overflow:hidden;background:rgba(8,12,24,.55);backdrop-filter:saturate(220%) brightness(1.1) contrast(1.05) blur(12px);-webkit-backdrop-filter:saturate(220%) brightness(1.1) contrast(1.05) blur(12px);box-shadow:0 14px 44px rgba(0,0,0,.32),0 2px 8px rgba(0,0,0,.18)}@media(max-width:640px){.g{border-radius:14px}}
+.g{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 100%);backdrop-filter:saturate(180%) brightness(1.06) contrast(1.03);-webkit-backdrop-filter:saturate(180%) brightness(1.06) contrast(1.03);box-shadow:0 20px 60px rgba(0,0,0,.45),0 4px 12px rgba(0,0,0,.25)}@media(max-width:640px){.g{border-radius:14px}}
 .g::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(ellipse 65% 45% at 18% 0%,rgba(255,255,255,.20) 0%,transparent 68%),linear-gradient(180deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.07) 11%,transparent 42%),linear-gradient(90deg,rgba(255,255,255,.11) 0%,transparent 18%),linear-gradient(0deg,rgba(255,255,255,.04) 0%,transparent 22%);pointer-events:none;z-index:1}
-.g::after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.40),inset 1px 0 0 rgba(255,255,255,.16),inset -1px 0 0 rgba(255,255,255,.07),inset 0 -1px 0 rgba(255,255,255,.05);z-index:2;pointer-events:none}
+.g::after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 2px 0 rgba(255,255,255,.50),inset 1px 0 0 rgba(255,255,255,.20),inset -1px 0 0 rgba(255,255,255,.08),inset 0 -1px 0 rgba(255,255,255,.06);z-index:2;pointer-events:none}
 /* HERO */
 #hero{min-height:100vh;display:flex;align-items:center;padding-top:52px}
 .hg{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center;padding:100px 0}
@@ -86,7 +86,7 @@ h1 em{font-style:italic;color:var(--ac)}
 .hr{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.035)}
 .hr:last-child{border:none;padding-bottom:0}
 .hk{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(220,240,242,1);text-shadow:0 1px 6px rgba(0,0,0,.9)}
-.hv{font-family:"JetBrains Mono",monospace;font-size:13px;color:#ffffff;text-align:right;line-height:1.3;text-shadow:0 1px 5px rgba(0,0,0,.8)}
+.hv{font-family:"JetBrains Mono",monospace;font-size:13px;color:#ffffff;text-align:right;line-height:1.3;text-shadow:0 1px 8px rgba(0,0,0,.95);font-weight:500}
 .hv.a{color:var(--ac)}
 .mb{margin-top:4px;height:1.5px;width:96px;background:rgba(255,255,255,.06);border-radius:1px;overflow:hidden;margin-left:auto}
 .mf{height:100%;background:rgba(142,207,204,.6);width:0;border-radius:1px;transition:width 1.6s cubic-bezier(.16,1,.3,1)}
@@ -102,7 +102,7 @@ h1 em{font-style:italic;color:var(--ac)}
 .w2{grid-column:span 2}
 @media(max-width:1024px){.w2{grid-column:span 1}}
 .ec{transition:transform .38s cubic-bezier(.16,1,.3,1),box-shadow .38s,background .38s}
-.ec:hover{transform:translateY(-5px);background:rgba(255,255,255,.07);box-shadow:0 24px 64px rgba(0,0,0,.28),0 4px 12px rgba(0,0,0,.18)}@media(hover:none){.ec:hover{transform:none;box-shadow:none;background:rgba(255,255,255,.04)}}@media(max-width:600px){.ec .eb{display:block!important}}@media(max-width:600px){.ec .eb{padding:20px 20px}}
+.ec:hover{transform:translateY(-5px);background:rgba(255,255,255,.07);box-shadow:0 24px 64px rgba(0,0,0,.28),0 4px 12px rgba(0,0,0,.18)}@media(hover:none){.ec:hover{transform:none;box-shadow:none}}@media(max-width:640px){.ec .eb{display:flex!important;flex-direction:column;gap:24px}}@media(max-width:640px){.ec .eb{padding:22px 20px!important}}
 /* Card content */
 .eb{padding:26px 28px;position:relative;z-index:2}
 .et{display:flex;align-items:flex-start;gap:16px;margin-bottom:18px}
@@ -115,8 +115,8 @@ h1 em{font-style:italic;color:var(--ac)}
 .en{font-family:"Plus Jakarta Sans",sans-serif;font-size:26px;font-weight:400;color:var(--tx);text-decoration:none;display:block;line-height:1;margin-bottom:4px;transition:color .2s;text-shadow:0 1px 12px rgba(0,0,0,.8),0 2px 4px rgba(0,0,0,.6)}@media(max-width:600px){.en{font-size:22px}}
 .en:hover{color:rgba(233,239,240,.7)}
 .ep{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(230,244,246,1);margin-bottom:3px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
-.er{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(185,232,229,1);text-shadow:0 1px 8px rgba(0,0,0,.9)}
-.ed{font-family:"Plus Jakarta Sans",sans-serif;font-size:17px;font-weight:300;line-height:1.66;color:#f0f7f8;margin-bottom:16px;opacity:1;text-shadow:0 1px 8px rgba(0,0,0,.9),0 2px 16px rgba(0,0,0,.7)}@media(max-width:600px){.ed{font-size:15px;line-height:1.6}}
+.er{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#b8e8e5;text-shadow:0 1px 8px rgba(0,0,0,.95),0 0 20px rgba(0,0,0,.7)}
+.ed{font-family:"Plus Jakarta Sans",sans-serif;font-size:17px;font-weight:400;line-height:1.68;color:#f2f9fa;margin-bottom:16px;opacity:1;text-shadow:0 1px 10px rgba(0,0,0,.95),0 2px 20px rgba(0,0,0,.8)}@media(max-width:600px){.ed{font-size:15px;line-height:1.65}}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
 .tag{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:1px solid rgba(255,255,255,.38);color:#f0f8f9;background:rgba(4,7,14,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
 .tag.hi{border-color:rgba(168,219,216,.8);color:#a8dbd8;background:rgba(20,70,68,.7);font-weight:500}
@@ -141,9 +141,9 @@ h1 em{font-style:italic;color:var(--ac)}
 .kg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:1024px){.kg{grid-template-columns:1fr}}@media(max-width:640px){.sp{padding:20px 18px}}
 .sp{padding:28px 30px;position:relative;z-index:3}
-.sth{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(210,232,234,.95);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1);text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.sth{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,250,252,1);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.12);text-shadow:0 1px 8px rgba(0,0,0,.9)}
 .sg{display:flex;flex-wrap:wrap;gap:6px 10px}
-.sn{font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;font-weight:400;color:rgba(255,255,255,.9);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:5px 12px;white-space:nowrap;text-shadow:0 1px 4px rgba(0,0,0,.6);letter-spacing:.01em}@media(max-width:480px){.sn{font-size:12px;padding:4px 10px}}
+.sn{font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;font-weight:500;color:#ffffff;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:5px 12px;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.8);letter-spacing:.01em}@media(max-width:480px){.sn{font-size:12px;padding:4px 10px}}
 
 
 /* AI Agents */
@@ -152,7 +152,7 @@ h1 em{font-style:italic;color:var(--ac)}
 .ai-card{border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:14px 16px;background:rgba(255,255,255,.04);position:relative;overflow:hidden}
 .ai-card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:rgba(255,255,255,.18)}
 .ai-name{font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;font-weight:500;color:#ffffff;margin-bottom:5px;text-shadow:0 1px 6px rgba(0,0,0,.8)}
-.ai-desc{font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:300;line-height:1.56;color:#e8f4f5;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.ai-desc{font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:400;line-height:1.58;color:#f0f8f9;text-shadow:0 1px 8px rgba(0,0,0,.9)}
 .ai-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
 .chip{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;border:1px solid rgba(130,186,182,.5);color:rgba(180,228,225,1);background:rgba(4,7,14,.55)}
 /* arcs */
@@ -164,7 +164,7 @@ h1 em{font-style:italic;color:var(--ac)}
 .dr{display:grid;grid-template-columns:7px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.034)}@media(max-width:480px){.dn{font-size:13px}.dy{font-size:9px}}
 .dr:last-child{border:none;padding-bottom:0}
 .dd{width:5px;height:5px;border-radius:50%;opacity:.58}
-.dn{font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:400;color:#ffffff;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.dn{font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:500;color:#ffffff;text-shadow:0 1px 8px rgba(0,0,0,.9)}
 .dy{font-family:"JetBrains Mono",monospace;font-size:10px;color:rgba(210,232,234,.95);letter-spacing:.07em;text-shadow:0 1px 4px rgba(0,0,0,.8)}
 /* CONTACT */
 #contact{padding:140px 0 110px}@media(max-width:640px){#contact{padding:80px 0 max(60px,env(safe-area-inset-bottom) + 40px)}}
@@ -180,7 +180,7 @@ h1 em{font-style:italic;color:var(--ac)}
 .cl:hover{border-color:rgba(255,255,255,.55);background:rgba(10,18,32,.72);transform:translateX(4px)}
 .cl:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
 .ci{width:22px;display:flex;align-items:center;justify-content:center;opacity:1;flex-shrink:0}
-.cs{font-family:"JetBrains Mono",monospace;font-size:11px;color:rgba(190,222,220,.95);display:block;margin-top:2px;letter-spacing:.06em;text-shadow:0 1px 4px rgba(0,0,0,.7)}
+.cs{font-family:"JetBrains Mono",monospace;font-size:11px;color:rgba(210,238,236,1);display:block;margin-top:2px;letter-spacing:.06em;text-shadow:0 1px 6px rgba(0,0,0,.9)}
 footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-right) + 20px) max(18px,env(safe-area-inset-bottom) + 12px) max(52px,env(safe-area-inset-left) + 20px);border-top:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.62);box-shadow:inset 0 1px 0 rgba(255,255,255,.12);font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.12em;color:rgba(210,232,234,.92);display:flex;justify-content:space-between}
 @media(max-width:600px){footer{padding:16px 20px;flex-direction:column;gap:5px}}.contact-footer{margin-top:52px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.12em;color:rgba(210,232,234,.55);display:flex;justify-content:space-between;align-items:center}
 .r{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
@@ -254,82 +254,94 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
             <div class="tags"><span class="tag hi">▸ Current</span><span class="tag">Platform</span><span class="tag">600M users</span><span class="tag">Kotlin</span></div>
             <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.spotify.music" target="_blank">▸ Google Play</a><a class="lnk" href="https://spotify.com" target="_blank">↗ spotify.com</a></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:#121212"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <!-- Spotify — Home screen: Your Mix cards -->
+          <div class="ph"><div class="psh"><div class="psc" style="background:#121212"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg">
   <rect width="102" height="214" fill="#121212"/>
   <!-- status bar -->
-  <text x="7" y="11" font-size="5.5" fill="rgba(255,255,255,.75)" font-weight="700">9:41</text>
-  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.45)" stroke-width=".7"/>
-  <rect x="81" y="7.5" width="9" height="3" rx=".8" fill="#1DB954"/>
-  <rect x="94.2" y="7.5" width="1" height="3" rx=".4" fill="rgba(255,255,255,.45)"/>
-  <rect x="68" y="9" width="1.5" height="3" rx=".4" fill="rgba(255,255,255,.4)"/>
-  <rect x="70.5" y="8" width="1.5" height="4" rx=".4" fill="rgba(255,255,255,.6)"/>
-  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,255,255,.8)"/>
-  <!-- Top greeting -->
-  <text x="10" y="26" font-size="9" font-weight="700" fill="white">Good evening</text>
-  <!-- Quick picks row -->
-  <rect x="10" y="32" width="38" height="14" rx="3" fill="rgba(255,255,255,.1)"/>
-  <rect x="10" y="32" width="14" height="14" rx="3 0 0 3" fill="#1DB954"/>
-  <text x="17" y="41.5" text-anchor="middle" font-size="7" fill="white">♪</text>
-  <text x="36" y="41" text-anchor="middle" font-size="5.5" fill="white" font-weight="600">Liked Songs</text>
-  <rect x="54" y="32" width="38" height="14" rx="3" fill="rgba(255,255,255,.1)"/>
-  <rect x="54" y="32" width="14" height="14" rx="3 0 0 3" fill="#4B0082"/>
-  <text x="61" y="41.5" text-anchor="middle" font-size="7" fill="white">♬</text>
-  <text x="79" y="41" text-anchor="middle" font-size="5.5" fill="white" font-weight="600">Daily Mix 1</text>
-  <!-- Second row -->
-  <rect x="10" y="50" width="38" height="14" rx="3" fill="rgba(255,255,255,.1)"/>
-  <rect x="10" y="50" width="14" height="14" rx="3 0 0 3" fill="#333"/>
-  <text x="17" y="59.5" text-anchor="middle" font-size="7" fill="white">⊞</text>
-  <text x="36" y="59" text-anchor="middle" font-size="5.5" fill="white" font-weight="600">Your Mix 3</text>
-  <rect x="54" y="50" width="38" height="14" rx="3" fill="rgba(255,255,255,.1)"/>
-  <rect x="54" y="50" width="14" height="14" rx="3 0 0 3" fill="#8B1A1A"/>
-  <text x="61" y="59.5" text-anchor="middle" font-size="7" fill="white">♫</text>
-  <text x="79" y="59" text-anchor="middle" font-size="5.5" fill="white" font-weight="600">Rock Classics</text>
-  <!-- Section: Featured Charts -->
-  <text x="10" y="76" font-size="7.5" font-weight="700" fill="white">Featured Charts</text>
-  <!-- Chart cards row -->
-  <rect x="10" y="81" width="36" height="36" rx="3" fill="#1a1a2e"/>
-  <rect x="10" y="81" width="36" height="18" fill="#16213e"/>
-  <rect x="10" y="81" width="36" height="9" fill="#0f3460"/>
-  <text x="28" y="91" text-anchor="middle" font-size="6" fill="white" font-weight="700">Top 50</text>
-  <text x="28" y="98" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.7)">Global</text>
-  <rect x="10" y="117" width="36" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
-  <text x="28" y="121" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)">Spotify Charts</text>
-  <rect x="50" y="81" width="36" height="36" rx="3" fill="#1e0533"/>
-  <rect x="50" y="81" width="36" height="18" fill="#2d0b4e"/>
-  <rect x="50" y="81" width="36" height="9" fill="#3d1165"/>
-  <text x="68" y="91" text-anchor="middle" font-size="6" fill="white" font-weight="700">Viral 50</text>
-  <text x="68" y="98" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.7)">Sweden</text>
-  <rect x="50" y="117" width="36" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
-  <text x="68" y="121" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)">Spotify Charts</text>
-  <!-- Section: Recently Played -->
-  <text x="10" y="135" font-size="7.5" font-weight="700" fill="white">Recently played</text>
-  <!-- Album grid -->
-  <rect x="10" y="140" width="26" height="26" rx="3" fill="#1a472a"/>
-  <text x="23" y="157" text-anchor="middle" font-size="10" fill="#1DB954">♪</text>
-  <rect x="40" y="140" width="26" height="26" rx="3" fill="#0d2137"/>
-  <text x="53" y="157" text-anchor="middle" font-size="10" fill="#4fc3f7">♫</text>
-  <rect x="70" y="140" width="26" height="26" rx="3" fill="#3b1a3a"/>
-  <text x="83" y="157" text-anchor="middle" font-size="10" fill="#ce93d8">♬</text>
-  <text x="23" y="170" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)">Chill Vibes</text>
-  <text x="53" y="170" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)">Lo-fi Beats</text>
-  <text x="83" y="170" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)">Indie Pop</text>
+  <text x="7" y="11" font-size="6" fill="#fff" font-weight="700" font-family="system-ui">9:41</text>
+  <rect x="77" y="7" width="14" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".8"/>
+  <rect x="78" y="8" width="10" height="3" rx=".8" fill="#1DB954"/>
+  <rect x="92.5" y="8" width="1.2" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
+  <rect x="66" y="9" width="2" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
+  <rect x="69.5" y="8" width="2" height="4" rx=".5" fill="rgba(255,255,255,.6)"/>
+  <rect x="73" y="7" width="2" height="5" rx=".5" fill="rgba(255,255,255,.85)"/>
+  <!-- greeting -->
+  <text x="10" y="27" font-size="9.5" fill="#fff" font-weight="700" font-family="system-ui">Good evening</text>
+  <!-- Quick picks grid: 2×2 pill cards -->
+  <!-- Card 1 -->
+  <rect x="8" y="33" width="41" height="14" rx="3" fill="#282828"/>
+  <rect x="8" y="33" width="14" height="14" rx="3 0 0 3" fill="#1DB954"/>
+  <text x="15" y="42" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">♬</text>
+  <text x="37" y="41" text-anchor="middle" font-size="5" fill="#fff" font-family="system-ui" font-weight="600">Liked Songs</text>
+  <!-- Card 2 -->
+  <rect x="53" y="33" width="41" height="14" rx="3" fill="#282828"/>
+  <rect x="53" y="33" width="14" height="14" rx="3 0 0 3" fill="#333"/>
+  <text x="60" y="42" text-anchor="middle" font-size="8" fill="#7b5ea7" font-weight="700" font-family="system-ui">♪</text>
+  <text x="79" y="41" text-anchor="middle" font-size="5" fill="#fff" font-family="system-ui" font-weight="600">Daily Mix 1</text>
+  <!-- Card 3 -->
+  <rect x="8" y="51" width="41" height="14" rx="3" fill="#282828"/>
+  <rect x="8" y="51" width="14" height="14" rx="3 0 0 3" fill="#9b1c1c"/>
+  <text x="15" y="60" text-anchor="middle" font-size="8" fill="#ef4444" font-weight="700" font-family="system-ui">♫</text>
+  <text x="37" y="59" text-anchor="middle" font-size="5" fill="#fff" font-family="system-ui" font-weight="600">Rock Classics</text>
+  <!-- Card 4 -->
+  <rect x="53" y="51" width="41" height="14" rx="3" fill="#282828"/>
+  <rect x="53" y="51" width="14" height="14" rx="3 0 0 3" fill="#1e3a5f"/>
+  <text x="60" y="60" text-anchor="middle" font-size="8" fill="#60a5fa" font-weight="700" font-family="system-ui">♩</text>
+  <text x="79" y="59" text-anchor="middle" font-size="5" fill="#fff" font-family="system-ui" font-weight="600">Lo-fi Beats</text>
+  <!-- Section label -->
+  <text x="10" y="79" font-size="7.5" fill="#fff" font-weight="700" font-family="system-ui">Recently played</text>
+  <!-- Album art row — 3 square cards -->
+  <rect x="8" y="84" width="27" height="27" rx="3" fill="#0a3d1a"/>
+  <rect x="8" y="84" width="27" height="13" rx="3" fill="#0f5c2e"/>
+  <text x="21.5" y="101" text-anchor="middle" font-size="12" fill="#1DB954" font-family="system-ui" font-weight="700">♪</text>
+  <rect x="39" y="84" width="27" height="27" rx="3" fill="#1e1e2e"/>
+  <rect x="39" y="84" width="27" height="13" rx="3" fill="#2d2d4e"/>
+  <text x="52.5" y="101" text-anchor="middle" font-size="12" fill="#a78bfa" font-family="system-ui" font-weight="700">♫</text>
+  <rect x="70" y="84" width="27" height="27" rx="3" fill="#1f1010"/>
+  <rect x="70" y="84" width="27" height="13" rx="3" fill="#3b1515"/>
+  <text x="83.5" y="101" text-anchor="middle" font-size="12" fill="#f87171" font-family="system-ui" font-weight="700">♬</text>
+  <text x="21.5" y="117" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)" font-family="system-ui">Chill Vibes</text>
+  <text x="52.5" y="117" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)" font-family="system-ui">Indie Pop</text>
+  <text x="83.5" y="117" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)" font-family="system-ui">Dark R&amp;B</text>
+  <!-- Section: Jump back in -->
+  <text x="10" y="129" font-size="7.5" fill="#fff" font-weight="700" font-family="system-ui">Jump back in</text>
+  <!-- Horizontal list cards -->
+  <rect x="8" y="134" width="42" height="34" rx="4" fill="#282828"/>
+  <rect x="8" y="134" width="42" height="20" rx="4" fill="#1a472a"/>
+  <text x="29" y="148" text-anchor="middle" font-size="11" fill="#1DB954" font-family="system-ui">▶</text>
+  <text x="29" y="163" text-anchor="middle" font-size="4.5" fill="#fff" font-family="system-ui" font-weight="600">Your Mix 3</text>
+  <rect x="54" y="134" width="42" height="34" rx="4" fill="#282828"/>
+  <rect x="54" y="134" width="42" height="20" rx="4" fill="#0d2137"/>
+  <text x="75" y="148" text-anchor="middle" font-size="11" fill="#60a5fa" font-family="system-ui">▶</text>
+  <text x="75" y="163" text-anchor="middle" font-size="4.5" fill="#fff" font-family="system-ui" font-weight="600">Discover Weekly</text>
   <!-- Now Playing mini bar -->
-  <rect x="4" y="178" width="94" height="16" rx="6" fill="#282828"/>
-  <rect x="8" y="181" width="10" height="10" rx="2" fill="#1DB954"/>
-  <text x="13" y="188" text-anchor="middle" font-size="7" fill="white">♪</text>
-  <text x="25" y="185" font-size="5" fill="white" font-weight="600">Blinding Lights</text>
-  <text x="25" y="191" font-size="4" fill="rgba(255,255,255,.55)">The Weeknd</text>
-  <text x="89" y="188" text-anchor="middle" font-size="10" fill="white">▶</text>
-  <rect x="82" y="184" width="1" height="6" rx=".5" fill="rgba(255,255,255,.4)"/>
-  <!-- Bottom navigation -->
+  <rect x="5" y="173" width="92" height="15" rx="5" fill="#282828"/>
+  <rect x="8" y="175.5" width="10" height="10" rx="2" fill="#1DB954"/>
+  <text x="13" y="182.5" text-anchor="middle" font-size="7" fill="#fff" font-family="system-ui" font-weight="700">♪</text>
+  <text x="25" y="180" font-size="5" fill="#fff" font-family="system-ui" font-weight="600">Blinding Lights</text>
+  <text x="25" y="186" font-size="4" fill="rgba(255,255,255,.6)" font-family="system-ui">The Weeknd</text>
+  <!-- play icon -->
+  <polygon points="87,177 87,185 93,181" fill="#fff"/>
+  <!-- progress bar on now playing -->
+  <rect x="5" y="188" width="92" height="1.5" rx=".75" fill="#535353"/>
+  <rect x="5" y="188" width="38" height="1.5" rx=".75" fill="#1DB954"/>
+  <!-- Bottom nav -->
   <rect x="0" y="196" width="102" height="18" fill="#000"/>
-  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
-  <rect x="7" y="198" width="18" height="1.5" rx=".75" fill="#1DB954"/>
-  <text x="16" y="207" text-anchor="middle" font-size="5.5" fill="#1DB954" font-weight="600">Home</text>
-  <text x="36" y="207" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)">Search</text>
-  <text x="56" y="207" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)">Library</text>
-  <text x="76" y="207" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)">Premium</text>
+  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.08)" stroke-width=".5"/>
+  <!-- Home (active) -->
+  <path d="M10 207 L13 203 L16 207 L16 210 L10 210 Z" fill="none" stroke="#1DB954" stroke-width="1" stroke-linejoin="round"/>
+  <rect x="11.5" y="207.5" width="3" height="2.5" rx=".5" fill="#1DB954"/>
+  <text x="13" y="214" text-anchor="middle" font-size="4.5" fill="#1DB954" font-family="system-ui" font-weight="600">Home</text>
+  <!-- Search -->
+  <circle cx="30" cy="206" r="3.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+  <line x1="32.5" y1="208.5" x2="35" y2="211" stroke="rgba(255,255,255,.4)" stroke-width="1" stroke-linecap="round"/>
+  <text x="31" y="214" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Search</text>
+  <!-- Library -->
+  <rect x="46" y="203" width="1.5" height="7" rx=".5" fill="rgba(255,255,255,.4)"/>
+  <rect x="49" y="204" width="1.5" height="6" rx=".5" fill="rgba(255,255,255,.4)"/>
+  <rect x="52" y="202" width="1.5" height="8" rx=".5" fill="rgba(255,255,255,.4)"/>
+  <text x="50" y="214" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Library</text>
+  <!-- home indicator -->
+  <rect x="33" y="212" width="36" height="2" rx="1" fill="rgba(255,255,255,.3)"/>
 </svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
         </div>
       </div>
@@ -346,85 +358,88 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
             <div class="tags"><span class="tag">Compose</span><span class="tag">Architecture</span><span class="tag">Remote</span></div>
             <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.truecaller" target="_blank">▸ Google Play</a><a class="lnk" href="https://truecaller.com" target="_blank">↗ truecaller.com</a></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:#0a0a0a"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <!-- Truecaller — Recents screen -->
+          <div class="ph"><div class="psh"><div class="psc" style="background:#0d0d0d"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg">
   <rect width="102" height="214" fill="#0d0d0d"/>
-  <!-- Status bar -->
-  <text x="7" y="11" font-size="5.5" fill="rgba(255,255,255,.8)" font-weight="700">9:41</text>
-  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".7"/>
-  <rect x="81" y="7.5" width="9" height="3" rx=".8" fill="#4CAF50"/>
-  <rect x="94.2" y="7.5" width="1" height="3" rx=".4" fill="rgba(255,255,255,.4)"/>
-  <rect x="68" y="9" width="1.5" height="3" rx=".4" fill="rgba(255,255,255,.4)"/>
-  <rect x="70.5" y="8" width="1.5" height="4" rx=".4" fill="rgba(255,255,255,.65)"/>
-  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,255,255,.85)"/>
+  <text x="7" y="11" font-size="6" fill="#fff" font-weight="700" font-family="system-ui">9:41</text>
+  <rect x="77" y="7" width="14" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".8"/>
+  <rect x="78" y="8" width="10" height="3" rx=".8" fill="#4CAF50"/>
+  <rect x="92.5" y="8" width="1.2" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
+  <rect x="66" y="9" width="2" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
+  <rect x="69.5" y="8" width="2" height="4" rx=".5" fill="rgba(255,255,255,.6)"/>
+  <rect x="73" y="7" width="2" height="5" rx=".5" fill="rgba(255,255,255,.85)"/>
   <!-- Top bar -->
   <rect x="0" y="14" width="102" height="18" fill="#1a1a1a"/>
-  <text x="10" y="26" font-size="8.5" font-weight="700" fill="white">Recents</text>
+  <text x="10" y="26" font-size="9" fill="#fff" font-weight="700" font-family="system-ui">Recents</text>
   <circle cx="88" cy="23" r="7" fill="#0288D1"/>
-  <text x="88" y="26.5" text-anchor="middle" font-size="6.5" fill="white" font-weight="700">T</text>
+  <text x="88" y="26.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">T</text>
   <!-- Search bar -->
-  <rect x="8" y="35" width="86" height="10" rx="5" fill="#252525"/>
-  <text x="20" y="42.5" font-size="5.5" fill="rgba(255,255,255,.35)">Search calls and contacts...</text>
-  <!-- Call list items -->
-  <!-- Item 1: incoming -->
-  <rect x="0" y="48" width="102" height="20" fill="#0d0d0d"/>
-  <circle cx="18" cy="58" r="8" fill="#1565C0"/>
-  <text x="18" y="61.5" text-anchor="middle" font-size="7" fill="white" font-weight="700">E</text>
-  <text x="32" y="55" font-size="6" fill="white" font-weight="600">Erik Karlsson</text>
-  <text x="32" y="63" font-size="5" fill="#4CAF50">↙ Incoming · 3 min ago</text>
-  <text x="92" y="59" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">2:34</text>
-  <line x1="28" y1="68" x2="102" y2="68" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- Item 2: outgoing -->
+  <rect x="8" y="35" width="86" height="9" rx="4.5" fill="#252525"/>
+  <text x="20" y="41.5" font-size="5" fill="rgba(255,255,255,.3)" font-family="system-ui">Search calls and contacts</text>
+  <!-- Call rows -->
+  <!-- 1: incoming green -->
+  <rect x="0" y="47" width="102" height="20" fill="#0d0d0d"/>
+  <circle cx="18" cy="57" r="8" fill="#1565C0"/>
+  <text x="18" y="60.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">E</text>
+  <text x="32" y="54.5" font-size="6" fill="#fff" font-weight="600" font-family="system-ui">Erik Karlsson</text>
+  <!-- incoming arrow -->
+  <line x1="30" y1="60" x2="33" y2="63" stroke="#4CAF50" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="30" y1="63" x2="30" y2="60" stroke="#4CAF50" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="30" y1="63" x2="33" y2="63" stroke="#4CAF50" stroke-width="1.2" stroke-linecap="round"/>
+  <text x="37" y="63" font-size="4.5" fill="#4CAF50" font-family="system-ui">Mobile · 3 min ago</text>
+  <text x="95" y="58" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.35)" font-family="system-ui">2:34</text>
+  <line x1="28" y1="67" x2="102" y2="67" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+  <!-- 2: outgoing -->
   <rect x="0" y="68" width="102" height="20" fill="#0d0d0d"/>
-  <circle cx="18" cy="78" r="8" fill="#6A1B9A"/>
-  <text x="18" y="81.5" text-anchor="middle" font-size="7" fill="white" font-weight="700">M</text>
-  <text x="32" y="75" font-size="6" fill="white" font-weight="600">Maria Svensson</text>
-  <text x="32" y="83" font-size="5" fill="rgba(255,255,255,.45)">↗ Outgoing · 1 hr ago</text>
-  <text x="92" y="79" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">8:21</text>
+  <circle cx="18" cy="78" r="8" fill="#7B1FA2"/>
+  <text x="18" y="81.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">M</text>
+  <text x="32" y="75.5" font-size="6" fill="#fff" font-weight="600" font-family="system-ui">Maria Svensson</text>
+  <text x="32" y="84" font-size="4.5" fill="rgba(255,255,255,.45)" font-family="system-ui">Outgoing · 1 hr ago</text>
+  <text x="95" y="78.5" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.35)" font-family="system-ui">8:21</text>
   <line x1="28" y1="88" x2="102" y2="88" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- Item 3: missed -->
-  <rect x="0" y="88" width="102" height="20" fill="#0d0d0d"/>
-  <circle cx="18" cy="98" r="8" fill="#37474F"/>
-  <text x="18" y="101.5" text-anchor="middle" font-size="7" fill="white" font-weight="700">J</text>
-  <text x="32" y="95" font-size="6" fill="#EF5350" font-weight="600">Johan Berg</text>
-  <text x="32" y="103" font-size="5" fill="#EF5350">↙ Missed · 2 hr ago</text>
-  <text x="92" y="99" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">11:07</text>
-  <line x1="28" y1="108" x2="102" y2="108" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- Item 4: spam blocked -->
-  <rect x="0" y="108" width="102" height="20" fill="#1a0a0a"/>
-  <circle cx="18" cy="118" r="8" fill="#B71C1C"/>
-  <text x="18" y="121.5" text-anchor="middle" font-size="7" fill="white" font-weight="700">!</text>
-  <text x="32" y="115" font-size="6" fill="#EF9A9A" font-weight="600">Spam · +46812345</text>
-  <text x="32" y="123" font-size="5" fill="rgba(239,154,154,.7)">⛔ Blocked · 3 hr ago</text>
-  <rect x="72" y="113" width="22" height="8" rx="2" fill="rgba(183,28,28,.3)" stroke="#B71C1C" stroke-width=".5"/>
-  <text x="83" y="119" text-anchor="middle" font-size="5" fill="#EF9A9A" font-weight="600">SPAM</text>
-  <line x1="28" y1="128" x2="102" y2="128" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- Item 5 -->
-  <rect x="0" y="128" width="102" height="20" fill="#0d0d0d"/>
-  <circle cx="18" cy="138" r="8" fill="#2E7D32"/>
-  <text x="18" y="141.5" text-anchor="middle" font-size="7" fill="white" font-weight="700">A</text>
-  <text x="32" y="135" font-size="6" fill="white" font-weight="600">Anna Lindqvist</text>
-  <text x="32" y="143" font-size="5" fill="rgba(255,255,255,.45)">↗ Outgoing · Yesterday</text>
-  <text x="92" y="139" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">5:48</text>
-  <line x1="28" y1="148" x2="102" y2="148" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- Item 6 -->
-  <rect x="0" y="148" width="102" height="20" fill="#0d0d0d"/>
-  <circle cx="18" cy="158" r="8" fill="#1565C0"/>
-  <text x="18" y="161.5" text-anchor="middle" font-size="7" fill="white" font-weight="700">P</text>
-  <text x="32" y="155" font-size="6" fill="white" font-weight="600">Peter Nilsson</text>
-  <text x="32" y="163" font-size="5" fill="rgba(255,255,255,.45)">↙ Incoming · Yesterday</text>
-  <text x="92" y="159" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">18:22</text>
-  <!-- FAB dial button -->
-  <circle cx="80" cy="178" r="11" fill="#0288D1"/>
-  <text x="80" y="182.5" text-anchor="middle" font-size="12" fill="white">✆</text>
-  <!-- Bottom navigation -->
+  <!-- 3: missed red -->
+  <rect x="0" y="89" width="102" height="20" fill="#0d0d0d"/>
+  <circle cx="18" cy="99" r="8" fill="#424242"/>
+  <text x="18" y="102.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">J</text>
+  <text x="32" y="96.5" font-size="6" fill="#EF5350" font-weight="600" font-family="system-ui">Johan Berg</text>
+  <text x="32" y="105" font-size="4.5" fill="#EF5350" font-family="system-ui">Missed · 2 hr ago</text>
+  <text x="95" y="99.5" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.35)" font-family="system-ui">11:07</text>
+  <line x1="28" y1="109" x2="102" y2="109" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+  <!-- 4: spam -->
+  <rect x="0" y="110" width="102" height="20" fill="#1a0a0a"/>
+  <circle cx="18" cy="120" r="8" fill="#B71C1C"/>
+  <text x="18" y="123.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">!</text>
+  <text x="32" y="117.5" font-size="6" fill="#EF9A9A" font-weight="600" font-family="system-ui">+46 812 345 67</text>
+  <rect x="70" y="115" width="24" height="7" rx="2" fill="rgba(183,28,28,.4)" stroke="#B71C1C" stroke-width=".6"/>
+  <text x="82" y="120.5" text-anchor="middle" font-size="4.5" fill="#EF9A9A" font-weight="600" font-family="system-ui">SPAM</text>
+  <text x="32" y="126" font-size="4.5" fill="rgba(239,154,154,.6)" font-family="system-ui">Blocked · 3 hr ago</text>
+  <line x1="28" y1="130" x2="102" y2="130" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+  <!-- 5 -->
+  <rect x="0" y="131" width="102" height="20" fill="#0d0d0d"/>
+  <circle cx="18" cy="141" r="8" fill="#2E7D32"/>
+  <text x="18" y="144.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">A</text>
+  <text x="32" y="138.5" font-size="6" fill="#fff" font-weight="600" font-family="system-ui">Anna Lindqvist</text>
+  <text x="32" y="147" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Outgoing · Yesterday</text>
+  <text x="95" y="141.5" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.35)" font-family="system-ui">5:48</text>
+  <line x1="28" y1="151" x2="102" y2="151" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+  <!-- 6 -->
+  <rect x="0" y="152" width="102" height="20" fill="#0d0d0d"/>
+  <circle cx="18" cy="162" r="8" fill="#1565C0"/>
+  <text x="18" y="165.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">P</text>
+  <text x="32" y="159.5" font-size="6" fill="#fff" font-weight="600" font-family="system-ui">Peter Nilsson</text>
+  <text x="32" y="168" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Incoming · Yesterday</text>
+  <text x="95" y="162.5" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.35)" font-family="system-ui">18:22</text>
+  <!-- FAB -->
+  <circle cx="80" cy="180" r="11" fill="#0288D1"/>
+  <path d="M76 180 Q76 175 80 175 Q84 175 84 180 Q84 183 80 183" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
+  <circle cx="80" cy="184" r="1" fill="#fff"/>
+  <!-- Bottom nav -->
   <rect x="0" y="196" width="102" height="18" fill="#1a1a1a"/>
   <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
-  <text x="13" y="207" text-anchor="middle" font-size="5" fill="#0288D1" font-weight="600">Recents</text>
-  <text x="36" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Contacts</text>
-  <text x="60" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Discover</text>
-  <text x="83" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Profile</text>
-  <rect x="5" y="194" width="16" height="2" rx="1" fill="#0288D1"/>
+  <rect x="4" y="194" width="18" height="2" rx="1" fill="#0288D1"/>
+  <text x="13" y="207" text-anchor="middle" font-size="4.5" fill="#0288D1" font-weight="600" font-family="system-ui">Recents</text>
+  <text x="34" y="207" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Contacts</text>
+  <text x="56" y="207" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Discover</text>
+  <text x="78" y="207" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Settings</text>
 </svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
         </div>
       </div>
@@ -469,30 +484,29 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
   <rect x="8" y="52" width="86" height="26" rx="5" fill="#2a0035"/>
   <rect x="8" y="52" width="86" height="26" rx="5" fill="url(#pafbanner)" opacity=".6"/>
   <defs><linearGradient id="pafbanner" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF6D00" stop-opacity=".3"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
-  <text x="18" y="63" font-size="6" fill="#FFB300" font-weight="700">🏆 JACKPOT</text>
+  <text x="18" y="63" font-size="6" fill="#FFB300" font-weight="700">JACKPOT</text>
   <text x="18" y="72" font-size="8" fill="white" font-weight="900">€ 124,582</text>
-  <text x="80" y="66" text-anchor="middle" font-size="8" fill="#FFD600">🎰</text>
   <!-- Game grid: 2 columns × 3 rows -->
   <!-- Row 1 -->
   <rect x="8" y="82" width="41" height="32" rx="4" fill="#1e0028"/>
-  <text x="28.5" y="103" text-anchor="middle" font-size="18">🍒</text>
+  <text x="28.5" y="103" text-anchor="middle" font-size="11" fill="#FFD54F" font-weight="700">★</text>
   <text x="28.5" y="110" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Book of Ra</text>
   <rect x="53" y="82" width="41" height="32" rx="4" fill="#001e28"/>
-  <text x="73.5" y="103" text-anchor="middle" font-size="18">🃏</text>
+  <text x="73.5" y="103" text-anchor="middle" font-size="13" fill="#90CAF9">♠</text>
   <text x="73.5" y="110" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Blackjack</text>
   <!-- Row 2 -->
   <rect x="8" y="118" width="41" height="32" rx="4" fill="#1e1a00"/>
-  <text x="28.5" y="139" text-anchor="middle" font-size="18">7️⃣</text>
+  <text x="28.5" y="139" text-anchor="middle" font-size="14" fill="#FFD54F" font-weight="900">7</text>
   <text x="28.5" y="146" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Lucky Sevens</text>
   <rect x="53" y="118" width="41" height="32" rx="4" fill="#1e0012"/>
-  <text x="73.5" y="139" text-anchor="middle" font-size="18">🎰</text>
+  <text x="73.5" y="139" text-anchor="middle" font-size="13" fill="#CE93D8">♦</text>
   <text x="73.5" y="146" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Mega Fortune</text>
   <!-- Row 3 -->
   <rect x="8" y="154" width="41" height="32" rx="4" fill="#001e0e"/>
-  <text x="28.5" y="175" text-anchor="middle" font-size="18">🍀</text>
+  <text x="28.5" y="175" text-anchor="middle" font-size="13" fill="#A5D6A7">♣</text>
   <text x="28.5" y="182" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Irish Luck</text>
   <rect x="53" y="154" width="41" height="32" rx="4" fill="#0a001e"/>
-  <text x="73.5" y="175" text-anchor="middle" font-size="18">💎</text>
+  <text x="73.5" y="175" text-anchor="middle" font-size="13" fill="#F48FB1">♦</text>
   <text x="73.5" y="182" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Diamond King</text>
   <!-- Bottom navigation -->
   <rect x="0" y="196" width="102" height="18" fill="#100015"/>
@@ -973,49 +987,51 @@ const h1El = document.querySelector('#hero h1');
 function updateNameFly(){
   const h1R   = h1El.getBoundingClientRect();
   const NAV_H = 52;
+  // Animation starts when h1 top is 180px below nav, ends when h1 is behind nav
+  const START = NAV_H + 180;
+  const END   = NAV_H - 50;
+  const RANGE = START - END;
 
-  // h1 well below the nav — fly is hidden, h1 fully visible
-  if(h1R.top > NAV_H + 120){
+  if(h1R.top > START){
     nameFly.style.opacity = '0';
     nlEl.classList.remove('vis');
-    h1El.style.opacity = '';
+    h1El.style.opacity   = '';
     return;
   }
-  // h1 completely past the nav — show static nav name
-  if(h1R.bottom < NAV_H){
+  if(h1R.top < END){
     nameFly.style.opacity = '0';
     nlEl.classList.add('vis');
-    h1El.style.opacity = '0';
+    h1El.style.opacity   = '0';
     return;
   }
   nlEl.classList.remove('vis');
 
-  // raw progress: 0 = h1 top at NAV_H+120, 1 = h1 top at NAV_H-80
-  const raw      = (NAV_H + 120 - h1R.top) / 200;
+  const raw      = (START - h1R.top) / RANGE;
   const progress = Math.max(0, Math.min(1, raw));
-  // ease-out cubic for a crisp snap into place
-  const eased    = 1 - Math.pow(1 - progress, 3);
+  // Ease in-out cubic — smooth at both ends
+  const t = progress;
+  const eased = t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2;
 
-  // Start: position of h1 text in viewport (top-left corner, cap at nav height)
   const h1FontSize = parseFloat(getComputedStyle(h1El).fontSize);
+  // Anchor to visual top-left of h1 text (cap below nav)
   const startX = h1R.left;
-  const startY = Math.max(NAV_H + 4, h1R.top + h1FontSize * 0.08);
-
-  // End: nav name (52px padding, centred in 52px nav)
-  const endX = 52;
-  const endY = NAV_H / 2;
+  const startY = Math.max(NAV_H + h1FontSize * 0.55, h1R.top + h1FontSize * 0.55);
+  const endX   = 52;
+  const endY   = NAV_H / 2;
   const endFontSize = 16;
 
   const x    = startX + (endX - startX) * eased;
   const y    = startY + (endY - startY) * eased;
   const size = h1FontSize + (endFontSize - h1FontSize) * eased;
 
-  nameFly.style.left      = x + 'px';
-  nameFly.style.top       = y + 'px';
-  nameFly.style.fontSize  = size + 'px';
-  nameFly.style.opacity   = String(Math.min(1, progress * 3));
-  // Fade h1 out proportionally so there's no duplicate
-  h1El.style.opacity = String(Math.max(0, 1 - progress * 2));
+  nameFly.style.left     = x + 'px';
+  nameFly.style.top      = y + 'px';
+  nameFly.style.fontSize = size + 'px';
+  // Fade in over first 20% of animation, stay visible
+  nameFly.style.opacity  = String(Math.min(1, progress * 5));
+  // h1 fades from 30%→70% of progress for a smooth handoff
+  const h1Fade = Math.max(0, Math.min(1, (progress - 0.25) / 0.45));
+  h1El.style.opacity = String(1 - h1Fade);
 }
 window.addEventListener('scroll', updateNameFly, {passive:true});
 updateNameFly();
