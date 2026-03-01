@@ -95,10 +95,8 @@ h1 em{font-style:italic;color:var(--ac)}
 @keyframes sp{0%,100%{opacity:.15}50%{opacity:.75}}
 /* EXP */
 #exp{padding:140px 0}@media(max-width:640px){#exp{padding:80px 0}}
-.exp-car{position:relative}.exp-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;-webkit-overflow-scrolling:touch}.exp-track::-webkit-scrollbar{display:none}.ec-slide{flex:0 0 min(540px,86vw);scroll-snap-align:start;min-height:0}@media(max-width:640px){.ec-slide{flex:0 0 90vw}}.exp-dots{display:flex;justify-content:center;gap:6px;margin-top:24px}.exp-dot{width:16px;height:3px;border-radius:2px;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}.exp-dot.a{background:var(--ac);width:32px}
-
-
-
+.exp-car{position:relative;margin-left:-52px;margin-right:-52px}@media(max-width:640px){.exp-car{margin-left:-20px;margin-right:-20px}}.exp-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding:16px 52px 28px;-webkit-overflow-scrolling:touch;-webkit-mask-image:linear-gradient(to right,transparent 0,black 52px,black calc(100% - 130px),transparent);mask-image:linear-gradient(to right,transparent 0,black 52px,black calc(100% - 130px),transparent)}@media(max-width:640px){.exp-track{padding:12px 20px 24px;-webkit-mask-image:linear-gradient(to right,transparent 0,black 20px,black 78%,transparent);mask-image:linear-gradient(to right,transparent 0,black 20px,black 78%,transparent)}}.exp-track::-webkit-scrollbar{display:none}.ec-slide{flex:0 0 min(520px,76vw);scroll-snap-align:start;min-height:0}@media(max-width:640px){.ec-slide{flex:0 0 78vw}}.exp-dots{display:flex;justify-content:center;gap:6px;margin-top:24px}.exp-dot{width:16px;height:3px;border-radius:2px;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}.exp-dot.a{background:var(--ac);width:32px}
+.ec-slide.g{background:linear-gradient(135deg,rgba(255,255,255,.13) 0%,rgba(255,255,255,.05) 100%);backdrop-filter:saturate(190%) brightness(1.14) contrast(1.02) blur(22px);-webkit-backdrop-filter:saturate(190%) brightness(1.14) contrast(1.02) blur(22px)}
 @media(max-width:640px){.ec-slide .eb{padding:20px 18px!important}}
 /* Card content */
 .eb{padding:26px 28px;position:relative;z-index:2}
@@ -318,7 +316,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
     <div class="r"><div class="sec-head"><div class="lbl">Technical profile</div><h2><em>Skills</em> & Capabilities</h2><div class="rule"></div></div></div>
     <div class="kg">
 
-      <div class="g r"><div class="sp">
+      <div class="g r" style="grid-column:span 2"><div class="sp">
         <div class="sth">Core Android</div>
         <div class="sg">
           <div class="sn">Kotlin</div>
@@ -376,7 +374,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="38" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="14" font-weight="700">600M</text></svg><div class="arc-l">Reached</div></div>
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="39" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="18" font-weight="600">7</text></svg><div class="arc-l">Products</div></div>
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="34" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-family="DM Mono,monospace" font-size="14" font-weight="600">11+</text></svg><div class="arc-l">Android</div></div>
-          <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="34" text-anchor="middle" dominant-baseline="central" fill="rgba(168,219,216,1)" font-family="DM Mono,monospace" font-size="13" font-weight="700">Staff</text></svg><div class="arc-l">Eng. level</div></div>
+          <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="34" text-anchor="middle" dominant-baseline="central" fill="rgba(168,219,216,1)" font-family="DM Mono,monospace" font-size="12" font-weight="700">JVM</text></svg><div class="arc-l">Expertise</div></div>
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="40" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="13" font-weight="600">27+</text></svg><div class="arc-l">Years coding</div></div>
         </div>
       </div></div>
