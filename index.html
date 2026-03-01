@@ -27,8 +27,6 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(-
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;display:flex;align-items:center;padding:0 52px;background:rgba(3,6,16,.82);backdrop-filter:saturate(240%) brightness(1.09) contrast(1.06) blur(22px);-webkit-backdrop-filter:saturate(240%) brightness(1.09) contrast(1.06) blur(22px);border-bottom:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -1px 0 rgba(255,255,255,.04),0 2px 40px rgba(0,0,0,.5);transition:background .35s ease}nav.scrolled{background:rgba(3,6,16,.94)}
 #nl{opacity:0;transform:translateX(-8px);transition:opacity .3s ease,transform .3s ease}#nl.vis{opacity:1;transform:translateX(0)}
-#name-fly{position:fixed;z-index:97;pointer-events:none;font-family:"Plus Jakarta Sans",sans-serif;font-weight:300;color:#ffffff;white-space:nowrap;opacity:0;line-height:1;letter-spacing:-.02em;will-change:transform,opacity;transform:translateY(-50%);text-shadow:0 1px 12px rgba(0,0,0,.6)}
-#name-fly em{font-style:italic;color:var(--ac);font-weight:200}
 .nl{font-family:"Plus Jakarta Sans",sans-serif;font-size:16px;font-weight:500;color:var(--tx);margin-right:auto}
 .nl em{font-style:italic;font-weight:300;opacity:.9}
 nav ul{display:flex;list-style:none}
@@ -97,12 +95,11 @@ h1 em{font-style:italic;color:var(--ac)}
 @keyframes sp{0%,100%{opacity:.15}50%{opacity:.75}}
 /* EXP */
 #exp{padding:140px 0}@media(max-width:640px){#exp{padding:80px 0}}
-.xg{display:flex;flex-direction:column;gap:16px}
+.exp-car{position:relative}.exp-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;-webkit-overflow-scrolling:touch}.exp-track::-webkit-scrollbar{display:none}.ec-slide{flex:0 0 min(540px,86vw);scroll-snap-align:start;min-height:0}@media(max-width:640px){.ec-slide{flex:0 0 90vw}}.exp-dots{display:flex;justify-content:center;gap:6px;margin-top:24px}.exp-dot{width:16px;height:3px;border-radius:2px;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}.exp-dot.a{background:var(--ac);width:32px}
 
 
 
-.ec{transition:transform .38s cubic-bezier(.16,1,.3,1),box-shadow .38s,background .38s}
-.ec:hover{transform:translateY(-5px);background:rgba(255,255,255,.07);box-shadow:0 24px 64px rgba(0,0,0,.28),0 4px 12px rgba(0,0,0,.18)}@media(hover:none){.ec:hover{transform:none;box-shadow:none}}@media(max-width:640px){.ec .eb{padding:20px 18px!important}}
+@media(max-width:640px){.ec-slide .eb{padding:20px 18px!important}}
 /* Card content */
 .eb{padding:26px 28px;position:relative;z-index:2}
 .et{display:flex;align-items:flex-start;gap:16px;margin-bottom:18px}
@@ -124,24 +121,10 @@ h1 em{font-style:italic;color:var(--ac)}
 .lnk{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#e8f4f5;padding:4px 10px;border:1px solid rgba(255,255,255,.38);border-radius:2px;transition:all .2s;background:rgba(10,14,22,.78);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
 .lnk:hover{border-color:rgba(255,255,255,.68);color:#ffffff;background:rgba(20,28,40,.82)}
 .lnk:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
-/* ── CAROUSEL ──────────────────────────────────── */
-.xc{margin:20px 0;padding:20px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
-.xct{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
-.xct::-webkit-scrollbar{display:none}
-.xcs{flex:0 0 160px;scroll-snap-align:start;border-radius:8px;padding:12px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;gap:2px;transition:background .2s,border-color .2s}
-.xcs:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.24)}
-.xcn{font-family:"JetBrains Mono",monospace;font-size:20px;font-weight:500;color:#ffffff;line-height:1.1;letter-spacing:-.01em}
-.xcl{font-family:"Plus Jakarta Sans",sans-serif;font-size:11.5px;font-weight:400;line-height:1.35;color:rgba(200,235,233,.9);margin-top:4px}
-.xcb{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(168,219,216,.6);margin-top:6px}
-.xcds{display:flex;gap:4px;margin-top:10px}
-.xcd{width:12px;height:2px;border-radius:1px;background:rgba(255,255,255,.2);cursor:pointer;transition:all .2s}
-.xcd.a{background:var(--ac);width:20px}
-@media(max-width:640px){.xcs{flex:0 0 140px;padding:10px 12px}.xcn{font-size:17px}.xcl{font-size:11px}}
 .xf{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08)}
 .xf .tags{margin-bottom:0;flex:1}
 .xf .lnks{flex-shrink:0}
-/* planet backdrop behind card */
-.ec{position:relative;overflow:hidden}
+.ec-slide{position:relative;overflow:hidden}
 .eb{position:relative;z-index:2}
 /* SKILLS */
 #skills{padding:140px 0}@media(max-width:640px){#skills{padding:80px 0}}
@@ -210,7 +193,6 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
     <li><a href="#contact"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span class="nav-label">Contact</span></a></li>
   </ul>
 </nav>
-<div id="name-fly" aria-hidden="true">Joel <em>Denke</em></div>
 
 <section id="hero">
   <div class="wrap">
@@ -245,84 +227,87 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
 <section id="exp">
   <div class="wrap">
     <div class="r"><div class="sec-head"><div class="lbl">Experience</div><h2>A decade of <em>craft</em></h2><div class="rule"></div></div></div>
-    <div class="xg">
-
-      <div class="ec g r">
+    <div class="exp-car r2">
+      <div class="exp-track">
+      <div class="ec-slide g">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#121212"><svg viewBox="0 0 168 168" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path fill="#1DB954" d="M84 0C37.6 0 0 37.6 0 84s37.6 84 84 84 84-37.6 84-84S130.4 0 84 0zm38.6 121.1c-1.5 2.4-4.8 3.2-7.2 1.6-19.8-12.1-44.8-14.9-74.1-8.1-2.9.7-5.7-1.1-6.4-3.9-.7-2.9 1.1-5.7 3.9-6.4 32.1-7.3 59.7-4.2 82 9.5 2.4 1.6 3.2 4.9 1.8 7.3zm10.3-22.9c-2 3.1-6 4.1-9.1 2.1-22.6-13.9-57-18-83.9-9.8-3.4 1-6.9-.9-7.9-4.2-1-3.4.9-6.9 4.2-7.9 30.6-9.3 68.7-4.8 94.8 11.2 3.1 2 4.1 6 1.9 8.6zm.9-23.8c-27.2-16.2-72-17.6-97.9-9.7-4 1.2-8.2-1-9.5-5-1.2-4 1-8.2 5-9.5 29.7-9 79.3-7.3 110.5 11.1 3.6 2.1 4.7 6.7 2.6 10.3-2.2 3.6-6.8 4.7-10.7 2.8z"/></svg></div>
-            <div class="em"><a class="en" href="https://spotify.com" target="_blank">Spotify</a><div class="ep">Nov 2025 – Present</div><div class="er">Android Engineer II &middot; via Coody</div></div>
+            <div class="em"><a class="en" href="https://spotify.com" target="_blank">Spotify</a><div class="ep">Nov 2025 &ndash; Present</div><div class="er">Android Engineer II &middot; via Coody</div></div>
           </div>
           <div class="ed">Engineering the Android platform behind music for 600 million+ listeners worldwide. Contributing to large-scale systems, performance, and architecture across one of the world&rsquo;s most-used apps.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">600M+</span><span class="xcl">monthly active listeners</span><span class="xcb">Scale</span></div><div class="xcs"><span class="xcn">Kotlin</span><span class="xcl">Coroutines &middot; Flow &middot; Multiplatform</span><span class="xcb">Language</span></div><div class="xcs"><span class="xcn">Platform</span><span class="xcl">Core infra, perf &amp; architecture</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Android</span><span class="xcl">World&rsquo;s most-used music app</span><span class="xcb">Impact</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
-          <div class="xf"><div class="tags"><span class="tag hi">&#9658; Current</span><span class="tag">Platform</span><span class="tag">600M users</span><span class="tag">Kotlin</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.spotify.music" target="_blank">▸ Google Play</a><a class="lnk" href="https://spotify.com" target="_blank">↗ spotify.com</a></div></div>
+          <div class="xf"><div class="tags"><span class="tag hi">&#9658; Current</span><span class="tag">Platform</span><span class="tag">600M users</span><span class="tag">Kotlin</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.spotify.music" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://spotify.com" target="_blank">&#8599; spotify.com</a></div></div>
         </div>
       </div>
-      <div class="ec g r2">
+      <div class="ec-slide g">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#003d8f"><svg viewBox="0 0 200 200" width="30" height="30"><rect width="200" height="200" rx="44" fill="#0288D1"/><path d="M60 58h80v20H112v64H88V78H60z" fill="white"/></svg></div>
             <div class="em"><a class="en" href="https://truecaller.com" target="_blank">Truecaller</a><div class="ep">Aug &ndash; Nov 2025</div><div class="er">Senior Android Developer &middot; Remote</div></div>
           </div>
           <div class="ed">Part of a greenfield initiative on Truecaller&rsquo;s global caller ID platform &mdash; Jetpack Compose from day one, clean architecture at scale, and rapid feature delivery in a fully remote setup.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">900M+</span><span class="xcl">identities in caller ID database</span><span class="xcb">Scale</span></div><div class="xcs"><span class="xcn">Compose</span><span class="xcl">Jetpack UI &middot; greenfield codebase</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Clean Arch</span><span class="xcl">Modular, testable, scalable</span><span class="xcb">Architecture</span></div><div class="xcs"><span class="xcn">Remote</span><span class="xcl">Stockholm &times; Bangalore team</span><span class="xcb">Setup</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
-          <div class="xf"><div class="tags"><span class="tag">Compose</span><span class="tag">Architecture</span><span class="tag">Remote</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.truecaller" target="_blank">▸ Google Play</a><a class="lnk" href="https://truecaller.com" target="_blank">↗ truecaller.com</a></div></div>
+          <div class="xf"><div class="tags"><span class="tag">Compose</span><span class="tag">Architecture</span><span class="tag">Remote</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.truecaller" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://truecaller.com" target="_blank">&#8599; truecaller.com</a></div></div>
         </div>
       </div>
-      <div class="ec g r">
+      <div class="ec-slide g">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#2a0800"><svg viewBox="0 0 200 200" width="30" height="30"><rect width="200" height="200" rx="44" fill="#D84315"/><text x="100" y="138" text-anchor="middle" font-family="Arial Black" font-size="80" font-weight="900" fill="white" letter-spacing="-2">paf</text></svg></div>
             <div class="em"><a class="en" href="https://paf.com" target="_blank">Paf</a><div class="ep">Mar 2024 &ndash; Jul 2025</div><div class="er">Senior Android Developer</div></div>
           </div>
           <div class="ed">Architected multiple white-label gaming apps from scratch. Built end-to-end CI/CD pipelines, a shared design system adopted across products, and mentored a growing Android team.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">3 apps</span><span class="xcl">White-label gaming &mdash; built from scratch</span><span class="xcb">Output</span></div><div class="xcs"><span class="xcn">CI/CD</span><span class="xcl">GitHub Actions &middot; automated pipelines</span><span class="xcb">DevOps</span></div><div class="xcs"><span class="xcn">Design Sys</span><span class="xcl">Shared components across all products</span><span class="xcb">Architecture</span></div><div class="xcs"><span class="xcn">Mentor</span><span class="xcl">Grew &amp; led the Android team</span><span class="xcb">Leadership</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
-          <div class="xf"><div class="tags"><span class="tag">White-label</span><span class="tag">CI/CD</span><span class="tag">Design System</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/search?q=paf&c=apps" target="_blank">▸ Google Play</a><a class="lnk" href="https://paf.com" target="_blank">↗ paf.com</a></div></div>
+          <div class="xf"><div class="tags"><span class="tag">White-label</span><span class="tag">CI/CD</span><span class="tag">Design System</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/search?q=paf&c=apps" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://paf.com" target="_blank">&#8599; paf.com</a></div></div>
         </div>
       </div>
-      <div class="ec g r2">
+      <div class="ec-slide g">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#00838F"><svg viewBox="0 0 100 100" width="32" height="32"><text x="50" y="62" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="white">G</text></svg></div>
             <div class="em"><a class="en" href="https://glooko.com" target="_blank">Glooko</a><div class="ep">May 2023 &ndash; Jan 2024</div><div class="er">Senior Android Developer &middot; G&ouml;teborg</div></div>
           </div>
-          <div class="ed">Full BT, NFC and USB hardware stack. Deep native work via NDK/JNI in C++ for medical device connectivity.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">BT+NFC+USB</span><span class="xcl">Full hardware connectivity stack</span><span class="xcb">Platform</span></div><div class="xcs"><span class="xcn">C++ NDK</span><span class="xcl">Native bridge via JNI for device comms</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Medical</span><span class="xcl">Dexcom, Medtronic device SDKs</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Real-time</span><span class="xcl">Sensor data pipeline &amp; sync</span><span class="xcb">Impact</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
-          <div class="xf"><div class="tags"><span class="tag">BT / NFC / USB</span><span class="tag">NDK / JNI</span><span class="tag">C++</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.glooko.logbook" target="_blank">▸ Google Play</a><a class="lnk" href="https://glooko.com" target="_blank">↗ glooko.com</a></div></div>
+          <div class="ed">Full BT, NFC and USB hardware stack. Deep native work via NDK/JNI in C++ for medical device connectivity. Built real-time sensor data sync for Dexcom and Medtronic devices.</div>
+          <div class="xf"><div class="tags"><span class="tag">BT / NFC / USB</span><span class="tag">NDK / JNI</span><span class="tag">C++</span><span class="tag">Medical</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.glooko.logbook" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://glooko.com" target="_blank">&#8599; glooko.com</a></div></div>
         </div>
       </div>
-      <div class="ec g r">
+      <div class="ec-slide g">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#fff"><img src="https://mnd-assets.mynewsdesk.com/image/upload/c_fill,dpr_auto,f_auto,g_auto,q_auto:good,w_300/ddkkugmnnfnzmi8xfzk1" style="width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;display:block;" alt="Kivra"/></div>
             <div class="em"><a class="en" href="https://kivra.se" target="_blank">Kivra</a><div class="ep">Aug 2020 &ndash; Oct 2022</div><div class="er">Senior Android Developer &middot; Stockholm</div></div>
           </div>
           <div class="ed">Led Android architecture at Sweden&rsquo;s leading digital mailbox service &mdash; payments, content delivery, and Compose migration. Drove GraphQL adoption, CI/CD with GitHub Actions, and grew the Android team through recruitment.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">5M+</span><span class="xcl">Swedish users &mdash; digital mailbox</span><span class="xcb">Scale</span></div><div class="xcs"><span class="xcn">GraphQL</span><span class="xcl">API architecture &middot; led adoption</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Payments</span><span class="xcl">Bills, invoices &amp; delivery</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Team Lead</span><span class="xcl">Hiring, architecture &amp; growth</span><span class="xcb">Leadership</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
-          <div class="xf"><div class="tags"><span class="tag">GraphQL</span><span class="tag">Payments</span><span class="tag">Compose</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.kivra" target="_blank">▸ Google Play</a><a class="lnk" href="https://kivra.se" target="_blank">↗ kivra.se</a></div></div>
+          <div class="xf"><div class="tags"><span class="tag">GraphQL</span><span class="tag">Payments</span><span class="tag">Compose</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.kivra" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://kivra.se" target="_blank">&#8599; kivra.se</a></div></div>
         </div>
       </div>
-      <div class="ec g r2">
+      <div class="ec-slide g">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#ffffff"><img src="https://www.sbab.se/images/18.1f81472418f76c7c850184/1715867477502/SBAB_Logotyp_Svart_Orange_RGB_500_.png" style="width:100%;height:100%;object-fit:contain;padding:6px;display:block;box-sizing:border-box;"/></div>
             <div class="em"><a class="en" href="https://sbab.se" target="_blank">SBAB Bank</a><div class="ep">Apr 2019 &ndash; Aug 2020</div><div class="er">Senior Android Developer &middot; Stockholm</div></div>
           </div>
           <div class="ed">Shipped features across SBAB&rsquo;s consumer banking app covering savings, mortgages, and insurance. Served as security lead for the Android codebase and drove recruitment alongside feature delivery.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">Security</span><span class="xcl">Android security lead &middot; threat modeling</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Banking</span><span class="xcl">Mortgages, savings &amp; insurance</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Architecture</span><span class="xcl">MVVM + Clean, tested codebase</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Recruitment</span><span class="xcl">Grew the Android team</span><span class="xcb">Leadership</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
-          <div class="xf"><div class="tags"><span class="tag">Banking</span><span class="tag">Security</span><span class="tag">Architecture</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.sbab.bankapp" target="_blank">▸ Google Play</a><a class="lnk" href="https://sbab.se" target="_blank">↗ sbab.se</a></div></div>
+          <div class="xf"><div class="tags"><span class="tag">Banking</span><span class="tag">Security</span><span class="tag">Architecture</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.sbab.bankapp" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://sbab.se" target="_blank">&#8599; sbab.se</a></div></div>
         </div>
       </div>
-      <div class="ec g r">
+      <div class="ec-slide g">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#ffffff"><img src="https://investors.avanza.se/files/Avanza_ir_logo.svg" style="width:100%;height:100%;object-fit:contain;padding:7px;display:block;box-sizing:border-box;"/></div>
             <div class="em"><a class="en" href="https://avanza.se" target="_blank">Avanza Bank</a><div class="ep">Jun 2014 &ndash; Apr 2019</div><div class="er">Lead Android Developer &middot; Stockholm</div></div>
           </div>
           <div class="ed">Built Avanza&rsquo;s Android app from scratch. Among the first in Sweden to adopt Kotlin and Material Design. Led hiring, migrated the entire codebase, achieved top Play Store ratings. Stocks, funds, dividends, loans, payments.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">4+ years</span><span class="xcl">Lead Android Developer</span><span class="xcb">Tenure</span></div><div class="xcs"><span class="xcn">Built 0&#x2192;1</span><span class="xcl">App from scratch &middot; full team lead</span><span class="xcb">Impact</span></div><div class="xcs"><span class="xcn">Kotlin</span><span class="xcl">First adopter in Sweden &middot; full migration</span><span class="xcb">Pioneer</span></div><div class="xcs"><span class="xcn">Fintech</span><span class="xcl">Stocks, funds, loans &amp; payments</span><span class="xcb">Domain</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
-          <div class="xf"><div class="tags"><span class="tag hi">Lead</span><span class="tag">Kotlin Pioneer</span><span class="tag">Fintech</span><span class="tag">4+ years</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.avanza.phone" target="_blank">▸ Google Play</a><a class="lnk" href="https://avanza.se" target="_blank">↗ avanza.se</a></div></div>
+          <div class="xf"><div class="tags"><span class="tag hi">Lead</span><span class="tag">Kotlin Pioneer</span><span class="tag">Fintech</span><span class="tag">4+ years</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.avanza.phone" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://avanza.se" target="_blank">&#8599; avanza.se</a></div></div>
         </div>
+      </div>
+      </div>
+      <div class="exp-dots">
+      <span class="exp-dot a"></span>
+      <span class="exp-dot"></span>
+      <span class="exp-dot"></span>
+      <span class="exp-dot"></span>
+      <span class="exp-dot"></span>
+      <span class="exp-dot"></span>
+      <span class="exp-dot"></span>
       </div>
     </div>
   </div>
@@ -391,7 +376,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="33" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="11" font-weight="600">600M</text><text x="34" y="44" text-anchor="middle" fill="rgba(200,232,230,.9)" font-family="DM Mono,monospace" font-size="8">listeners</text></svg><div class="arc-l">Reached</div></div>
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="39" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="18" font-weight="600">7</text></svg><div class="arc-l">Products</div></div>
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="32" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="10" font-weight="600">11+</text><text x="34" y="44" text-anchor="middle" fill="rgba(200,232,230,.9)" font-family="DM Mono,monospace" font-size="8">years</text></svg><div class="arc-l">Android</div></div>
-          <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="32" text-anchor="middle" fill="rgba(168,219,216,1)" font-family="DM Mono,monospace" font-size="13" font-weight="600">★★★★★</text><text x="34" y="43" text-anchor="middle" fill="rgba(200,232,230,.9)" font-family="DM Mono,monospace" font-size="7">Play Store</text></svg><div class="arc-l">Top Rated</div></div>
+          <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="30" text-anchor="middle" fill="rgba(168,219,216,1)" font-family="DM Mono,monospace" font-size="14" font-weight="700">4.8</text><text x="34" y="43" text-anchor="middle" fill="rgba(168,219,216,.8)" font-family="DM Mono,monospace" font-size="11">★</text></svg><div class="arc-l">Play Store</div></div>
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="40" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="13" font-weight="600">27+</text></svg><div class="arc-l">Years coding</div></div>
         </div>
       </div></div>
@@ -437,93 +422,37 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
 
 <script>
 
-// ── Carousels: update dot indicators on scroll ────────────────────────
-document.querySelectorAll('.xct').forEach(track => {
-  const dots = track.nextElementSibling?.querySelectorAll('.xcd');
-  if(!dots || !dots.length) return;
-  const slides = track.querySelectorAll('.xcs');
-  if(!slides.length) return;
-  function updateDots(){
-    const scrollLeft = track.scrollLeft;
-    const slideW = slides[0].offsetWidth + 10; // width + gap
-    const active = Math.round(scrollLeft / slideW);
-    dots.forEach((d,i) => d.classList.toggle('a', i === active));
-  }
-  track.addEventListener('scroll', updateDots, {passive:true});
-  // Also allow clicking dots to scroll
-  dots.forEach((d,i) => d.addEventListener('click', () => {
-    const slideW = slides[0].offsetWidth + 10;
-    track.scrollTo({left: i * slideW, behavior:'smooth'});
-  }));
-});
-
 // Elements
 const nlEl  = document.getElementById('nl');
-const heroEl= document.getElementById('hero');
 const navEl = document.querySelector('nav');
-const nameFly = document.getElementById('name-fly');
 
-// ── Nav: become more opaque as user scrolls ──────────────────────────────
+// ── Nav: become more opaque + show name as user scrolls ──────────────────
 function updateNavGlass(){
   navEl.classList.toggle('scrolled', window.scrollY > 20);
+  nlEl.classList.toggle('vis', window.scrollY > window.innerHeight * 0.65);
 }
 window.addEventListener('scroll', updateNavGlass, {passive:true});
 updateNavGlass();
 
-// ── Parallax: "Joel Denke" travels from hero h1 → nav corner ────────────
-const h1El = document.querySelector('#hero h1');
-function updateNameFly(){
-  const h1R   = h1El.getBoundingClientRect();
-  const NAV_H = 52;
-  // Animation starts when h1 top is 180px below nav, ends when h1 is behind nav
-  const START = NAV_H + 180;
-  const END   = NAV_H - 50;
-  const RANGE = START - END;
-
-  if(h1R.top > START){
-    nameFly.style.opacity = '0';
-    nlEl.classList.remove('vis');
-    h1El.style.opacity   = '';
-    return;
+// ── Experience carousel ──────────────────────────────────────────────────
+(function(){
+  const track = document.querySelector('.exp-track');
+  const dots  = document.querySelectorAll('.exp-dot');
+  const slides= document.querySelectorAll('.ec-slide');
+  if(!track || !dots.length || !slides.length) return;
+  function updateDots(){
+    const gap    = 16;
+    const slideW = slides[0].offsetWidth + gap;
+    const active = Math.min(Math.round(track.scrollLeft / slideW), slides.length - 1);
+    dots.forEach((d,i) => d.classList.toggle('a', i === active));
   }
-  if(h1R.top < END){
-    nameFly.style.opacity = '0';
-    nlEl.classList.add('vis');
-    h1El.style.opacity   = '0';
-    return;
-  }
-  nlEl.classList.remove('vis');
-
-  const raw      = (START - h1R.top) / RANGE;
-  const progress = Math.max(0, Math.min(1, raw));
-  // Ease in-out cubic — smooth at both ends
-  const t = progress;
-  const eased = t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2;
-
-  const h1FontSize = parseFloat(getComputedStyle(h1El).fontSize);
-  // Anchor to visual top-left of h1 text (cap below nav)
-  const startX = h1R.left;
-  const startY = Math.max(NAV_H + h1FontSize * 0.55, h1R.top + h1FontSize * 0.55);
-  const endX   = 52;
-  const endY   = NAV_H / 2;
-  const endFontSize = 16;
-
-  const x    = startX + (endX - startX) * eased;
-  const y    = startY + (endY - startY) * eased;
-  const size = h1FontSize + (endFontSize - h1FontSize) * eased;
-
-  nameFly.style.left     = x + 'px';
-  nameFly.style.top      = y + 'px';
-  nameFly.style.fontSize = size + 'px';
-  // Fade in over first 20% of animation, stay visible
-  nameFly.style.opacity  = String(Math.min(1, progress * 5));
-  // h1 fades from 30%→70% of progress for a smooth handoff
-  const h1Fade = Math.max(0, Math.min(1, (progress - 0.25) / 0.45));
-  h1El.style.opacity = String(1 - h1Fade);
-}
-window.addEventListener('scroll', updateNameFly, {passive:true});
-updateNameFly();
-
+  track.addEventListener('scroll', updateDots, {passive:true});
+  dots.forEach((d,i) => d.addEventListener('click', () => {
+    const slideW = slides[0].offsetWidth + 16;
+    track.scrollTo({left: i * slideW, behavior:'smooth'});
+  }));
+  updateDots();
+})();
 
 // video background active
 
