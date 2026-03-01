@@ -53,7 +53,7 @@ h2 em{font-style:italic;color:var(--ac);font-weight:200}
 .sec-head h2{margin-bottom:14px}
 .sec-head .rule{margin-bottom:0}
 /* LIQUID GLASS - true glass, no blur, full optical depth */
-.g{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,rgba(6,10,20,.84) 0%,rgba(4,8,18,.90) 100%);backdrop-filter:saturate(180%) brightness(1.08) contrast(1.04);-webkit-backdrop-filter:saturate(180%) brightness(1.08) contrast(1.04);box-shadow:0 20px 60px rgba(0,0,0,.55),0 4px 12px rgba(0,0,0,.35)}@media(max-width:640px){.g{border-radius:14px}}
+.g{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 100%);backdrop-filter:saturate(180%) brightness(1.06) contrast(1.03);-webkit-backdrop-filter:saturate(180%) brightness(1.06) contrast(1.03);box-shadow:0 20px 60px rgba(0,0,0,.45),0 4px 12px rgba(0,0,0,.25)}@media(max-width:640px){.g{border-radius:14px}}
 .g::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(ellipse 65% 45% at 18% 0%,rgba(255,255,255,.20) 0%,transparent 68%),linear-gradient(180deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.07) 11%,transparent 42%),linear-gradient(90deg,rgba(255,255,255,.11) 0%,transparent 18%),linear-gradient(0deg,rgba(255,255,255,.04) 0%,transparent 22%);pointer-events:none;z-index:1}
 .g::after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 2px 0 rgba(255,255,255,.50),inset 1px 0 0 rgba(255,255,255,.20),inset -1px 0 0 rgba(255,255,255,.08),inset 0 -1px 0 rgba(255,255,255,.06);z-index:2;pointer-events:none}
 /* HERO */
@@ -125,21 +125,21 @@ h1 em{font-style:italic;color:var(--ac)}
 .lnk:hover{border-color:rgba(255,255,255,.68);color:#ffffff;background:rgba(20,28,40,.82)}
 .lnk:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
 /* ── CAROUSEL ──────────────────────────────────── */
-.xc{margin-top:24px;position:relative}
-.xct{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:12px}
+.xc{margin:20px 0;padding:20px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.xct{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
 .xct::-webkit-scrollbar{display:none}
-.xcs{flex:0 0 170px;scroll-snap-align:start;border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:14px 16px 12px;background:rgba(255,255,255,.05);display:flex;flex-direction:column;gap:3px;cursor:default;transition:background .2s,border-color .2s}
-.xcs:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.28)}
-.xcn{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:500;color:#ffffff;line-height:1;letter-spacing:-.02em;text-shadow:0 1px 12px rgba(0,0,0,.8)}
-.xcl{font-family:"Plus Jakarta Sans",sans-serif;font-size:12px;font-weight:400;line-height:1.4;color:rgba(210,240,238,.85);margin-top:5px;text-shadow:0 1px 6px rgba(0,0,0,.8)}
-.xcb{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(168,219,216,.7);margin-top:auto;padding-top:8px}
-.xcds{display:flex;gap:5px;margin-top:8px;padding-left:2px}
-.xcd{width:14px;height:2px;border-radius:1px;background:rgba(255,255,255,.18);cursor:pointer;transition:all .25s}
-.xcd.a{background:var(--ac);width:22px}
-@media(max-width:640px){.xcs{flex:0 0 150px;padding:12px 14px 10px}.xcn{font-size:19px}}
-.xf{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px}
-.xf .tags{margin-bottom:0}
-.xf .lnks{margin-left:auto}
+.xcs{flex:0 0 160px;scroll-snap-align:start;border-radius:8px;padding:12px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;gap:2px;transition:background .2s,border-color .2s}
+.xcs:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.24)}
+.xcn{font-family:"JetBrains Mono",monospace;font-size:20px;font-weight:500;color:#ffffff;line-height:1.1;letter-spacing:-.01em}
+.xcl{font-family:"Plus Jakarta Sans",sans-serif;font-size:11.5px;font-weight:400;line-height:1.35;color:rgba(200,235,233,.9);margin-top:4px}
+.xcb{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(168,219,216,.6);margin-top:6px}
+.xcds{display:flex;gap:4px;margin-top:10px}
+.xcd{width:12px;height:2px;border-radius:1px;background:rgba(255,255,255,.2);cursor:pointer;transition:all .2s}
+.xcd.a{background:var(--ac);width:20px}
+@media(max-width:640px){.xcs{flex:0 0 140px;padding:10px 12px}.xcn{font-size:17px}.xcl{font-size:11px}}
+.xf{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08)}
+.xf .tags{margin-bottom:0;flex:1}
+.xf .lnks{flex-shrink:0}
 /* planet backdrop behind card */
 .ec{position:relative;overflow:hidden}
 .eb{position:relative;z-index:2}
@@ -247,102 +247,84 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
     <div class="r"><div class="sec-head"><div class="lbl">Experience</div><h2>A decade of <em>craft</em></h2><div class="rule"></div></div></div>
     <div class="xg">
 
-      <!-- SPOTIFY -->
       <div class="ec g r">
         <div class="eb">
           <div class="et">
-            <div class="logo" style="background:#121212">
-              <svg viewBox="0 0 168 168" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path fill="#1DB954" d="M84 0C37.6 0 0 37.6 0 84s37.6 84 84 84 84-37.6 84-84S130.4 0 84 0zm38.6 121.1c-1.5 2.4-4.8 3.2-7.2 1.6-19.8-12.1-44.8-14.9-74.1-8.1-2.9.7-5.7-1.1-6.4-3.9-.7-2.9 1.1-5.7 3.9-6.4 32.1-7.3 59.7-4.2 82 9.5 2.4 1.6 3.2 4.9 1.8 7.3zm10.3-22.9c-2 3.1-6 4.1-9.1 2.1-22.6-13.9-57-18-83.9-9.8-3.4 1-6.9-.9-7.9-4.2-1-3.4.9-6.9 4.2-7.9 30.6-9.3 68.7-4.8 94.8 11.2 3.1 2 4.1 6 1.9 8.6zm.9-23.8c-27.2-16.2-72-17.6-97.9-9.7-4 1.2-8.2-1-9.5-5-1.2-4 1-8.2 5-9.5 29.7-9 79.3-7.3 110.5 11.1 3.6 2.1 4.7 6.7 2.6 10.3-2.2 3.6-6.8 4.7-10.7 2.8z"/></svg>
-            </div>
-            <div class="em"><a class="en" href="https://spotify.com" target="_blank">Spotify</a><div class="ep">Nov 2025 – Present</div><div class="er">Android Engineer II · via Coody</div></div>
+            <div class="logo" style="background:#121212"><svg viewBox="0 0 168 168" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path fill="#1DB954" d="M84 0C37.6 0 0 37.6 0 84s37.6 84 84 84 84-37.6 84-84S130.4 0 84 0zm38.6 121.1c-1.5 2.4-4.8 3.2-7.2 1.6-19.8-12.1-44.8-14.9-74.1-8.1-2.9.7-5.7-1.1-6.4-3.9-.7-2.9 1.1-5.7 3.9-6.4 32.1-7.3 59.7-4.2 82 9.5 2.4 1.6 3.2 4.9 1.8 7.3zm10.3-22.9c-2 3.1-6 4.1-9.1 2.1-22.6-13.9-57-18-83.9-9.8-3.4 1-6.9-.9-7.9-4.2-1-3.4.9-6.9 4.2-7.9 30.6-9.3 68.7-4.8 94.8 11.2 3.1 2 4.1 6 1.9 8.6zm.9-23.8c-27.2-16.2-72-17.6-97.9-9.7-4 1.2-8.2-1-9.5-5-1.2-4 1-8.2 5-9.5 29.7-9 79.3-7.3 110.5 11.1 3.6 2.1 4.7 6.7 2.6 10.3-2.2 3.6-6.8 4.7-10.7 2.8z"/></svg></div>
+            <div class="em"><a class="en" href="https://spotify.com" target="_blank">Spotify</a><div class="ep">Nov 2025 – Present</div><div class="er">Android Engineer II &middot; via Coody</div></div>
           </div>
-          <div class="ed">Engineering the Android platform behind music for 600 million+ listeners worldwide. Contributing to large-scale systems, performance, and architecture across one of the world's most-used apps.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">600M+</span><span class="xcl">monthly active listeners</span><span class="xcb">Scale</span></div><div class="xcs"><span class="xcn">Kotlin</span><span class="xcl">Modern Android · Coroutines · Flow</span><span class="xcb">Language</span></div><div class="xcs"><span class="xcn">Platform</span><span class="xcl">Core infra, perf & architecture</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Android</span><span class="xcl">World's most-used music app</span><span class="xcb">Impact</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
-          <div class="xf"><div class="tags"><span class="tag hi">▸ Current</span><span class="tag">Platform</span><span class="tag">600M users</span><span class="tag">Kotlin</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.spotify.music" target="_blank">▸ Google Play</a><a class="lnk" href="https://spotify.com" target="_blank">↗ spotify.com</a></div>
+          <div class="ed">Engineering the Android platform behind music for 600 million+ listeners worldwide. Contributing to large-scale systems, performance, and architecture across one of the world&rsquo;s most-used apps.</div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">600M+</span><span class="xcl">monthly active listeners</span><span class="xcb">Scale</span></div><div class="xcs"><span class="xcn">Kotlin</span><span class="xcl">Coroutines &middot; Flow &middot; Multiplatform</span><span class="xcb">Language</span></div><div class="xcs"><span class="xcn">Platform</span><span class="xcl">Core infra, perf &amp; architecture</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Android</span><span class="xcl">World&rsquo;s most-used music app</span><span class="xcb">Impact</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="xf"><div class="tags"><span class="tag hi">&#9658; Current</span><span class="tag">Platform</span><span class="tag">600M users</span><span class="tag">Kotlin</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.spotify.music" target="_blank">▸ Google Play</a><a class="lnk" href="https://spotify.com" target="_blank">↗ spotify.com</a></div></div>
         </div>
       </div>
-
-      <!-- TRUECALLER -->
       <div class="ec g r2">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#003d8f"><svg viewBox="0 0 200 200" width="30" height="30"><rect width="200" height="200" rx="44" fill="#0288D1"/><path d="M60 58h80v20H112v64H88V78H60z" fill="white"/></svg></div>
-            <div class="em"><a class="en" href="https://truecaller.com" target="_blank">Truecaller</a><div class="ep">Aug – Nov 2025</div><div class="er">Senior Android Developer · Remote</div></div>
+            <div class="em"><a class="en" href="https://truecaller.com" target="_blank">Truecaller</a><div class="ep">Aug &ndash; Nov 2025</div><div class="er">Senior Android Developer &middot; Remote</div></div>
           </div>
-          <div class="ed">Part of a greenfield initiative on Truecaller's global caller ID platform — Jetpack Compose from day one, clean architecture at scale, and rapid feature delivery in a fully remote setup.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">900M+</span><span class="xcl">identities in caller ID database</span><span class="xcb">Scale</span></div><div class="xcs"><span class="xcn">Compose</span><span class="xcl">Jetpack UI · greenfield codebase</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Clean Arch</span><span class="xcl">Modular, testable, scalable</span><span class="xcb">Architecture</span></div><div class="xcs"><span class="xcn">Remote</span><span class="xcl">Stockholm × Bangalore team</span><span class="xcb">Setup</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="ed">Part of a greenfield initiative on Truecaller&rsquo;s global caller ID platform &mdash; Jetpack Compose from day one, clean architecture at scale, and rapid feature delivery in a fully remote setup.</div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">900M+</span><span class="xcl">identities in caller ID database</span><span class="xcb">Scale</span></div><div class="xcs"><span class="xcn">Compose</span><span class="xcl">Jetpack UI &middot; greenfield codebase</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Clean Arch</span><span class="xcl">Modular, testable, scalable</span><span class="xcb">Architecture</span></div><div class="xcs"><span class="xcn">Remote</span><span class="xcl">Stockholm &times; Bangalore team</span><span class="xcb">Setup</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
           <div class="xf"><div class="tags"><span class="tag">Compose</span><span class="tag">Architecture</span><span class="tag">Remote</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.truecaller" target="_blank">▸ Google Play</a><a class="lnk" href="https://truecaller.com" target="_blank">↗ truecaller.com</a></div></div>
-
         </div>
       </div>
-
-      <!-- PAF -->
       <div class="ec g r">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#2a0800"><svg viewBox="0 0 200 200" width="30" height="30"><rect width="200" height="200" rx="44" fill="#D84315"/><text x="100" y="138" text-anchor="middle" font-family="Arial Black" font-size="80" font-weight="900" fill="white" letter-spacing="-2">paf</text></svg></div>
-            <div class="em"><a class="en" href="https://paf.com" target="_blank">Paf</a><div class="ep">Mar 2024 – Jul 2025</div><div class="er">Senior Android Developer</div></div>
+            <div class="em"><a class="en" href="https://paf.com" target="_blank">Paf</a><div class="ep">Mar 2024 &ndash; Jul 2025</div><div class="er">Senior Android Developer</div></div>
           </div>
           <div class="ed">Architected multiple white-label gaming apps from scratch. Built end-to-end CI/CD pipelines, a shared design system adopted across products, and mentored a growing Android team.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">3 apps</span><span class="xcl">White-label gaming — built from scratch</span><span class="xcb">Output</span></div><div class="xcs"><span class="xcn">CI/CD</span><span class="xcl">GitHub Actions · automated pipelines</span><span class="xcb">DevOps</span></div><div class="xcs"><span class="xcn">Design System</span><span class="xcl">Shared components across all products</span><span class="xcb">Architecture</span></div><div class="xcs"><span class="xcn">Mentor</span><span class="xcl">Grew & led the Android team</span><span class="xcb">Leadership</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">3 apps</span><span class="xcl">White-label gaming &mdash; built from scratch</span><span class="xcb">Output</span></div><div class="xcs"><span class="xcn">CI/CD</span><span class="xcl">GitHub Actions &middot; automated pipelines</span><span class="xcb">DevOps</span></div><div class="xcs"><span class="xcn">Design Sys</span><span class="xcl">Shared components across all products</span><span class="xcb">Architecture</span></div><div class="xcs"><span class="xcn">Mentor</span><span class="xcl">Grew &amp; led the Android team</span><span class="xcb">Leadership</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
           <div class="xf"><div class="tags"><span class="tag">White-label</span><span class="tag">CI/CD</span><span class="tag">Design System</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/search?q=paf&c=apps" target="_blank">▸ Google Play</a><a class="lnk" href="https://paf.com" target="_blank">↗ paf.com</a></div></div>
-
         </div>
       </div>
-
-      <!-- GLOOKO -->
       <div class="ec g r2">
         <div class="eb">
           <div class="et">
-            <div class="logo" style="background:#00838F"><svg viewBox="0 0 100 100" width="32" height="32"><rect width="100" height="100" rx="0" fill="none"/><text x="50" y="62" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="white">G</text></svg></div>
-            <div class="em"><a class="en" href="https://glooko.com" target="_blank">Glooko</a><div class="ep">May 2023 – Jan 2024</div><div class="er">Senior Android Developer · Göteborg</div></div>
+            <div class="logo" style="background:#00838F"><svg viewBox="0 0 100 100" width="32" height="32"><text x="50" y="62" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="white">G</text></svg></div>
+            <div class="em"><a class="en" href="https://glooko.com" target="_blank">Glooko</a><div class="ep">May 2023 &ndash; Jan 2024</div><div class="er">Senior Android Developer &middot; G&ouml;teborg</div></div>
           </div>
           <div class="ed">Full BT, NFC and USB hardware stack. Deep native work via NDK/JNI in C++ for medical device connectivity.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">BT+NFC+USB</span><span class="xcl">Full hardware connectivity stack</span><span class="xcb">Platform</span></div><div class="xcs"><span class="xcn">C++ NDK</span><span class="xcl">Native bridge via JNI for device comms</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Medical</span><span class="xcl">Dexcom, Medtronic device SDKs</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Real-time</span><span class="xcl">Sensor data pipeline & sync</span><span class="xcb">Impact</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">BT+NFC+USB</span><span class="xcl">Full hardware connectivity stack</span><span class="xcb">Platform</span></div><div class="xcs"><span class="xcn">C++ NDK</span><span class="xcl">Native bridge via JNI for device comms</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Medical</span><span class="xcl">Dexcom, Medtronic device SDKs</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Real-time</span><span class="xcl">Sensor data pipeline &amp; sync</span><span class="xcb">Impact</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
           <div class="xf"><div class="tags"><span class="tag">BT / NFC / USB</span><span class="tag">NDK / JNI</span><span class="tag">C++</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.glooko.logbook" target="_blank">▸ Google Play</a><a class="lnk" href="https://glooko.com" target="_blank">↗ glooko.com</a></div></div>
         </div>
       </div>
-
-      <!-- KIVRA -->
       <div class="ec g r">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#fff"><img src="https://mnd-assets.mynewsdesk.com/image/upload/c_fill,dpr_auto,f_auto,g_auto,q_auto:good,w_300/ddkkugmnnfnzmi8xfzk1" style="width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;display:block;" alt="Kivra"/></div>
-            <div class="em"><a class="en" href="https://kivra.se" target="_blank">Kivra</a><div class="ep">Aug 2020 – Oct 2022</div><div class="er">Senior Android Developer · Stockholm</div></div>
+            <div class="em"><a class="en" href="https://kivra.se" target="_blank">Kivra</a><div class="ep">Aug 2020 &ndash; Oct 2022</div><div class="er">Senior Android Developer &middot; Stockholm</div></div>
           </div>
-          <div class="ed">Led Android architecture at Sweden's leading digital mailbox service — payments, content delivery, and Compose migration. Drove GraphQL adoption, CI/CD with GitHub Actions, and grew the Android team through recruitment.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">5M+</span><span class="xcl">Swedish users — digital mailbox</span><span class="xcb">Scale</span></div><div class="xcs"><span class="xcn">GraphQL</span><span class="xcl">API architecture · led adoption</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Payments</span><span class="xcl">Bills, invoices & delivery</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Team Lead</span><span class="xcl">Hiring, architecture & growth</span><span class="xcb">Leadership</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="ed">Led Android architecture at Sweden&rsquo;s leading digital mailbox service &mdash; payments, content delivery, and Compose migration. Drove GraphQL adoption, CI/CD with GitHub Actions, and grew the Android team through recruitment.</div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">5M+</span><span class="xcl">Swedish users &mdash; digital mailbox</span><span class="xcb">Scale</span></div><div class="xcs"><span class="xcn">GraphQL</span><span class="xcl">API architecture &middot; led adoption</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Payments</span><span class="xcl">Bills, invoices &amp; delivery</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Team Lead</span><span class="xcl">Hiring, architecture &amp; growth</span><span class="xcb">Leadership</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
           <div class="xf"><div class="tags"><span class="tag">GraphQL</span><span class="tag">Payments</span><span class="tag">Compose</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.kivra" target="_blank">▸ Google Play</a><a class="lnk" href="https://kivra.se" target="_blank">↗ kivra.se</a></div></div>
         </div>
       </div>
-
-      <!-- SBAB -->
       <div class="ec g r2">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#ffffff"><img src="https://www.sbab.se/images/18.1f81472418f76c7c850184/1715867477502/SBAB_Logotyp_Svart_Orange_RGB_500_.png" style="width:100%;height:100%;object-fit:contain;padding:6px;display:block;box-sizing:border-box;"/></div>
-            <div class="em"><a class="en" href="https://sbab.se" target="_blank">SBAB Bank</a><div class="ep">Apr 2019 – Aug 2020</div><div class="er">Senior Android Developer · Stockholm</div></div>
+            <div class="em"><a class="en" href="https://sbab.se" target="_blank">SBAB Bank</a><div class="ep">Apr 2019 &ndash; Aug 2020</div><div class="er">Senior Android Developer &middot; Stockholm</div></div>
           </div>
-          <div class="ed">Shipped features across SBAB's consumer banking app covering savings, mortgages, and insurance. Served as security lead for the Android codebase and drove recruitment alongside feature delivery.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">Security</span><span class="xcl">Android security lead · threat modeling</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Banking</span><span class="xcl">Mortgages, savings & insurance</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Architecture</span><span class="xcl">MVVM + Clean, tested codebase</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Recruitment</span><span class="xcl">Grew the Android team</span><span class="xcb">Leadership</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="ed">Shipped features across SBAB&rsquo;s consumer banking app covering savings, mortgages, and insurance. Served as security lead for the Android codebase and drove recruitment alongside feature delivery.</div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">Security</span><span class="xcl">Android security lead &middot; threat modeling</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Banking</span><span class="xcl">Mortgages, savings &amp; insurance</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Architecture</span><span class="xcl">MVVM + Clean, tested codebase</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Recruitment</span><span class="xcl">Grew the Android team</span><span class="xcb">Leadership</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
           <div class="xf"><div class="tags"><span class="tag">Banking</span><span class="tag">Security</span><span class="tag">Architecture</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.sbab.bankapp" target="_blank">▸ Google Play</a><a class="lnk" href="https://sbab.se" target="_blank">↗ sbab.se</a></div></div>
         </div>
       </div>
-
-      <!-- AVANZA -->
       <div class="ec g r">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#ffffff"><img src="https://investors.avanza.se/files/Avanza_ir_logo.svg" style="width:100%;height:100%;object-fit:contain;padding:7px;display:block;box-sizing:border-box;"/></div>
-            <div class="em"><a class="en" href="https://avanza.se" target="_blank">Avanza Bank</a><div class="ep">Jun 2014 – Apr 2019</div><div class="er">Lead Android Developer · Stockholm</div></div>
+            <div class="em"><a class="en" href="https://avanza.se" target="_blank">Avanza Bank</a><div class="ep">Jun 2014 &ndash; Apr 2019</div><div class="er">Lead Android Developer &middot; Stockholm</div></div>
           </div>
-          <div class="ed">Built Avanza's Android app from scratch. Among the first in Sweden to adopt Kotlin and Material Design. Led hiring, migrated the entire codebase, achieved top Play Store ratings. Stocks, funds, dividends, loans, payments.</div>
-          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">4+ years</span><span class="xcl">Lead Android Developer</span><span class="xcb">Tenure</span></div><div class="xcs"><span class="xcn">Built 0→1</span><span class="xcl">App from scratch · full team lead</span><span class="xcb">Impact</span></div><div class="xcs"><span class="xcn">Kotlin</span><span class="xcl">First adopter in Sweden · full migration</span><span class="xcb">Pioneer</span></div><div class="xcs"><span class="xcn">Fintech</span><span class="xcl">Stocks, funds, loans & payments</span><span class="xcb">Domain</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="ed">Built Avanza&rsquo;s Android app from scratch. Among the first in Sweden to adopt Kotlin and Material Design. Led hiring, migrated the entire codebase, achieved top Play Store ratings. Stocks, funds, dividends, loans, payments.</div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">4+ years</span><span class="xcl">Lead Android Developer</span><span class="xcb">Tenure</span></div><div class="xcs"><span class="xcn">Built 0&#x2192;1</span><span class="xcl">App from scratch &middot; full team lead</span><span class="xcb">Impact</span></div><div class="xcs"><span class="xcn">Kotlin</span><span class="xcl">First adopter in Sweden &middot; full migration</span><span class="xcb">Pioneer</span></div><div class="xcs"><span class="xcn">Fintech</span><span class="xcl">Stocks, funds, loans &amp; payments</span><span class="xcb">Domain</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
           <div class="xf"><div class="tags"><span class="tag hi">Lead</span><span class="tag">Kotlin Pioneer</span><span class="tag">Fintech</span><span class="tag">4+ years</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.avanza.phone" target="_blank">▸ Google Play</a><a class="lnk" href="https://avanza.se" target="_blank">↗ avanza.se</a></div></div>
         </div>
       </div>
-
-        </div>
+    </div>
   </div>
 </section>
 
