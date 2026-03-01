@@ -15,8 +15,8 @@
 :focus-visible{outline:2px solid rgba(168,219,216,.9);outline-offset:3px;border-radius:3px}
 a:focus-visible,button:focus-visible{outline:2px solid rgba(168,219,216,.9);outline-offset:3px}
 :root{--bg:#05070e;--gl:rgba(255,255,255,.07);--ge:rgba(255,255,255,.18);--gt:rgba(255,255,255,.28);--tx:#ffffff;--mu:rgba(235,242,244,.96);--fa:rgba(220,236,238,.92);--ac:#a8dbd8;--tb:rgba(0,0,0,.55)}
-html{scroll-behavior:smooth}
-body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(--tx);overflow-x:hidden;cursor:none;padding-top:env(safe-area-inset-top)}@media(hover:none){body{cursor:auto}#cur,#cur-r{display:none!important}}
+html{scroll-behavior:smooth;overflow-x:hidden;overscroll-behavior:none}
+body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(--tx);overflow-x:hidden;overscroll-behavior:none;cursor:none;padding-top:env(safe-area-inset-top)}@media(hover:none){body{cursor:auto}#cur,#cur-r{display:none!important}}
 
 /* NATURE CANVAS BG */
 #bg-wrap{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;transform:translateZ(0)}#bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
