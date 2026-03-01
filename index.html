@@ -19,7 +19,7 @@ html{scroll-behavior:smooth}
 body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(--tx);overflow-x:hidden;cursor:none;padding-top:env(safe-area-inset-top)}@media(hover:none){body{cursor:auto}#cur,#cur-r{display:none!important}}
 
 /* NATURE CANVAS BG */
-#bgv{position:fixed;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+#bgv{position:fixed;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;pointer-events:none;transform:translateZ(0);will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 #vig{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 140% 140% at 50% 50%,transparent 15%,rgba(3,5,10,.45) 58%,rgba(3,5,10,.82) 100%)}
 /* CURSOR */
 #cur{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;width:7px;height:7px;border-radius:50%;background:rgba(225,238,240,.9);transform:translate(-50%,-50%);transition:width .14s,height .14s}
@@ -96,6 +96,7 @@ h1 em{font-style:italic;color:var(--ac)}
 /* EXP */
 #exp{padding:140px 0}@media(max-width:640px){#exp{padding:80px 0}}
 .exp-car{position:relative}.exp-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;-webkit-overflow-scrolling:touch}.exp-track::-webkit-scrollbar{display:none}.ec-slide{flex:0 0 min(540px,86vw);scroll-snap-align:start;min-height:0}@media(max-width:640px){.ec-slide{flex:0 0 90vw}}.exp-dots{display:flex;justify-content:center;gap:6px;margin-top:24px}.exp-dot{width:16px;height:3px;border-radius:2px;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}.exp-dot.a{background:var(--ac);width:32px}
+.ec-slide{background:rgba(8,13,26,.80);border:1px solid rgba(255,255,255,.18);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5),0 4px 12px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.14);flex-shrink:0}@media(max-width:640px){.ec-slide{border-radius:14px}}
 
 
 
@@ -109,11 +110,11 @@ h1 em{font-style:italic;color:var(--ac)}
 .logo::after{content:"";position:absolute;inset:0;border-radius:14px;border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),0 6px 18px rgba(0,0,0,.5);z-index:3;pointer-events:none}
 .logo svg{position:relative;z-index:1}
 .em{flex:1;min-width:0}
-.en{font-family:"Plus Jakarta Sans",sans-serif;font-size:26px;font-weight:500;color:#ffffff;text-decoration:none;display:block;line-height:1;margin-bottom:4px;transition:color .2s;text-shadow:0 2px 20px rgba(0,0,0,.95),0 1px 6px rgba(0,0,0,.8)}@media(max-width:600px){.en{font-size:22px}}
+.en{font-family:"Plus Jakarta Sans",sans-serif;font-size:26px;font-weight:500;color:#ffffff;text-decoration:none;display:block;line-height:1;margin-bottom:4px;transition:color .2s;text-shadow:0 2px 24px rgba(0,0,0,1),0 1px 8px rgba(0,0,0,.9)}@media(max-width:600px){.en{font-size:22px}}
 .en:hover{color:rgba(233,239,240,.7)}
-.ep{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(230,244,246,1);margin-bottom:3px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
-.er{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#b8e8e5;text-shadow:0 1px 8px rgba(0,0,0,.95),0 0 20px rgba(0,0,0,.7)}
-.ed{font-family:"Plus Jakarta Sans",sans-serif;font-size:17px;font-weight:450;line-height:1.68;color:#f0f8f9;margin-bottom:16px;text-shadow:0 1px 16px rgba(0,0,0,.98),0 2px 32px rgba(0,0,0,.9),0 2px 24px rgba(0,0,0,.85)}@media(max-width:600px){.ed{font-size:15px;line-height:1.65}}
+.ep{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#ffffff;margin-bottom:3px;text-shadow:0 1px 10px rgba(0,0,0,.99),0 2px 16px rgba(0,0,0,.85)}
+.er{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.88);text-shadow:0 1px 8px rgba(0,0,0,.99),0 2px 16px rgba(0,0,0,.8)}
+.ed{font-family:"Plus Jakarta Sans",sans-serif;font-size:17px;font-weight:500;line-height:1.68;color:#f5fafe;margin-bottom:16px;text-shadow:0 1px 20px rgba(0,0,0,1),0 2px 40px rgba(0,0,0,.95),0 0 8px rgba(0,0,0,.8)}@media(max-width:600px){.ed{font-size:15px;line-height:1.65}}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
 .tag{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:1px solid rgba(255,255,255,.38);color:#f0f8f9;background:rgba(4,7,14,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
 .tag.hi{border-color:rgba(168,219,216,.8);color:#a8dbd8;background:rgba(20,70,68,.7);font-weight:500}
@@ -173,9 +174,9 @@ h1 em{font-style:italic;color:var(--ac)}
 .cs{font-family:"JetBrains Mono",monospace;font-size:11px;color:rgba(210,238,236,1);display:block;margin-top:2px;letter-spacing:.06em;text-shadow:0 1px 6px rgba(0,0,0,.9)}
 footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-right) + 20px) max(18px,env(safe-area-inset-bottom) + 12px) max(52px,env(safe-area-inset-left) + 20px);border-top:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.62);box-shadow:inset 0 1px 0 rgba(255,255,255,.12);font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.12em;color:rgba(210,232,234,.92);display:flex;justify-content:space-between}
 @media(max-width:600px){footer{padding:16px 20px;flex-direction:column;gap:5px}}.contact-footer{margin-top:52px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.12em;color:rgba(210,232,234,.55);display:flex;justify-content:space-between;align-items:center}
-.r{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
-.r2{opacity:0;transform:translateY(18px);transition:opacity .8s .14s ease,transform .8s .14s ease}
-.r.v,.r2.v{opacity:1;transform:translateY(0)}
+.r{opacity:0;transition:opacity .7s ease}
+.r2{opacity:0;transition:opacity .7s .12s ease}
+.r.v,.r2.v{opacity:1}
 </style>
 </head>
 <body>
@@ -229,7 +230,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
     <div class="r"><div class="sec-head"><div class="lbl">Experience</div><h2>A decade of <em>craft</em></h2><div class="rule"></div></div></div>
     <div class="exp-car r2">
       <div class="exp-track">
-      <div class="ec-slide g">
+      <div class="ec-slide">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#121212"><svg viewBox="0 0 168 168" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path fill="#1DB954" d="M84 0C37.6 0 0 37.6 0 84s37.6 84 84 84 84-37.6 84-84S130.4 0 84 0zm38.6 121.1c-1.5 2.4-4.8 3.2-7.2 1.6-19.8-12.1-44.8-14.9-74.1-8.1-2.9.7-5.7-1.1-6.4-3.9-.7-2.9 1.1-5.7 3.9-6.4 32.1-7.3 59.7-4.2 82 9.5 2.4 1.6 3.2 4.9 1.8 7.3zm10.3-22.9c-2 3.1-6 4.1-9.1 2.1-22.6-13.9-57-18-83.9-9.8-3.4 1-6.9-.9-7.9-4.2-1-3.4.9-6.9 4.2-7.9 30.6-9.3 68.7-4.8 94.8 11.2 3.1 2 4.1 6 1.9 8.6zm.9-23.8c-27.2-16.2-72-17.6-97.9-9.7-4 1.2-8.2-1-9.5-5-1.2-4 1-8.2 5-9.5 29.7-9 79.3-7.3 110.5 11.1 3.6 2.1 4.7 6.7 2.6 10.3-2.2 3.6-6.8 4.7-10.7 2.8z"/></svg></div>
@@ -239,7 +240,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
           <div class="xf"><div class="tags"><span class="tag hi">&#9658; Current</span><span class="tag">Platform</span><span class="tag">600M users</span><span class="tag">Kotlin</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.spotify.music" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://spotify.com" target="_blank">&#8599; spotify.com</a></div></div>
         </div>
       </div>
-      <div class="ec-slide g">
+      <div class="ec-slide">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#003d8f"><svg viewBox="0 0 200 200" width="30" height="30"><rect width="200" height="200" rx="44" fill="#0288D1"/><path d="M60 58h80v20H112v64H88V78H60z" fill="white"/></svg></div>
@@ -249,7 +250,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
           <div class="xf"><div class="tags"><span class="tag">Compose</span><span class="tag">Architecture</span><span class="tag">Remote</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.truecaller" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://truecaller.com" target="_blank">&#8599; truecaller.com</a></div></div>
         </div>
       </div>
-      <div class="ec-slide g">
+      <div class="ec-slide">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#2a0800"><svg viewBox="0 0 200 200" width="30" height="30"><rect width="200" height="200" rx="44" fill="#D84315"/><text x="100" y="138" text-anchor="middle" font-family="Arial Black" font-size="80" font-weight="900" fill="white" letter-spacing="-2">paf</text></svg></div>
@@ -259,7 +260,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
           <div class="xf"><div class="tags"><span class="tag">White-label</span><span class="tag">CI/CD</span><span class="tag">Design System</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/search?q=paf&c=apps" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://paf.com" target="_blank">&#8599; paf.com</a></div></div>
         </div>
       </div>
-      <div class="ec-slide g">
+      <div class="ec-slide">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#00838F"><svg viewBox="0 0 100 100" width="32" height="32"><text x="50" y="62" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="white">G</text></svg></div>
@@ -269,7 +270,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
           <div class="xf"><div class="tags"><span class="tag">BT / NFC / USB</span><span class="tag">NDK / JNI</span><span class="tag">C++</span><span class="tag">Medical</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.glooko.logbook" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://glooko.com" target="_blank">&#8599; glooko.com</a></div></div>
         </div>
       </div>
-      <div class="ec-slide g">
+      <div class="ec-slide">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#fff"><img src="https://mnd-assets.mynewsdesk.com/image/upload/c_fill,dpr_auto,f_auto,g_auto,q_auto:good,w_300/ddkkugmnnfnzmi8xfzk1" style="width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;display:block;" alt="Kivra"/></div>
@@ -279,7 +280,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
           <div class="xf"><div class="tags"><span class="tag">GraphQL</span><span class="tag">Payments</span><span class="tag">Compose</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.kivra" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://kivra.se" target="_blank">&#8599; kivra.se</a></div></div>
         </div>
       </div>
-      <div class="ec-slide g">
+      <div class="ec-slide">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#ffffff"><img src="https://www.sbab.se/images/18.1f81472418f76c7c850184/1715867477502/SBAB_Logotyp_Svart_Orange_RGB_500_.png" style="width:100%;height:100%;object-fit:contain;padding:6px;display:block;box-sizing:border-box;"/></div>
@@ -289,7 +290,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
           <div class="xf"><div class="tags"><span class="tag">Banking</span><span class="tag">Security</span><span class="tag">Architecture</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.sbab.bankapp" target="_blank">&#9658; Google Play</a><a class="lnk" href="https://sbab.se" target="_blank">&#8599; sbab.se</a></div></div>
         </div>
       </div>
-      <div class="ec-slide g">
+      <div class="ec-slide">
         <div class="eb">
           <div class="et">
             <div class="logo" style="background:#ffffff"><img src="https://investors.avanza.se/files/Avanza_ir_logo.svg" style="width:100%;height:100%;object-fit:contain;padding:7px;display:block;box-sizing:border-box;"/></div>
@@ -376,7 +377,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="33" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="11" font-weight="600">600M</text><text x="34" y="44" text-anchor="middle" fill="rgba(200,232,230,.9)" font-family="DM Mono,monospace" font-size="8">listeners</text></svg><div class="arc-l">Reached</div></div>
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="39" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="18" font-weight="600">7</text></svg><div class="arc-l">Products</div></div>
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="32" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="10" font-weight="600">11+</text><text x="34" y="44" text-anchor="middle" fill="rgba(200,232,230,.9)" font-family="DM Mono,monospace" font-size="8">years</text></svg><div class="arc-l">Android</div></div>
-          <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="30" text-anchor="middle" fill="rgba(168,219,216,1)" font-family="DM Mono,monospace" font-size="14" font-weight="700">4.8</text><text x="34" y="43" text-anchor="middle" fill="rgba(168,219,216,.8)" font-family="DM Mono,monospace" font-size="11">★</text></svg><div class="arc-l">Play Store</div></div>
+          <div class="arc-i"><div style="width:72px;height:72px;margin:0 auto 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:rgba(168,219,216,.07);border:1px solid rgba(168,219,216,.28);border-radius:12px;box-shadow:inset 0 1px 0 rgba(168,219,216,.18)"><span style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:#ffffff;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.9)">4.8</span><span style="font-size:9px;color:rgba(168,219,216,.95);letter-spacing:2px;line-height:1">★★★★★</span></div><div class="arc-l">Play Store</div></div>
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="40" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="13" font-weight="600">27+</text></svg><div class="arc-l">Years coding</div></div>
         </div>
       </div></div>
