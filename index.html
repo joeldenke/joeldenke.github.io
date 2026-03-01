@@ -118,13 +118,13 @@ h1 em{font-style:italic;color:var(--ac)}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
 .tag{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:1px solid rgba(255,255,255,.38);color:#f0f8f9;background:rgba(4,7,14,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
 .tag.hi{border-color:rgba(168,219,216,.8);color:#a8dbd8;background:rgba(20,70,68,.7);font-weight:500}
-.lnks{display:flex;gap:8px}
-.lnk{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#e8f4f5;padding:4px 10px;border:1px solid rgba(255,255,255,.38);border-radius:2px;transition:all .2s;background:rgba(10,14,22,.78);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
-.lnk:hover{border-color:rgba(255,255,255,.68);color:#ffffff;background:rgba(20,28,40,.82)}
+.lnks{display:flex;gap:8px;flex-wrap:wrap}
+.lnk{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#e0f2f4;padding:8px 18px;border:1px solid rgba(255,255,255,.3);border-radius:6px;transition:all .2s;background:rgba(8,12,22,.75);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 2px 8px rgba(0,0,0,.3);font-weight:500}
+.lnk:hover{border-color:rgba(255,255,255,.65);color:#ffffff;background:rgba(20,30,48,.85);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 4px 16px rgba(0,0,0,.4)}
 .lnk:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
-.xf{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08)}
-.xf .tags{margin-bottom:0;flex:1}
-.xf .lnks{flex-shrink:0}
+.xf{display:flex;flex-direction:column;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08)}
+.xf .tags{margin-bottom:0}
+.xf .lnks{align-self:flex-start}
 .ec-slide{position:relative;overflow:hidden}
 .eb{position:relative;z-index:2}
 /* SKILLS */
@@ -319,7 +319,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
     <div class="r"><div class="sec-head"><div class="lbl">Technical profile</div><h2><em>Skills</em> & Capabilities</h2><div class="rule"></div></div></div>
     <div class="kg">
 
-      <div class="g r" style="grid-column:span 2"><div class="sp">
+      <div class="g r"><div class="sp">
         <div class="sth">Core Android</div>
         <div class="sg">
           <div class="sn">Kotlin</div>
@@ -374,7 +374,7 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
         <div class="sth">By the Numbers</div>
         <div class="arcs">
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="39" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="13" font-weight="600">10+</text></svg><div class="arc-l">Years</div></div>
-          <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="33" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="11" font-weight="600">600M</text><text x="34" y="44" text-anchor="middle" fill="rgba(200,232,230,.9)" font-family="DM Mono,monospace" font-size="8">listeners</text></svg><div class="arc-l">Reached</div></div>
+          <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="38" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="14" font-weight="700">600M</text></svg><div class="arc-l">Reached</div></div>
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="39" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="18" font-weight="600">7</text></svg><div class="arc-l">Products</div></div>
           <div class="arc-i"><svg class="arc-s" viewBox="0 0 68 68"><circle cx="34" cy="34" r="26" fill="rgba(4,7,14,.55)" stroke="rgba(255,255,255,.12)" stroke-width="4"/><text x="34" y="32" text-anchor="middle" fill="#ffffff" font-family="DM Mono,monospace" font-size="10" font-weight="600">11+</text><text x="34" y="44" text-anchor="middle" fill="rgba(200,232,230,.9)" font-family="DM Mono,monospace" font-size="8">years</text></svg><div class="arc-l">Android</div></div>
           <div class="arc-i"><div style="width:72px;height:72px;margin:0 auto 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:rgba(168,219,216,.07);border:1px solid rgba(168,219,216,.28);border-radius:12px;box-shadow:inset 0 1px 0 rgba(168,219,216,.18)"><span style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:#ffffff;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.9)">4.8</span><span style="font-size:9px;color:rgba(168,219,216,.95);letter-spacing:2px;line-height:1">★★★★★</span></div><div class="arc-l">Play Store</div></div>
