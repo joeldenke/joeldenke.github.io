@@ -42,9 +42,9 @@ nav a:hover{color:var(--tx)}
 section{position:relative;z-index:4}
 .wrap{max-width:1180px;margin:0 auto;padding:0 max(52px,env(safe-area-inset-left) + 20px) 0 max(52px,env(safe-area-inset-right) + 20px)}
 @media(max-width:640px){.wrap{padding:0 max(20px,env(safe-area-inset-left) + 12px) 0 max(20px,env(safe-area-inset-right) + 12px)}}
-.lbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(220,236,238,.98);margin-bottom:12px;display:inline-block;background:rgba(0,0,0,.62);padding:3px 10px;border-radius:3px;text-shadow:0 1px 4px rgba(0,0,0,.8);border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
+.lbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#ffffff;margin-bottom:12px;display:inline-block;background:rgba(0,0,0,.75);padding:3px 10px;border-radius:3px;text-shadow:0 1px 6px rgba(0,0,0,.95);border:1px solid rgba(255,255,255,.20);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
 .lbl::before{content:"— "}
-h2{font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(28px,4.8vw,58px);font-weight:300;line-height:1.05;margin-bottom:16px;text-shadow:0 2px 24px rgba(0,0,0,.9),0 1px 4px rgba(0,0,0,.8)}
+h2{font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(28px,4.8vw,58px);font-weight:300;line-height:1.05;margin-bottom:16px;color:#ffffff;text-shadow:0 2px 32px rgba(0,0,0,.98),0 1px 8px rgba(0,0,0,.9)}
 h2 em{font-style:italic;color:var(--ac);font-weight:200}
 .rule{width:52px;height:1px;background:rgba(255,255,255,.22);margin-bottom:60px}
 /* Section header block gets subtle dark scrim so h2 is always legible over video */
@@ -53,7 +53,7 @@ h2 em{font-style:italic;color:var(--ac);font-weight:200}
 .sec-head h2{margin-bottom:14px}
 .sec-head .rule{margin-bottom:0}
 /* LIQUID GLASS - true glass, no blur, full optical depth */
-.g{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 100%);backdrop-filter:saturate(180%) brightness(1.06) contrast(1.03);-webkit-backdrop-filter:saturate(180%) brightness(1.06) contrast(1.03);box-shadow:0 20px 60px rgba(0,0,0,.45),0 4px 12px rgba(0,0,0,.25)}@media(max-width:640px){.g{border-radius:14px}}
+.g{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,rgba(6,10,20,.84) 0%,rgba(4,8,18,.90) 100%);backdrop-filter:saturate(180%) brightness(1.08) contrast(1.04);-webkit-backdrop-filter:saturate(180%) brightness(1.08) contrast(1.04);box-shadow:0 20px 60px rgba(0,0,0,.55),0 4px 12px rgba(0,0,0,.35)}@media(max-width:640px){.g{border-radius:14px}}
 .g::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(ellipse 65% 45% at 18% 0%,rgba(255,255,255,.20) 0%,transparent 68%),linear-gradient(180deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.07) 11%,transparent 42%),linear-gradient(90deg,rgba(255,255,255,.11) 0%,transparent 18%),linear-gradient(0deg,rgba(255,255,255,.04) 0%,transparent 22%);pointer-events:none;z-index:1}
 .g::after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 2px 0 rgba(255,255,255,.50),inset 1px 0 0 rgba(255,255,255,.20),inset -1px 0 0 rgba(255,255,255,.08),inset 0 -1px 0 rgba(255,255,255,.06);z-index:2;pointer-events:none}
 /* HERO */
@@ -65,7 +65,7 @@ h1{font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(70px,10vw,124px);f
 h1 strong{display:block;font-weight:400}
 h1 em{font-style:italic;color:var(--ac)}
 .hrol{font-size:13px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--tx);margin-bottom:14px;animation:fu .9s .44s both;display:inline-block;background:rgba(0,0,0,.44);padding:4px 14px;border-radius:4px;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
-.hbio{font-family:"Plus Jakarta Sans",sans-serif;font-size:20px;font-weight:300;line-height:1.7;color:#f0f7f8;max-width:480px;margin-bottom:38px;animation:fu .9s .58s both;background:rgba(0,0,0,.50);padding:16px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 4px 20px rgba(0,0,0,.24)}@media(max-width:640px){.hbio{font-size:16px;line-height:1.65;padding:14px 16px}}
+.hbio{font-family:"Plus Jakarta Sans",sans-serif;font-size:20px;font-weight:400;line-height:1.7;color:#f5fafb;max-width:480px;margin-bottom:38px;animation:fu .9s .58s both;background:rgba(0,0,0,.65);padding:16px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.20);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 4px 20px rgba(0,0,0,.3)}@media(max-width:640px){.hbio{font-size:16px;line-height:1.65;padding:14px 16px}}
 .hbtns{display:flex;gap:12px;flex-wrap:wrap;animation:fu .9s .72s both}
 @keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .btn{display:inline-flex;align-items:center;gap:7px;padding:11px 26px;border-radius:3px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .22s}
@@ -97,12 +97,12 @@ h1 em{font-style:italic;color:var(--ac)}
 @keyframes sp{0%,100%{opacity:.15}50%{opacity:.75}}
 /* EXP */
 #exp{padding:140px 0}@media(max-width:640px){#exp{padding:80px 0}}
-.xg{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:640px){.xg{gap:12px}}
-@media(max-width:1024px){.xg{grid-template-columns:1fr}}
-.w2{grid-column:span 2}
-@media(max-width:1024px){.w2{grid-column:span 1}}
+.xg{display:flex;flex-direction:column;gap:16px}
+
+
+
 .ec{transition:transform .38s cubic-bezier(.16,1,.3,1),box-shadow .38s,background .38s}
-.ec:hover{transform:translateY(-5px);background:rgba(255,255,255,.07);box-shadow:0 24px 64px rgba(0,0,0,.28),0 4px 12px rgba(0,0,0,.18)}@media(hover:none){.ec:hover{transform:none;box-shadow:none}}@media(max-width:640px){.ec .eb{display:flex!important;flex-direction:column;gap:24px}}@media(max-width:640px){.ec .eb{padding:22px 20px!important}}
+.ec:hover{transform:translateY(-5px);background:rgba(255,255,255,.07);box-shadow:0 24px 64px rgba(0,0,0,.28),0 4px 12px rgba(0,0,0,.18)}@media(hover:none){.ec:hover{transform:none;box-shadow:none}}@media(max-width:640px){.ec .eb{padding:20px 18px!important}}
 /* Card content */
 .eb{padding:26px 28px;position:relative;z-index:2}
 .et{display:flex;align-items:flex-start;gap:16px;margin-bottom:18px}
@@ -112,11 +112,11 @@ h1 em{font-style:italic;color:var(--ac)}
 .logo::after{content:"";position:absolute;inset:0;border-radius:14px;border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),0 6px 18px rgba(0,0,0,.5);z-index:3;pointer-events:none}
 .logo svg{position:relative;z-index:1}
 .em{flex:1;min-width:0}
-.en{font-family:"Plus Jakarta Sans",sans-serif;font-size:26px;font-weight:400;color:var(--tx);text-decoration:none;display:block;line-height:1;margin-bottom:4px;transition:color .2s;text-shadow:0 1px 12px rgba(0,0,0,.8),0 2px 4px rgba(0,0,0,.6)}@media(max-width:600px){.en{font-size:22px}}
+.en{font-family:"Plus Jakarta Sans",sans-serif;font-size:26px;font-weight:500;color:#ffffff;text-decoration:none;display:block;line-height:1;margin-bottom:4px;transition:color .2s;text-shadow:0 2px 20px rgba(0,0,0,.95),0 1px 6px rgba(0,0,0,.8)}@media(max-width:600px){.en{font-size:22px}}
 .en:hover{color:rgba(233,239,240,.7)}
 .ep{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(230,244,246,1);margin-bottom:3px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
 .er{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#b8e8e5;text-shadow:0 1px 8px rgba(0,0,0,.95),0 0 20px rgba(0,0,0,.7)}
-.ed{font-family:"Plus Jakarta Sans",sans-serif;font-size:17px;font-weight:400;line-height:1.68;color:#f2f9fa;margin-bottom:16px;opacity:1;text-shadow:0 1px 10px rgba(0,0,0,.95),0 2px 20px rgba(0,0,0,.8)}@media(max-width:600px){.ed{font-size:15px;line-height:1.65}}
+.ed{font-family:"Plus Jakarta Sans",sans-serif;font-size:17px;font-weight:450;line-height:1.68;color:#f0f8f9;margin-bottom:16px;text-shadow:0 1px 16px rgba(0,0,0,.98),0 2px 32px rgba(0,0,0,.9),0 2px 24px rgba(0,0,0,.85)}@media(max-width:600px){.ed{font-size:15px;line-height:1.65}}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
 .tag{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:1px solid rgba(255,255,255,.38);color:#f0f8f9;background:rgba(4,7,14,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
 .tag.hi{border-color:rgba(168,219,216,.8);color:#a8dbd8;background:rgba(20,70,68,.7);font-weight:500}
@@ -124,15 +124,22 @@ h1 em{font-style:italic;color:var(--ac)}
 .lnk{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#e8f4f5;padding:4px 10px;border:1px solid rgba(255,255,255,.38);border-radius:2px;transition:all .2s;background:rgba(10,14,22,.78);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
 .lnk:hover{border-color:rgba(255,255,255,.68);color:#ffffff;background:rgba(20,28,40,.82)}
 .lnk:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
-/* phone mockup */
-.ph{width:110px;height:222px;flex-shrink:0;position:relative;align-self:center;margin-top:8px;transform:perspective(900px) rotateY(-18deg) rotateX(5deg);filter:drop-shadow(0 24px 50px rgba(0,0,0,.95))}@media(max-width:600px){.ph{width:120px;height:242px;transform:none;filter:drop-shadow(0 14px 36px rgba(0,0,0,.9));margin:20px auto 0;display:block}}
-.psh{position:absolute;inset:0;border-radius:20px;overflow:hidden;background:#0a0a0a}
-.pgl{position:absolute;inset:0;border-radius:20px;background:rgba(255,255,255,.08);z-index:2;pointer-events:none}
-.pca{position:absolute;top:0;left:0;right:0;height:44%;border-radius:20px 20px 55% 55%/20px 20px 30% 30%;background:linear-gradient(180deg,rgba(255,255,255,.38) 0%,transparent 100%);z-index:3;pointer-events:none}
-.pri{position:absolute;inset:0;border-radius:20px;border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 2px 0 rgba(255,255,255,.5),0 0 32px rgba(0,0,0,.98);z-index:4;pointer-events:none}
-.psc{position:absolute;inset:4px;border-radius:16px;overflow:hidden;z-index:1}
-.pno{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:22px;height:5px;background:#000;border-radius:2.5px;z-index:5}
-.pnm{font-family:"JetBrains Mono",monospace;font-size:6px;letter-spacing:.06em;text-transform:uppercase;position:relative;z-index:1}
+/* ── CAROUSEL ──────────────────────────────────── */
+.xc{margin-top:24px;position:relative}
+.xct{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:12px}
+.xct::-webkit-scrollbar{display:none}
+.xcs{flex:0 0 170px;scroll-snap-align:start;border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:14px 16px 12px;background:rgba(255,255,255,.05);display:flex;flex-direction:column;gap:3px;cursor:default;transition:background .2s,border-color .2s}
+.xcs:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.28)}
+.xcn{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:500;color:#ffffff;line-height:1;letter-spacing:-.02em;text-shadow:0 1px 12px rgba(0,0,0,.8)}
+.xcl{font-family:"Plus Jakarta Sans",sans-serif;font-size:12px;font-weight:400;line-height:1.4;color:rgba(210,240,238,.85);margin-top:5px;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.xcb{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(168,219,216,.7);margin-top:auto;padding-top:8px}
+.xcds{display:flex;gap:5px;margin-top:8px;padding-left:2px}
+.xcd{width:14px;height:2px;border-radius:1px;background:rgba(255,255,255,.18);cursor:pointer;transition:all .25s}
+.xcd.a{background:var(--ac);width:22px}
+@media(max-width:640px){.xcs{flex:0 0 150px;padding:12px 14px 10px}.xcn{font-size:19px}}
+.xf{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px}
+.xf .tags{margin-bottom:0}
+.xf .lnks{margin-left:auto}
 /* planet backdrop behind card */
 .ec{position:relative;overflow:hidden}
 .eb{position:relative;z-index:2}
@@ -141,7 +148,7 @@ h1 em{font-style:italic;color:var(--ac)}
 .kg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:1024px){.kg{grid-template-columns:1fr}}@media(max-width:640px){.sp{padding:20px 18px}}
 .sp{padding:28px 30px;position:relative;z-index:3}
-.sth{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,250,252,1);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.12);text-shadow:0 1px 8px rgba(0,0,0,.9)}
+.sth{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:#ffffff;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.18);text-shadow:0 1px 10px rgba(0,0,0,.95)}
 .sg{display:flex;flex-wrap:wrap;gap:6px 10px}
 .sn{font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;font-weight:500;color:#ffffff;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:5px 12px;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.8);letter-spacing:.01em}@media(max-width:480px){.sn{font-size:12px;padding:4px 10px}}
 
@@ -152,7 +159,7 @@ h1 em{font-style:italic;color:var(--ac)}
 .ai-card{border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:14px 16px;background:rgba(255,255,255,.04);position:relative;overflow:hidden}
 .ai-card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:rgba(255,255,255,.18)}
 .ai-name{font-family:"Plus Jakarta Sans",sans-serif;font-size:13px;font-weight:500;color:#ffffff;margin-bottom:5px;text-shadow:0 1px 6px rgba(0,0,0,.8)}
-.ai-desc{font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:400;line-height:1.58;color:#f0f8f9;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+.ai-desc{font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:400;line-height:1.58;color:#f2f9fa;text-shadow:0 1px 10px rgba(0,0,0,.95)}
 .ai-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
 .chip{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;border:1px solid rgba(130,186,182,.5);color:rgba(180,228,225,1);background:rgba(4,7,14,.55)}
 /* arcs */
@@ -164,7 +171,7 @@ h1 em{font-style:italic;color:var(--ac)}
 .dr{display:grid;grid-template-columns:7px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.034)}@media(max-width:480px){.dn{font-size:13px}.dy{font-size:9px}}
 .dr:last-child{border:none;padding-bottom:0}
 .dd{width:5px;height:5px;border-radius:50%;opacity:.58}
-.dn{font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:500;color:#ffffff;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+.dn{font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:500;color:#ffffff;text-shadow:0 1px 12px rgba(0,0,0,.95)}
 .dy{font-family:"JetBrains Mono",monospace;font-size:10px;color:rgba(210,232,234,.95);letter-spacing:.07em;text-shadow:0 1px 4px rgba(0,0,0,.8)}
 /* CONTACT */
 #contact{padding:140px 0 110px}@media(max-width:640px){#contact{padding:80px 0 max(60px,env(safe-area-inset-bottom) + 40px)}}
@@ -174,7 +181,7 @@ h1 em{font-style:italic;color:var(--ac)}
 .contact-panel{background:rgba(255,255,255,.04);backdrop-filter:saturate(200%) brightness(1.08) contrast(1.04);-webkit-backdrop-filter:saturate(200%) brightness(1.08) contrast(1.04);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:36px 40px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.40),inset 1px 0 0 rgba(255,255,255,.16),inset -1px 0 0 rgba(255,255,255,.07),inset 0 -1px 0 rgba(255,255,255,.05),0 14px 44px rgba(0,0,0,.22),0 2px 8px rgba(0,0,0,.14)}
 .contact-panel::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(ellipse 65% 45% at 18% 0%,rgba(255,255,255,.20) 0%,transparent 68%),linear-gradient(180deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.07) 11%,transparent 42%),linear-gradient(90deg,rgba(255,255,255,.11) 0%,transparent 18%);pointer-events:none;z-index:1}
 .contact-panel{position:relative;overflow:hidden;width:100%;box-sizing:border-box}@media(max-width:640px){.contact-panel{padding:28px 24px;border-radius:14px}}
-.cbio{font-family:"Plus Jakarta Sans",sans-serif;font-size:21px;font-weight:300;line-height:1.72;color:#f0f7f8;margin:16px 0 30px;text-shadow:0 1px 8px rgba(0,0,0,.9)}@media(max-width:640px){.cbio{font-size:17px;line-height:1.65}}
+.cbio{font-family:"Plus Jakarta Sans",sans-serif;font-size:21px;font-weight:400;line-height:1.72;color:#f5fafb;margin:16px 0 30px;text-shadow:0 1px 12px rgba(0,0,0,.95)}@media(max-width:640px){.cbio{font-size:17px;line-height:1.65}}
 .cls{padding:0;margin-top:24px;display:flex;flex-direction:column;gap:8px;position:relative;z-index:3}
 .cl{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:6px;text-decoration:none;border:1px solid rgba(255,255,255,.28);color:#ffffff;font-family:"Plus Jakarta Sans",sans-serif;font-size:17px;font-weight:400;transition:all .2s;background:rgba(4,7,14,.62);text-shadow:0 1px 4px rgba(0,0,0,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
 .cl:hover{border-color:rgba(255,255,255,.55);background:rgba(10,18,32,.72);transform:translateX(4px)}
@@ -240,624 +247,102 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
     <div class="r"><div class="sec-head"><div class="lbl">Experience</div><h2>A decade of <em>craft</em></h2><div class="rule"></div></div></div>
     <div class="xg">
 
-      <!-- SPOTIFY — Coruscant: endless city lights, deep space -->
-      <div class="ec g w2 r">
-        <div class="eb" style="display:grid;grid-template-columns:1fr auto;gap:28px;align-items:start">
-          <div>
-            <div class="et">
-              <div class="logo" style="background:#121212">
-                <svg viewBox="0 0 168 168" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path fill="#1DB954" d="M84 0C37.6 0 0 37.6 0 84s37.6 84 84 84 84-37.6 84-84S130.4 0 84 0zm38.6 121.1c-1.5 2.4-4.8 3.2-7.2 1.6-19.8-12.1-44.8-14.9-74.1-8.1-2.9.7-5.7-1.1-6.4-3.9-.7-2.9 1.1-5.7 3.9-6.4 32.1-7.3 59.7-4.2 82 9.5 2.4 1.6 3.2 4.9 1.8 7.3zm10.3-22.9c-2 3.1-6 4.1-9.1 2.1-22.6-13.9-57-18-83.9-9.8-3.4 1-6.9-.9-7.9-4.2-1-3.4.9-6.9 4.2-7.9 30.6-9.3 68.7-4.8 94.8 11.2 3.1 2 4.1 6 1.9 8.6zm.9-23.8c-27.2-16.2-72-17.6-97.9-9.7-4 1.2-8.2-1-9.5-5-1.2-4 1-8.2 5-9.5 29.7-9 79.3-7.3 110.5 11.1 3.6 2.1 4.7 6.7 2.6 10.3-2.2 3.6-6.8 4.7-10.7 2.8z"/></svg>
-              </div>
-              <div class="em"><a class="en" href="https://spotify.com" target="_blank">Spotify</a><div class="ep">Nov 2025 – Present</div><div class="er">Android Engineer II · via Coody</div></div>
-            </div>
-            <div class="ed">Engineering the Android platform behind music for 600 million+ listeners worldwide. Contributing to large-scale systems, performance, and architecture across one of the world's most-used apps.</div>
-            <div class="tags"><span class="tag hi">▸ Current</span><span class="tag">Platform</span><span class="tag">600M users</span><span class="tag">Kotlin</span></div>
-            <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.spotify.music" target="_blank">▸ Google Play</a><a class="lnk" href="https://spotify.com" target="_blank">↗ spotify.com</a></div>
-          </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:#121212"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg">
-  <rect width="102" height="214" fill="#121212"/>
-  <!-- status bar -->
-  <text x="7" y="11" font-size="6" fill="#fff" font-weight="700" font-family="system-ui">9:41</text>
-  <rect x="77" y="7" width="14" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".8"/>
-  <rect x="78" y="8" width="10" height="3" rx=".8" fill="#1DB954"/>
-  <rect x="92.5" y="8" width="1.2" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
-  <rect x="66" y="9" width="2" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
-  <rect x="69.5" y="8" width="2" height="4" rx=".5" fill="rgba(255,255,255,.6)"/>
-  <rect x="73" y="7" width="2" height="5" rx=".5" fill="rgba(255,255,255,.85)"/>
-  <!-- greeting -->
-  <text x="10" y="27" font-size="9.5" fill="#fff" font-weight="700" font-family="system-ui">Good evening</text>
-  <!-- Quick picks grid: 2×2 pill cards -->
-  <!-- Card 1 -->
-  <rect x="8" y="33" width="41" height="14" rx="3" fill="#282828"/>
-  <rect x="8" y="33" width="14" height="14" rx="3 0 0 3" fill="#1DB954"/>
-  <text x="15" y="42" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">♬</text>
-  <text x="37" y="41" text-anchor="middle" font-size="5" fill="#fff" font-family="system-ui" font-weight="600">Liked Songs</text>
-  <!-- Card 2 -->
-  <rect x="53" y="33" width="41" height="14" rx="3" fill="#282828"/>
-  <rect x="53" y="33" width="14" height="14" rx="3 0 0 3" fill="#333"/>
-  <text x="60" y="42" text-anchor="middle" font-size="8" fill="#7b5ea7" font-weight="700" font-family="system-ui">♪</text>
-  <text x="79" y="41" text-anchor="middle" font-size="5" fill="#fff" font-family="system-ui" font-weight="600">Daily Mix 1</text>
-  <!-- Card 3 -->
-  <rect x="8" y="51" width="41" height="14" rx="3" fill="#282828"/>
-  <rect x="8" y="51" width="14" height="14" rx="3 0 0 3" fill="#9b1c1c"/>
-  <text x="15" y="60" text-anchor="middle" font-size="8" fill="#ef4444" font-weight="700" font-family="system-ui">♫</text>
-  <text x="37" y="59" text-anchor="middle" font-size="5" fill="#fff" font-family="system-ui" font-weight="600">Rock Classics</text>
-  <!-- Card 4 -->
-  <rect x="53" y="51" width="41" height="14" rx="3" fill="#282828"/>
-  <rect x="53" y="51" width="14" height="14" rx="3 0 0 3" fill="#1e3a5f"/>
-  <text x="60" y="60" text-anchor="middle" font-size="8" fill="#60a5fa" font-weight="700" font-family="system-ui">♩</text>
-  <text x="79" y="59" text-anchor="middle" font-size="5" fill="#fff" font-family="system-ui" font-weight="600">Lo-fi Beats</text>
-  <!-- Section label -->
-  <text x="10" y="79" font-size="7.5" fill="#fff" font-weight="700" font-family="system-ui">Recently played</text>
-  <!-- Album art row — 3 square cards -->
-  <rect x="8" y="84" width="27" height="27" rx="3" fill="#0a3d1a"/>
-  <rect x="8" y="84" width="27" height="13" rx="3" fill="#0f5c2e"/>
-  <text x="21.5" y="101" text-anchor="middle" font-size="12" fill="#1DB954" font-family="system-ui" font-weight="700">♪</text>
-  <rect x="39" y="84" width="27" height="27" rx="3" fill="#1e1e2e"/>
-  <rect x="39" y="84" width="27" height="13" rx="3" fill="#2d2d4e"/>
-  <text x="52.5" y="101" text-anchor="middle" font-size="12" fill="#a78bfa" font-family="system-ui" font-weight="700">♫</text>
-  <rect x="70" y="84" width="27" height="27" rx="3" fill="#1f1010"/>
-  <rect x="70" y="84" width="27" height="13" rx="3" fill="#3b1515"/>
-  <text x="83.5" y="101" text-anchor="middle" font-size="12" fill="#f87171" font-family="system-ui" font-weight="700">♬</text>
-  <text x="21.5" y="117" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)" font-family="system-ui">Chill Vibes</text>
-  <text x="52.5" y="117" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)" font-family="system-ui">Indie Pop</text>
-  <text x="83.5" y="117" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.6)" font-family="system-ui">Dark R&amp;B</text>
-  <!-- Section: Jump back in -->
-  <text x="10" y="129" font-size="7.5" fill="#fff" font-weight="700" font-family="system-ui">Jump back in</text>
-  <!-- Horizontal list cards -->
-  <rect x="8" y="134" width="42" height="34" rx="4" fill="#282828"/>
-  <rect x="8" y="134" width="42" height="20" rx="4" fill="#1a472a"/>
-  <text x="29" y="148" text-anchor="middle" font-size="11" fill="#1DB954" font-family="system-ui">▶</text>
-  <text x="29" y="163" text-anchor="middle" font-size="4.5" fill="#fff" font-family="system-ui" font-weight="600">Your Mix 3</text>
-  <rect x="54" y="134" width="42" height="34" rx="4" fill="#282828"/>
-  <rect x="54" y="134" width="42" height="20" rx="4" fill="#0d2137"/>
-  <text x="75" y="148" text-anchor="middle" font-size="11" fill="#60a5fa" font-family="system-ui">▶</text>
-  <text x="75" y="163" text-anchor="middle" font-size="4.5" fill="#fff" font-family="system-ui" font-weight="600">Discover Weekly</text>
-  <!-- Now Playing mini bar -->
-  <rect x="5" y="173" width="92" height="15" rx="5" fill="#282828"/>
-  <rect x="8" y="175.5" width="10" height="10" rx="2" fill="#1DB954"/>
-  <text x="13" y="182.5" text-anchor="middle" font-size="7" fill="#fff" font-family="system-ui" font-weight="700">♪</text>
-  <text x="25" y="180" font-size="5" fill="#fff" font-family="system-ui" font-weight="600">Blinding Lights</text>
-  <text x="25" y="186" font-size="4" fill="rgba(255,255,255,.6)" font-family="system-ui">The Weeknd</text>
-  <!-- play icon -->
-  <polygon points="87,177 87,185 93,181" fill="#fff"/>
-  <!-- progress bar on now playing -->
-  <rect x="5" y="188" width="92" height="1.5" rx=".75" fill="#535353"/>
-  <rect x="5" y="188" width="38" height="1.5" rx=".75" fill="#1DB954"/>
-  <!-- Bottom nav -->
-  <rect x="0" y="196" width="102" height="18" fill="#000"/>
-  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.08)" stroke-width=".5"/>
-  <!-- Home (active) -->
-  <path d="M10 207 L13 203 L16 207 L16 210 L10 210 Z" fill="none" stroke="#1DB954" stroke-width="1" stroke-linejoin="round"/>
-  <rect x="11.5" y="207.5" width="3" height="2.5" rx=".5" fill="#1DB954"/>
-  <text x="13" y="214" text-anchor="middle" font-size="4.5" fill="#1DB954" font-family="system-ui" font-weight="600">Home</text>
-  <!-- Search -->
-  <circle cx="30" cy="206" r="3.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
-  <line x1="32.5" y1="208.5" x2="35" y2="211" stroke="rgba(255,255,255,.4)" stroke-width="1" stroke-linecap="round"/>
-  <text x="31" y="214" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Search</text>
-  <!-- Library -->
-  <rect x="46" y="203" width="1.5" height="7" rx=".5" fill="rgba(255,255,255,.4)"/>
-  <rect x="49" y="204" width="1.5" height="6" rx=".5" fill="rgba(255,255,255,.4)"/>
-  <rect x="52" y="202" width="1.5" height="8" rx=".5" fill="rgba(255,255,255,.4)"/>
-  <text x="50" y="214" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Library</text>
-  <!-- home indicator -->
-  <rect x="33" y="212" width="36" height="2" rx="1" fill="rgba(255,255,255,.3)"/>
-</svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
-        </div>
-      </div>
-
-      <!-- TRUECALLER — Kamino: stormy ocean planet, blue-grey -->
+      <!-- SPOTIFY -->
       <div class="ec g r">
-        <div class="eb" style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
-          <div>
-            <div class="et">
-              <div class="logo" style="background:#003d8f"><svg viewBox="0 0 200 200" width="30" height="30"><rect width="200" height="200" rx="44" fill="#0288D1"/><path d="M60 58h80v20H112v64H88V78H60z" fill="white"/></svg></div>
-              <div class="em"><a class="en" href="https://truecaller.com" target="_blank">Truecaller</a><div class="ep">Aug – Nov 2025</div><div class="er">Senior Android Developer · Remote</div></div>
+        <div class="eb">
+          <div class="et">
+            <div class="logo" style="background:#121212">
+              <svg viewBox="0 0 168 168" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path fill="#1DB954" d="M84 0C37.6 0 0 37.6 0 84s37.6 84 84 84 84-37.6 84-84S130.4 0 84 0zm38.6 121.1c-1.5 2.4-4.8 3.2-7.2 1.6-19.8-12.1-44.8-14.9-74.1-8.1-2.9.7-5.7-1.1-6.4-3.9-.7-2.9 1.1-5.7 3.9-6.4 32.1-7.3 59.7-4.2 82 9.5 2.4 1.6 3.2 4.9 1.8 7.3zm10.3-22.9c-2 3.1-6 4.1-9.1 2.1-22.6-13.9-57-18-83.9-9.8-3.4 1-6.9-.9-7.9-4.2-1-3.4.9-6.9 4.2-7.9 30.6-9.3 68.7-4.8 94.8 11.2 3.1 2 4.1 6 1.9 8.6zm.9-23.8c-27.2-16.2-72-17.6-97.9-9.7-4 1.2-8.2-1-9.5-5-1.2-4 1-8.2 5-9.5 29.7-9 79.3-7.3 110.5 11.1 3.6 2.1 4.7 6.7 2.6 10.3-2.2 3.6-6.8 4.7-10.7 2.8z"/></svg>
             </div>
-            <div class="ed">Part of a greenfield initiative on Truecaller's global caller ID platform — Jetpack Compose from day one, clean architecture at scale, and rapid feature delivery in a fully remote setup.</div>
-            <div class="tags"><span class="tag">Compose</span><span class="tag">Architecture</span><span class="tag">Remote</span></div>
-            <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.truecaller" target="_blank">▸ Google Play</a><a class="lnk" href="https://truecaller.com" target="_blank">↗ truecaller.com</a></div>
+            <div class="em"><a class="en" href="https://spotify.com" target="_blank">Spotify</a><div class="ep">Nov 2025 – Present</div><div class="er">Android Engineer II · via Coody</div></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:#0d0d0d"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg">
-  <rect width="102" height="214" fill="#0d0d0d"/>
-  <text x="7" y="11" font-size="6" fill="#fff" font-weight="700" font-family="system-ui">9:41</text>
-  <rect x="77" y="7" width="14" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".8"/>
-  <rect x="78" y="8" width="10" height="3" rx=".8" fill="#4CAF50"/>
-  <rect x="92.5" y="8" width="1.2" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
-  <rect x="66" y="9" width="2" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
-  <rect x="69.5" y="8" width="2" height="4" rx=".5" fill="rgba(255,255,255,.6)"/>
-  <rect x="73" y="7" width="2" height="5" rx=".5" fill="rgba(255,255,255,.85)"/>
-  <!-- Top bar -->
-  <rect x="0" y="14" width="102" height="18" fill="#1a1a1a"/>
-  <text x="10" y="26" font-size="9" fill="#fff" font-weight="700" font-family="system-ui">Recents</text>
-  <circle cx="88" cy="23" r="7" fill="#0288D1"/>
-  <text x="88" y="26.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">T</text>
-  <!-- Search bar -->
-  <rect x="8" y="35" width="86" height="9" rx="4.5" fill="#252525"/>
-  <text x="20" y="41.5" font-size="5" fill="rgba(255,255,255,.3)" font-family="system-ui">Search calls and contacts</text>
-  <!-- Call rows -->
-  <!-- 1: incoming green -->
-  <rect x="0" y="47" width="102" height="20" fill="#0d0d0d"/>
-  <circle cx="18" cy="57" r="8" fill="#1565C0"/>
-  <text x="18" y="60.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">E</text>
-  <text x="32" y="54.5" font-size="6" fill="#fff" font-weight="600" font-family="system-ui">Erik Karlsson</text>
-  <!-- incoming arrow -->
-  <line x1="30" y1="60" x2="33" y2="63" stroke="#4CAF50" stroke-width="1.2" stroke-linecap="round"/>
-  <line x1="30" y1="63" x2="30" y2="60" stroke="#4CAF50" stroke-width="1.2" stroke-linecap="round"/>
-  <line x1="30" y1="63" x2="33" y2="63" stroke="#4CAF50" stroke-width="1.2" stroke-linecap="round"/>
-  <text x="37" y="63" font-size="4.5" fill="#4CAF50" font-family="system-ui">Mobile · 3 min ago</text>
-  <text x="95" y="58" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.35)" font-family="system-ui">2:34</text>
-  <line x1="28" y1="67" x2="102" y2="67" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- 2: outgoing -->
-  <rect x="0" y="68" width="102" height="20" fill="#0d0d0d"/>
-  <circle cx="18" cy="78" r="8" fill="#7B1FA2"/>
-  <text x="18" y="81.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">M</text>
-  <text x="32" y="75.5" font-size="6" fill="#fff" font-weight="600" font-family="system-ui">Maria Svensson</text>
-  <text x="32" y="84" font-size="4.5" fill="rgba(255,255,255,.45)" font-family="system-ui">Outgoing · 1 hr ago</text>
-  <text x="95" y="78.5" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.35)" font-family="system-ui">8:21</text>
-  <line x1="28" y1="88" x2="102" y2="88" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- 3: missed red -->
-  <rect x="0" y="89" width="102" height="20" fill="#0d0d0d"/>
-  <circle cx="18" cy="99" r="8" fill="#424242"/>
-  <text x="18" y="102.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">J</text>
-  <text x="32" y="96.5" font-size="6" fill="#EF5350" font-weight="600" font-family="system-ui">Johan Berg</text>
-  <text x="32" y="105" font-size="4.5" fill="#EF5350" font-family="system-ui">Missed · 2 hr ago</text>
-  <text x="95" y="99.5" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.35)" font-family="system-ui">11:07</text>
-  <line x1="28" y1="109" x2="102" y2="109" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- 4: spam -->
-  <rect x="0" y="110" width="102" height="20" fill="#1a0a0a"/>
-  <circle cx="18" cy="120" r="8" fill="#B71C1C"/>
-  <text x="18" y="123.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">!</text>
-  <text x="32" y="117.5" font-size="6" fill="#EF9A9A" font-weight="600" font-family="system-ui">+46 812 345 67</text>
-  <rect x="70" y="115" width="24" height="7" rx="2" fill="rgba(183,28,28,.4)" stroke="#B71C1C" stroke-width=".6"/>
-  <text x="82" y="120.5" text-anchor="middle" font-size="4.5" fill="#EF9A9A" font-weight="600" font-family="system-ui">SPAM</text>
-  <text x="32" y="126" font-size="4.5" fill="rgba(239,154,154,.6)" font-family="system-ui">Blocked · 3 hr ago</text>
-  <line x1="28" y1="130" x2="102" y2="130" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- 5 -->
-  <rect x="0" y="131" width="102" height="20" fill="#0d0d0d"/>
-  <circle cx="18" cy="141" r="8" fill="#2E7D32"/>
-  <text x="18" y="144.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">A</text>
-  <text x="32" y="138.5" font-size="6" fill="#fff" font-weight="600" font-family="system-ui">Anna Lindqvist</text>
-  <text x="32" y="147" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Outgoing · Yesterday</text>
-  <text x="95" y="141.5" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.35)" font-family="system-ui">5:48</text>
-  <line x1="28" y1="151" x2="102" y2="151" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- 6 -->
-  <rect x="0" y="152" width="102" height="20" fill="#0d0d0d"/>
-  <circle cx="18" cy="162" r="8" fill="#1565C0"/>
-  <text x="18" y="165.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700" font-family="system-ui">P</text>
-  <text x="32" y="159.5" font-size="6" fill="#fff" font-weight="600" font-family="system-ui">Peter Nilsson</text>
-  <text x="32" y="168" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Incoming · Yesterday</text>
-  <text x="95" y="162.5" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.35)" font-family="system-ui">18:22</text>
-  <!-- FAB -->
-  <circle cx="80" cy="180" r="11" fill="#0288D1"/>
-  <path d="M76 180 Q76 175 80 175 Q84 175 84 180 Q84 183 80 183" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
-  <circle cx="80" cy="184" r="1" fill="#fff"/>
-  <!-- Bottom nav -->
-  <rect x="0" y="196" width="102" height="18" fill="#1a1a1a"/>
-  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
-  <rect x="4" y="194" width="18" height="2" rx="1" fill="#0288D1"/>
-  <text x="13" y="207" text-anchor="middle" font-size="4.5" fill="#0288D1" font-weight="600" font-family="system-ui">Recents</text>
-  <text x="34" y="207" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Contacts</text>
-  <text x="56" y="207" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Discover</text>
-  <text x="78" y="207" text-anchor="middle" font-size="4.5" fill="rgba(255,255,255,.4)" font-family="system-ui">Settings</text>
-</svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
+          <div class="ed">Engineering the Android platform behind music for 600 million+ listeners worldwide. Contributing to large-scale systems, performance, and architecture across one of the world's most-used apps.</div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">600M+</span><span class="xcl">monthly active listeners</span><span class="xcb">Scale</span></div><div class="xcs"><span class="xcn">Kotlin</span><span class="xcl">Modern Android · Coroutines · Flow</span><span class="xcb">Language</span></div><div class="xcs"><span class="xcn">Platform</span><span class="xcl">Core infra, perf & architecture</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Android</span><span class="xcl">World's most-used music app</span><span class="xcb">Impact</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="xf"><div class="tags"><span class="tag hi">▸ Current</span><span class="tag">Platform</span><span class="tag">600M users</span><span class="tag">Kotlin</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.spotify.music" target="_blank">▸ Google Play</a><a class="lnk" href="https://spotify.com" target="_blank">↗ spotify.com</a></div>
         </div>
       </div>
 
-      <!-- PAF — Mustafar: volcanic lava planet, deep red-orange -->
+      <!-- TRUECALLER -->
       <div class="ec g r2">
-        <div class="eb" style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
-          <div>
-            <div class="et">
-              <div class="logo" style="background:#2a0800"><svg viewBox="0 0 200 200" width="30" height="30"><rect width="200" height="200" rx="44" fill="#D84315"/><text x="100" y="138" text-anchor="middle" font-family="Arial Black" font-size="80" font-weight="900" fill="white" letter-spacing="-2">paf</text></svg></div>
-              <div class="em"><a class="en" href="https://paf.com" target="_blank">Paf</a><div class="ep">Mar 2024 – Jul 2025</div><div class="er">Senior Android Developer</div></div>
-            </div>
-            <div class="ed">Architected multiple white-label gaming apps from scratch. Built end-to-end CI/CD pipelines, a shared design system adopted across products, and mentored a growing Android team.</div>
-            <div class="tags"><span class="tag">White-label</span><span class="tag">CI/CD</span><span class="tag">Design System</span></div>
-            <div class="lnks"><a class="lnk" href="https://play.google.com/store/search?q=paf&c=apps" target="_blank">▸ Google Play</a><a class="lnk" href="https://paf.com" target="_blank">↗ paf.com</a></div>
+        <div class="eb">
+          <div class="et">
+            <div class="logo" style="background:#003d8f"><svg viewBox="0 0 200 200" width="30" height="30"><rect width="200" height="200" rx="44" fill="#0288D1"/><path d="M60 58h80v20H112v64H88V78H60z" fill="white"/></svg></div>
+            <div class="em"><a class="en" href="https://truecaller.com" target="_blank">Truecaller</a><div class="ep">Aug – Nov 2025</div><div class="er">Senior Android Developer · Remote</div></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:#0a0008"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <!-- PAF — Casino lobby screen -->
-  <rect width="102" height="214" fill="#0d0010"/>
-  <!-- Status bar -->
-  <text x="7" y="11" font-size="5.5" fill="rgba(255,200,100,.85)" font-weight="700">9:41</text>
-  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,200,100,.4)" stroke-width=".7"/>
-  <rect x="81" y="7.5" width="9" height="3" rx=".8" fill="#FF6D00"/>
-  <rect x="68" y="9" width="1.5" height="3" rx=".4" fill="rgba(255,200,100,.4)"/>
-  <rect x="70.5" y="8" width="1.5" height="4" rx=".4" fill="rgba(255,200,100,.65)"/>
-  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,200,100,.9)"/>
-  <!-- Header bar -->
-  <rect x="0" y="14" width="102" height="20" fill="#1a0020"/>
-  <text x="12" y="27.5" font-size="10" font-weight="900" fill="#FF6D00" letter-spacing=".08em">paf</text>
-  <!-- Balance chip -->
-  <rect x="55" y="18" width="42" height="12" rx="6" fill="rgba(255,152,0,.15)" stroke="rgba(255,152,0,.4)" stroke-width=".7"/>
-  <text x="76" y="26.5" text-anchor="middle" font-size="5.5" fill="#FFB300" font-weight="700">€ 250.00</text>
-  <!-- Nav tabs -->
-  <rect x="0" y="34" width="102" height="14" fill="#120015"/>
-  <text x="13" y="43.5" text-anchor="middle" font-size="5.5" fill="#FF6D00" font-weight="700">Slots</text>
-  <rect x="5" y="47" width="16" height="1.5" rx=".75" fill="#FF6D00"/>
-  <text x="33" y="43.5" text-anchor="middle" font-size="5.5" fill="rgba(255,200,100,.4)">Live</text>
-  <text x="51" y="43.5" text-anchor="middle" font-size="5.5" fill="rgba(255,200,100,.4)">Table</text>
-  <text x="69" y="43.5" text-anchor="middle" font-size="5.5" fill="rgba(255,200,100,.4)">Sport</text>
-  <text x="89" y="43.5" text-anchor="middle" font-size="5.5" fill="rgba(255,200,100,.4)">More</text>
-  <!-- Featured banner -->
-  <rect x="8" y="52" width="86" height="26" rx="5" fill="#2a0035"/>
-  <rect x="8" y="52" width="86" height="26" rx="5" fill="url(#pafbanner)" opacity=".6"/>
-  <defs><linearGradient id="pafbanner" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF6D00" stop-opacity=".3"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
-  <text x="18" y="63" font-size="6" fill="#FFB300" font-weight="700">JACKPOT</text>
-  <text x="18" y="72" font-size="8" fill="white" font-weight="900">€ 124,582</text>
-  <!-- Game grid: 2 columns × 3 rows -->
-  <!-- Row 1 -->
-  <rect x="8" y="82" width="41" height="32" rx="4" fill="#1e0028"/>
-  <text x="28.5" y="103" text-anchor="middle" font-size="11" fill="#FFD54F" font-weight="700">★</text>
-  <text x="28.5" y="110" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Book of Ra</text>
-  <rect x="53" y="82" width="41" height="32" rx="4" fill="#001e28"/>
-  <text x="73.5" y="103" text-anchor="middle" font-size="13" fill="#90CAF9">♠</text>
-  <text x="73.5" y="110" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Blackjack</text>
-  <!-- Row 2 -->
-  <rect x="8" y="118" width="41" height="32" rx="4" fill="#1e1a00"/>
-  <text x="28.5" y="139" text-anchor="middle" font-size="14" fill="#FFD54F" font-weight="900">7</text>
-  <text x="28.5" y="146" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Lucky Sevens</text>
-  <rect x="53" y="118" width="41" height="32" rx="4" fill="#1e0012"/>
-  <text x="73.5" y="139" text-anchor="middle" font-size="13" fill="#CE93D8">♦</text>
-  <text x="73.5" y="146" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Mega Fortune</text>
-  <!-- Row 3 -->
-  <rect x="8" y="154" width="41" height="32" rx="4" fill="#001e0e"/>
-  <text x="28.5" y="175" text-anchor="middle" font-size="13" fill="#A5D6A7">♣</text>
-  <text x="28.5" y="182" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Irish Luck</text>
-  <rect x="53" y="154" width="41" height="32" rx="4" fill="#0a001e"/>
-  <text x="73.5" y="175" text-anchor="middle" font-size="13" fill="#F48FB1">♦</text>
-  <text x="73.5" y="182" text-anchor="middle" font-size="4.5" fill="rgba(255,200,100,.8)">Diamond King</text>
-  <!-- Bottom navigation -->
-  <rect x="0" y="196" width="102" height="18" fill="#100015"/>
-  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,150,0,.15)" stroke-width=".5"/>
-  <text x="13" y="207" text-anchor="middle" font-size="5" fill="#FF6D00" font-weight="600">Lobby</text>
-  <text x="33" y="207" text-anchor="middle" font-size="5" fill="rgba(255,200,100,.4)">My Games</text>
-  <text x="55" y="207" text-anchor="middle" font-size="5" fill="rgba(255,200,100,.4)">Offers</text>
-  <text x="75" y="207" text-anchor="middle" font-size="5" fill="rgba(255,200,100,.4)">Cashier</text>
-  <text x="92" y="207" text-anchor="middle" font-size="5" fill="rgba(255,200,100,.4)">Account</text>
-  <rect x="5" y="194" width="16" height="2" rx="1" fill="#FF6D00"/>
-</svg></div></svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
+          <div class="ed">Part of a greenfield initiative on Truecaller's global caller ID platform — Jetpack Compose from day one, clean architecture at scale, and rapid feature delivery in a fully remote setup.</div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">900M+</span><span class="xcl">identities in caller ID database</span><span class="xcb">Scale</span></div><div class="xcs"><span class="xcn">Compose</span><span class="xcl">Jetpack UI · greenfield codebase</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Clean Arch</span><span class="xcl">Modular, testable, scalable</span><span class="xcb">Architecture</span></div><div class="xcs"><span class="xcn">Remote</span><span class="xcl">Stockholm × Bangalore team</span><span class="xcb">Setup</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="xf"><div class="tags"><span class="tag">Compose</span><span class="tag">Architecture</span><span class="tag">Remote</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.truecaller" target="_blank">▸ Google Play</a><a class="lnk" href="https://truecaller.com" target="_blank">↗ truecaller.com</a></div></div>
+
         </div>
       </div>
 
-      <!-- GLOOKO — Mandalore: silver-steel deserts, beskar sheen -->
+      <!-- PAF -->
       <div class="ec g r">
-        <div class="eb" style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
-          <div>
-            <div class="et">
-              <div class="logo" style="background:#00838F"><svg viewBox="0 0 100 100" width="32" height="32"><rect width="100" height="100" rx="0" fill="none"/><text x="50" y="62" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="white">G</text></svg></div>
-              <div class="em"><a class="en" href="https://glooko.com" target="_blank">Glooko</a><div class="ep">May 2023 – Jan 2024</div><div class="er">Senior Android Developer · Göteborg</div></div>
-            </div>
-            <div class="ed">Full BT, NFC and USB hardware stack. Deep native work via NDK/JNI in C++ for medical device connectivity.</div>
-            <div class="tags"><span class="tag">BT / NFC / USB</span><span class="tag">NDK / JNI</span><span class="tag">C++</span></div>
-            <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.glooko.logbook" target="_blank">▸ Google Play</a><a class="lnk" href="https://glooko.com" target="_blank">↗ glooko.com</a></div>
+        <div class="eb">
+          <div class="et">
+            <div class="logo" style="background:#2a0800"><svg viewBox="0 0 200 200" width="30" height="30"><rect width="200" height="200" rx="44" fill="#D84315"/><text x="100" y="138" text-anchor="middle" font-family="Arial Black" font-size="80" font-weight="900" fill="white" letter-spacing="-2">paf</text></svg></div>
+            <div class="em"><a class="en" href="https://paf.com" target="_blank">Paf</a><div class="ep">Mar 2024 – Jul 2025</div><div class="er">Senior Android Developer</div></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:#051212"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <!-- Glooko — Glucose Logbook screen -->
-  <rect width="102" height="214" fill="#071515"/>
-  <!-- Status bar -->
-  <text x="7" y="11" font-size="5.5" fill="rgba(255,255,255,.8)" font-weight="700">9:41</text>
-  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".7"/>
-  <rect x="81" y="7.5" width="10" height="3" rx=".8" fill="#00BCD4"/>
-  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,255,255,.85)"/>
-  <!-- Header -->
-  <rect x="0" y="14" width="102" height="18" fill="#0a1e1e"/>
-  <text x="10" y="26" font-size="8" font-weight="700" fill="white">Logbook</text>
-  <text x="90" y="26" text-anchor="end" font-size="6" fill="#26C6DA">Today</text>
-  <!-- Current reading hero card -->
-  <rect x="8" y="35" width="86" height="46" rx="6" fill="#0d2626"/>
-  <rect x="8" y="35" width="86" height="46" rx="6" fill="url(#glgrad)" opacity=".4"/>
-  <defs><linearGradient id="glgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00BCD4" stop-opacity=".3"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
-  <text x="20" y="50" font-size="5.5" fill="rgba(255,255,255,.6)" letter-spacing=".08em">CURRENT BLOOD GLUCOSE</text>
-  <text x="20" y="65" font-size="18" font-weight="700" fill="#26C6DA">7.4</text>
-  <text x="46" y="68" font-size="7" fill="rgba(255,255,255,.55)">mmol/L</text>
-  <rect x="65" y="50" width="22" height="10" rx="3" fill="rgba(255,193,7,.15)" stroke="rgba(255,193,7,.4)" stroke-width=".7"/>
-  <text x="76" y="57" text-anchor="middle" font-size="5" fill="#FFD54F" font-weight="600">IN RANGE</text>
-  <text x="20" y="76" font-size="4.5" fill="rgba(255,255,255,.4)">Last reading: 12 min ago · Dexcom G7</text>
-  <!-- Mini chart -->
-  <rect x="8" y="85" width="86" height="38" rx="5" fill="#0d2020"/>
-  <text x="14" y="95" font-size="5" fill="rgba(255,255,255,.5)" letter-spacing=".06em">24H TREND</text>
-  <!-- Chart grid lines -->
-  <line x1="14" y1="101" x2="88" y2="101" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
-  <line x1="14" y1="109" x2="88" y2="109" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
-  <line x1="14" y1="117" x2="88" y2="117" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
-  <!-- Target range band -->
-  <rect x="14" y="104" width="74" height="10" fill="rgba(76,175,80,.1)"/>
-  <!-- Glucose line -->
-  <polyline points="14,116 22,112 30,108 38,104 46,107 54,110 62,106 70,103 78,107 86,108" fill="none" stroke="#26C6DA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Dots -->
-  <circle cx="14" cy="116" r="1.5" fill="#26C6DA"/>
-  <circle cx="46" cy="107" r="1.5" fill="#26C6DA"/>
-  <circle cx="86" cy="108" r="2" fill="#26C6DA" stroke="#0d2020" stroke-width="1"/>
-  <!-- High/Low labels -->
-  <text x="14" y="101" font-size="4" fill="rgba(255,100,100,.6)">High</text>
-  <text x="14" y="119" font-size="4" fill="rgba(100,200,255,.6)">Low</text>
-  <!-- Today's readings list -->
-  <text x="10" y="133" font-size="6.5" font-weight="700" fill="white">Today's readings</text>
-  <!-- Reading rows -->
-  <rect x="8" y="137" width="86" height="13" rx="3" fill="#0d2020"/>
-  <circle cx="17" cy="143.5" r="4" fill="rgba(38,198,218,.2)" stroke="#26C6DA" stroke-width=".8"/>
-  <text x="17" y="146" text-anchor="middle" font-size="5" fill="#26C6DA" font-weight="700">●</text>
-  <text x="28" y="141" font-size="5.5" fill="white" font-weight="600">7.4 mmol/L</text>
-  <text x="28" y="148" font-size="4.5" fill="rgba(255,255,255,.4)">09:28 · Before meal</text>
-  <text x="88" y="145" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">Now</text>
-  <rect x="8" y="153" width="86" height="13" rx="3" fill="#0d2020"/>
-  <circle cx="17" cy="159.5" r="4" fill="rgba(102,187,106,.2)" stroke="#66BB6A" stroke-width=".8"/>
-  <text x="28" y="157" font-size="5.5" fill="white" font-weight="600">6.8 mmol/L</text>
-  <text x="28" y="164" font-size="4.5" fill="rgba(255,255,255,.4)">07:45 · Fasting</text>
-  <text x="88" y="161" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">2h ago</text>
-  <rect x="8" y="169" width="86" height="13" rx="3" fill="#0d2020"/>
-  <circle cx="17" cy="175.5" r="4" fill="rgba(255,183,77,.2)" stroke="#FFB74D" stroke-width=".8"/>
-  <text x="28" y="173" font-size="5.5" fill="white" font-weight="600">9.2 mmol/L</text>
-  <text x="28" y="180" font-size="4.5" fill="rgba(255,255,255,.4)">06:10 · After meal</text>
-  <text x="88" y="177" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">3h ago</text>
-  <!-- Bottom navigation -->
-  <rect x="0" y="196" width="102" height="18" fill="#0a1a1a"/>
-  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
-  <text x="13" y="207" text-anchor="middle" font-size="5" fill="#26C6DA" font-weight="600">Log</text>
-  <text x="33" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Reports</text>
-  <text x="54" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Devices</text>
-  <text x="75" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Insights</text>
-  <text x="92" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Profile</text>
-  <rect x="5" y="194" width="16" height="2" rx="1" fill="#26C6DA"/>
-</svg></div></svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
+          <div class="ed">Architected multiple white-label gaming apps from scratch. Built end-to-end CI/CD pipelines, a shared design system adopted across products, and mentored a growing Android team.</div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">3 apps</span><span class="xcl">White-label gaming — built from scratch</span><span class="xcb">Output</span></div><div class="xcs"><span class="xcn">CI/CD</span><span class="xcl">GitHub Actions · automated pipelines</span><span class="xcb">DevOps</span></div><div class="xcs"><span class="xcn">Design System</span><span class="xcl">Shared components across all products</span><span class="xcb">Architecture</span></div><div class="xcs"><span class="xcn">Mentor</span><span class="xcl">Grew & led the Android team</span><span class="xcb">Leadership</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="xf"><div class="tags"><span class="tag">White-label</span><span class="tag">CI/CD</span><span class="tag">Design System</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/search?q=paf&c=apps" target="_blank">▸ Google Play</a><a class="lnk" href="https://paf.com" target="_blank">↗ paf.com</a></div></div>
+
         </div>
       </div>
 
-      <!-- KIVRA — Bespin: cloud city, soft peach-rose twilight -->
+      <!-- GLOOKO -->
       <div class="ec g r2">
-        <div class="eb" style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
-          <div>
-            <div class="et">
-              <div class="logo" style="background:#fff"><img src="https://mnd-assets.mynewsdesk.com/image/upload/c_fill,dpr_auto,f_auto,g_auto,q_auto:good,w_300/ddkkugmnnfnzmi8xfzk1" style="width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;display:block;" alt="Kivra"/></div>
-              <div class="em"><a class="en" href="https://kivra.se" target="_blank">Kivra</a><div class="ep">Aug 2020 – Oct 2022</div><div class="er">Senior Android Developer · Stockholm</div></div>
-            </div>
-            <div class="ed">Led Android architecture at Sweden's leading digital mailbox service — payments, content delivery, and Compose migration. Drove GraphQL adoption, CI/CD with GitHub Actions, and grew the Android team through recruitment.</div>
-            <div class="tags"><span class="tag">GraphQL</span><span class="tag">Payments</span><span class="tag">Compose</span></div>
-            <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.kivra" target="_blank">▸ Google Play</a><a class="lnk" href="https://kivra.se" target="_blank">↗ kivra.se</a></div>
+        <div class="eb">
+          <div class="et">
+            <div class="logo" style="background:#00838F"><svg viewBox="0 0 100 100" width="32" height="32"><rect width="100" height="100" rx="0" fill="none"/><text x="50" y="62" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="white">G</text></svg></div>
+            <div class="em"><a class="en" href="https://glooko.com" target="_blank">Glooko</a><div class="ep">May 2023 – Jan 2024</div><div class="er">Senior Android Developer · Göteborg</div></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:#0e0717"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <!-- Kivra — Inbox screen -->
-  <rect width="102" height="214" fill="#100a1e"/>
-  <!-- Status bar -->
-  <text x="7" y="11" font-size="5.5" fill="rgba(255,255,255,.8)" font-weight="700">9:41</text>
-  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".7"/>
-  <rect x="81" y="7.5" width="10" height="3" rx=".8" fill="#7C4DFF"/>
-  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,255,255,.85)"/>
-  <!-- Header -->
-  <rect x="0" y="14" width="102" height="18" fill="#160e28"/>
-  <text x="10" y="26" font-size="8.5" font-weight="700" fill="white">Inbox</text>
-  <!-- Unread badge -->
-  <circle cx="42" cy="23" r="5" fill="#7C4DFF"/>
-  <text x="42" y="26" text-anchor="middle" font-size="5.5" fill="white" font-weight="700">3</text>
-  <text x="92" y="26" text-anchor="end" font-size="6" fill="#9C78FF">Filter</text>
-  <!-- Filter tabs -->
-  <rect x="0" y="32" width="102" height="12" fill="#130c22"/>
-  <text x="15" y="40.5" text-anchor="middle" font-size="5.5" fill="#9C78FF" font-weight="700">All</text>
-  <rect x="5" y="43" width="20" height="1.5" rx=".75" fill="#7C4DFF"/>
-  <text x="38" y="40.5" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)">Unread</text>
-  <text x="62" y="40.5" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)">Mail</text>
-  <text x="84" y="40.5" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)">Invoices</text>
-  <!-- Mail items -->
-  <!-- Item 1: unread -->
-  <rect x="0" y="47" width="102" height="22" fill="#1a1030"/>
-  <rect x="8" y="51" width="14" height="14" rx="3" fill="#E53935"/>
-  <text x="15" y="60.5" text-anchor="middle" font-size="6.5" fill="white" font-weight="700">S</text>
-  <text x="30" y="56" font-size="6" fill="white" font-weight="700">Skatteverket</text>
-  <text x="30" y="63" font-size="5" fill="rgba(255,255,255,.55)">Beslut om skattereduktion</text>
-  <text x="94" y="56" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.4)">08:14</text>
-  <circle cx="96" cy="63" r="2.5" fill="#7C4DFF"/>
-  <line x1="8" y1="69" x2="102" y2="69" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- Item 2: unread -->
-  <rect x="0" y="69" width="102" height="22" fill="#1a1030"/>
-  <rect x="8" y="73" width="14" height="14" rx="3" fill="#1565C0"/>
-  <text x="15" y="82.5" text-anchor="middle" font-size="6.5" fill="white" font-weight="700">F</text>
-  <text x="30" y="78" font-size="6" fill="white" font-weight="700">Försäkringskassan</text>
-  <text x="30" y="85" font-size="5" fill="rgba(255,255,255,.55)">Utbetalning 4 600 kr</text>
-  <text x="94" y="78" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.4)">Igår</text>
-  <circle cx="96" cy="85" r="2.5" fill="#7C4DFF"/>
-  <line x1="8" y1="91" x2="102" y2="91" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- Item 3: unread -->
-  <rect x="0" y="91" width="102" height="22" fill="#1a1030"/>
-  <rect x="8" y="95" width="14" height="14" rx="3" fill="#2E7D32"/>
-  <text x="15" y="104.5" text-anchor="middle" font-size="6.5" fill="white" font-weight="700">N</text>
-  <text x="30" y="100" font-size="6" fill="white" font-weight="700">Nordea</text>
-  <text x="30" y="107" font-size="5" fill="rgba(255,255,255,.55)">Kontoutdrag november</text>
-  <text x="94" y="100" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.4)">Mån</text>
-  <circle cx="96" cy="107" r="2.5" fill="#7C4DFF"/>
-  <line x1="8" y1="113" x2="102" y2="113" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
-  <!-- Item 4: read -->
-  <rect x="0" y="113" width="102" height="22" fill="#100a1e"/>
-  <rect x="8" y="117" width="14" height="14" rx="3" fill="#455A64"/>
-  <text x="15" y="126.5" text-anchor="middle" font-size="6.5" fill="white" font-weight="700">V</text>
-  <text x="30" y="122" font-size="6" fill="rgba(255,255,255,.7)">Vattenfall</text>
-  <text x="30" y="129" font-size="5" fill="rgba(255,255,255,.4)">Faktura 843 kr · Förfaller 15 dec</text>
-  <text x="94" y="122" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.3)">Sön</text>
-  <line x1="8" y1="135" x2="102" y2="135" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
-  <!-- Item 5: read -->
-  <rect x="0" y="135" width="102" height="22" fill="#100a1e"/>
-  <rect x="8" y="139" width="14" height="14" rx="3" fill="#6A1B9A"/>
-  <text x="15" y="148.5" text-anchor="middle" font-size="6.5" fill="white" font-weight="700">T</text>
-  <text x="30" y="144" font-size="6" fill="rgba(255,255,255,.7)">Telia</text>
-  <text x="30" y="151" font-size="5" fill="rgba(255,255,255,.4)">Din faktura är klar</text>
-  <text x="94" y="144" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.3)">Lör</text>
-  <line x1="8" y1="157" x2="102" y2="157" stroke="rgba(255,255,255,.05)" stroke-width=".5"/>
-  <!-- Item 6: read -->
-  <rect x="0" y="157" width="102" height="22" fill="#100a1e"/>
-  <rect x="8" y="161" width="14" height="14" rx="3" fill="#E65100"/>
-  <text x="15" y="170.5" text-anchor="middle" font-size="5" fill="white" font-weight="700">ICA</text>
-  <text x="30" y="166" font-size="6" fill="rgba(255,255,255,.7)">ICA Banken</text>
-  <text x="30" y="173" font-size="5" fill="rgba(255,255,255,.4)">Ditt årliga kontoutdrag</text>
-  <text x="94" y="166" text-anchor="end" font-size="4.5" fill="rgba(255,255,255,.3)">Fre</text>
-  <!-- Bottom navigation -->
-  <rect x="0" y="196" width="102" height="18" fill="#160e28"/>
-  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
-  <text x="13" y="207" text-anchor="middle" font-size="5" fill="#9C78FF" font-weight="600">Inbox</text>
-  <text x="33" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Files</text>
-  <text x="54" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Payments</text>
-  <text x="76" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Settings</text>
-  <text x="93" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Profile</text>
-  <rect x="5" y="194" width="16" height="2" rx="1" fill="#7C4DFF"/>
-</svg></div></svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
+          <div class="ed">Full BT, NFC and USB hardware stack. Deep native work via NDK/JNI in C++ for medical device connectivity.</div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">BT+NFC+USB</span><span class="xcl">Full hardware connectivity stack</span><span class="xcb">Platform</span></div><div class="xcs"><span class="xcn">C++ NDK</span><span class="xcl">Native bridge via JNI for device comms</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Medical</span><span class="xcl">Dexcom, Medtronic device SDKs</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Real-time</span><span class="xcl">Sensor data pipeline & sync</span><span class="xcb">Impact</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="xf"><div class="tags"><span class="tag">BT / NFC / USB</span><span class="tag">NDK / JNI</span><span class="tag">C++</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=com.glooko.logbook" target="_blank">▸ Google Play</a><a class="lnk" href="https://glooko.com" target="_blank">↗ glooko.com</a></div></div>
         </div>
       </div>
 
-      <!-- SBAB — Hoth: frozen wastes, ice-white cold blue -->
+      <!-- KIVRA -->
       <div class="ec g r">
-        <div class="eb" style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
-          <div>
-            <div class="et">
-              <div class="logo" style="background:#ffffff"><img src="https://www.sbab.se/images/18.1f81472418f76c7c850184/1715867477502/SBAB_Logotyp_Svart_Orange_RGB_500_.png" style="width:100%;height:100%;object-fit:contain;padding:6px;display:block;box-sizing:border-box;"/></div>
-              <div class="em"><a class="en" href="https://sbab.se" target="_blank">SBAB Bank</a><div class="ep">Apr 2019 – Aug 2020</div><div class="er">Senior Android Developer · Stockholm</div></div>
-            </div>
-            <div class="ed">Shipped features across SBAB's consumer banking app covering savings, mortgages, and insurance. Served as security lead for the Android codebase and drove recruitment alongside feature delivery.</div>
-            <div class="tags"><span class="tag">Banking</span><span class="tag">Security</span><span class="tag">Architecture</span></div>
-            <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.sbab.bankapp" target="_blank">▸ Google Play</a><a class="lnk" href="https://sbab.se" target="_blank">↗ sbab.se</a></div>
+        <div class="eb">
+          <div class="et">
+            <div class="logo" style="background:#fff"><img src="https://mnd-assets.mynewsdesk.com/image/upload/c_fill,dpr_auto,f_auto,g_auto,q_auto:good,w_300/ddkkugmnnfnzmi8xfzk1" style="width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;display:block;" alt="Kivra"/></div>
+            <div class="em"><a class="en" href="https://kivra.se" target="_blank">Kivra</a><div class="ep">Aug 2020 – Oct 2022</div><div class="er">Senior Android Developer · Stockholm</div></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:#050b18"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <!-- SBAB — My accounts overview -->
-  <rect width="102" height="214" fill="#060e1e"/>
-  <!-- Status bar -->
-  <text x="7" y="11" font-size="5.5" fill="rgba(255,255,255,.8)" font-weight="700">9:41</text>
-  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".7"/>
-  <rect x="81" y="7.5" width="9" height="3" rx=".8" fill="#1565C0"/>
-  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,255,255,.85)"/>
-  <!-- Header -->
-  <rect x="0" y="14" width="102" height="18" fill="#081426"/>
-  <text x="10" y="26" font-size="8.5" font-weight="700" fill="white">SBAB</text>
-  <text x="92" y="26" text-anchor="end" font-size="6" fill="rgba(255,255,255,.5)">⬡</text>
-  <!-- Savings card -->
-  <rect x="8" y="36" width="86" height="44" rx="6" fill="#0d2040"/>
-  <text x="18" y="49" font-size="5" fill="rgba(255,255,255,.5)" letter-spacing=".07em">SPARKONTO PREMIUM</text>
-  <text x="18" y="64" font-size="15" font-weight="700" fill="white">241 450 kr</text>
-  <text x="18" y="73" font-size="4.5" fill="rgba(100,180,255,.75)">+3 482 kr denna månad  · 2,15% ränta</text>
-  <text x="84" y="49" text-anchor="end" font-size="5" fill="rgba(255,255,255,.3)">••••</text>
-  <!-- Mortgage card -->
-  <rect x="8" y="84" width="86" height="36" rx="6" fill="#081a30"/>
-  <text x="18" y="96" font-size="5" fill="rgba(255,255,255,.5)" letter-spacing=".07em">BOLÅN</text>
-  <text x="18" y="109" font-size="13" font-weight="700" fill="white">2 850 000 kr</text>
-  <text x="18" y="117" font-size="4.5" fill="rgba(255,150,100,.7)">4,62% rörlig ränta · 30 år</text>
-  <!-- Transactions section -->
-  <text x="10" y="130" font-size="6.5" font-weight="700" fill="white">Senaste händelser</text>
-  <!-- Transactions -->
-  <rect x="8" y="134" width="86" height="13" rx="3" fill="#0a1830"/>
-  <text x="16" y="143" font-size="5.5" fill="white">Inbetalning</text>
-  <text x="16" y="149" font-size="4" fill="rgba(255,255,255,.4)">28 nov · Lön november</text>
-  <text x="88" y="143" text-anchor="end" font-size="5.5" fill="#81C784" font-weight="600">+45 200 kr</text>
-  <rect x="8" y="150" width="86" height="13" rx="3" fill="#0a1830"/>
-  <text x="16" y="159" font-size="5.5" fill="white">Autogiro</text>
-  <text x="16" y="165" font-size="4" fill="rgba(255,255,255,.4)">25 nov · SBAB Bolån</text>
-  <text x="88" y="159" text-anchor="end" font-size="5.5" fill="#EF9A9A">-9 438 kr</text>
-  <rect x="8" y="166" width="86" height="13" rx="3" fill="#0a1830"/>
-  <text x="16" y="175" font-size="5.5" fill="white">Ränta insatt</text>
-  <text x="16" y="181" font-size="4" fill="rgba(255,255,255,.4)">25 nov · Sparkonto Premium</text>
-  <text x="88" y="175" text-anchor="end" font-size="5.5" fill="#81C784" font-weight="600">+432 kr</text>
-  <!-- Quick actions row -->
-  <rect x="8" y="183" width="26" height="9" rx="4.5" fill="rgba(21,101,192,.3)" stroke="rgba(21,101,192,.5)" stroke-width=".7"/>
-  <text x="21" y="189.5" text-anchor="middle" font-size="5" fill="#90CAF9">Överför</text>
-  <rect x="38" y="183" width="26" height="9" rx="4.5" fill="rgba(21,101,192,.15)" stroke="rgba(21,101,192,.3)" stroke-width=".7"/>
-  <text x="51" y="189.5" text-anchor="middle" font-size="5" fill="rgba(144,202,249,.7)">Betala</text>
-  <rect x="68" y="183" width="26" height="9" rx="4.5" fill="rgba(21,101,192,.15)" stroke="rgba(21,101,192,.3)" stroke-width=".7"/>
-  <text x="81" y="189.5" text-anchor="middle" font-size="5" fill="rgba(144,202,249,.7)">Ränta</text>
-  <!-- Bottom navigation -->
-  <rect x="0" y="196" width="102" height="18" fill="#081426"/>
-  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
-  <text x="13" y="207" text-anchor="middle" font-size="5" fill="#64B5F6" font-weight="600">Overview</text>
-  <text x="33" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Savings</text>
-  <text x="54" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Mortgage</text>
-  <text x="75" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Payments</text>
-  <text x="93" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Profile</text>
-  <rect x="5" y="194" width="16" height="2" rx="1" fill="#1565C0"/>
-</svg></div></svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
+          <div class="ed">Led Android architecture at Sweden's leading digital mailbox service — payments, content delivery, and Compose migration. Drove GraphQL adoption, CI/CD with GitHub Actions, and grew the Android team through recruitment.</div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">5M+</span><span class="xcl">Swedish users — digital mailbox</span><span class="xcb">Scale</span></div><div class="xcs"><span class="xcn">GraphQL</span><span class="xcl">API architecture · led adoption</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Payments</span><span class="xcl">Bills, invoices & delivery</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Team Lead</span><span class="xcl">Hiring, architecture & growth</span><span class="xcb">Leadership</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="xf"><div class="tags"><span class="tag">GraphQL</span><span class="tag">Payments</span><span class="tag">Compose</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.kivra" target="_blank">▸ Google Play</a><a class="lnk" href="https://kivra.se" target="_blank">↗ kivra.se</a></div></div>
         </div>
       </div>
 
-      <!-- AVANZA — Tatooine: twin suns desert, golden dunes -->
-      <div class="ec g w2 r">
-        <div class="eb" style="display:grid;grid-template-columns:1fr auto;gap:28px;align-items:start">
-          <div>
-            <div class="et">
-              <div class="logo" style="background:#ffffff"><img src="https://investors.avanza.se/files/Avanza_ir_logo.svg" style="width:100%;height:100%;object-fit:contain;padding:7px;display:block;box-sizing:border-box;"/></div>
-              <div class="em"><a class="en" href="https://avanza.se" target="_blank">Avanza Bank</a><div class="ep">Jun 2014 – Apr 2019</div><div class="er">Lead Android Developer · Stockholm</div></div>
-            </div>
-            <div class="ed">Built Avanza's Android app from scratch. Among the first in Sweden to adopt Kotlin and Material Design. Led hiring, migrated the entire codebase, achieved top Play Store ratings. Stocks, funds, dividends, loans, payments.</div>
-            <div class="tags"><span class="tag hi">Lead</span><span class="tag">Kotlin Pioneer</span><span class="tag">Fintech</span><span class="tag">4+ years</span></div>
-            <div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.avanza.phone" target="_blank">▸ Google Play</a><a class="lnk" href="https://avanza.se" target="_blank">↗ avanza.se</a></div>
+      <!-- SBAB -->
+      <div class="ec g r2">
+        <div class="eb">
+          <div class="et">
+            <div class="logo" style="background:#ffffff"><img src="https://www.sbab.se/images/18.1f81472418f76c7c850184/1715867477502/SBAB_Logotyp_Svart_Orange_RGB_500_.png" style="width:100%;height:100%;object-fit:contain;padding:6px;display:block;box-sizing:border-box;"/></div>
+            <div class="em"><a class="en" href="https://sbab.se" target="_blank">SBAB Bank</a><div class="ep">Apr 2019 – Aug 2020</div><div class="er">Senior Android Developer · Stockholm</div></div>
           </div>
-          <div class="ph"><div class="psh"><div class="psc" style="background:#020a02"><svg width="102" height="214" viewBox="0 0 102 214" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
-  <!-- Avanza — Portfolio screen -->
-  <rect width="102" height="214" fill="#030e04"/>
-  <!-- Status bar -->
-  <text x="7" y="11" font-size="5.5" fill="rgba(255,255,255,.8)" font-weight="700">9:41</text>
-  <rect x="80" y="6.5" width="13" height="5" rx="1.5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width=".7"/>
-  <rect x="81" y="7.5" width="10" height="3" rx=".8" fill="#43A047"/>
-  <rect x="73" y="7" width="1.5" height="5" rx=".4" fill="rgba(255,255,255,.85)"/>
-  <!-- Header -->
-  <rect x="0" y="14" width="102" height="18" fill="#031205"/>
-  <text x="10" y="26" font-size="8.5" font-weight="700" fill="white">Portfolio</text>
-  <text x="92" y="26" text-anchor="end" font-size="6" fill="rgba(255,255,255,.4)">↻</text>
-  <!-- Portfolio total card -->
-  <rect x="8" y="36" width="86" height="42" rx="6" fill="#051a06"/>
-  <text x="18" y="48" font-size="5" fill="rgba(255,255,255,.45)" letter-spacing=".07em">TOTAL VALUE</text>
-  <text x="18" y="63" font-size="16" font-weight="700" fill="white">834 210 kr</text>
-  <text x="18" y="72" font-size="5" fill="#66BB6A" font-weight="600">▲ +4 820 kr  (+0,58%)  idag</text>
-  <!-- Mini sparkline in card -->
-  <polyline points="60,70 64,65 68,68 72,60 76,55 80,58 84,52 88,46 92,50" fill="none" stroke="#43A047" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/>
-  <!-- Holdings list header -->
-  <text x="10" y="89" font-size="6.5" font-weight="700" fill="white">Holdings</text>
-  <text x="92" y="89" text-anchor="end" font-size="5" fill="rgba(255,255,255,.4)">Sort ▾</text>
-  <!-- Holdings -->
-  <!-- ERIC B -->
-  <rect x="8" y="93" width="86" height="18" rx="3" fill="#061408"/>
-  <rect x="10" y="97" width="12" height="10" rx="2" fill="#1B5E20"/>
-  <text x="16" y="103.5" text-anchor="middle" font-size="4.5" fill="#A5D6A7" font-weight="700">EB</text>
-  <text x="28" y="99" font-size="6" fill="white" font-weight="600">Ericsson B</text>
-  <text x="28" y="107" font-size="4.5" fill="rgba(255,255,255,.4)">500 aktier</text>
-  <text x="88" y="99" text-anchor="end" font-size="5.5" fill="white" font-weight="600">34 500 kr</text>
-  <text x="88" y="107" text-anchor="end" font-size="5" fill="#66BB6A">+2,4%</text>
-  <!-- Volvo B -->
-  <rect x="8" y="114" width="86" height="18" rx="3" fill="#061408"/>
-  <rect x="10" y="118" width="12" height="10" rx="2" fill="#283593"/>
-  <text x="16" y="124.5" text-anchor="middle" font-size="4.5" fill="#9FA8DA" font-weight="700">VO</text>
-  <text x="28" y="120" font-size="6" fill="white" font-weight="600">Volvo B</text>
-  <text x="28" y="128" font-size="4.5" fill="rgba(255,255,255,.4)">120 aktier</text>
-  <text x="88" y="120" text-anchor="end" font-size="5.5" fill="white" font-weight="600">28 440 kr</text>
-  <text x="88" y="128" text-anchor="end" font-size="5" fill="#66BB6A">+1,1%</text>
-  <!-- Investor A -->
-  <rect x="8" y="135" width="86" height="18" rx="3" fill="#061408"/>
-  <rect x="10" y="139" width="12" height="10" rx="2" fill="#4A148C"/>
-  <text x="16" y="145.5" text-anchor="middle" font-size="4" fill="#CE93D8" font-weight="700">INV</text>
-  <text x="28" y="141" font-size="6" fill="white" font-weight="600">Investor A</text>
-  <text x="28" y="149" font-size="4.5" fill="rgba(255,255,255,.4)">75 aktier</text>
-  <text x="88" y="141" text-anchor="end" font-size="5.5" fill="white" font-weight="600">67 500 kr</text>
-  <text x="88" y="149" text-anchor="end" font-size="5" fill="#EF9A9A">-0,3%</text>
-  <!-- Spotify -->
-  <rect x="8" y="156" width="86" height="18" rx="3" fill="#061408"/>
-  <rect x="10" y="160" width="12" height="10" rx="2" fill="#1DB954"/>
-  <text x="16" y="166.5" text-anchor="middle" font-size="5" fill="white" font-weight="700">♪</text>
-  <text x="28" y="162" font-size="6" fill="white" font-weight="600">Spotify</text>
-  <text x="28" y="170" font-size="4.5" fill="rgba(255,255,255,.4)">20 aktier</text>
-  <text x="88" y="162" text-anchor="end" font-size="5.5" fill="white" font-weight="600">53 200 kr</text>
-  <text x="88" y="170" text-anchor="end" font-size="5" fill="#66BB6A">+5,8%</text>
-  <!-- Annual return row -->
-  <rect x="8" y="178" width="86" height="12" rx="4" fill="rgba(67,160,71,.12)" stroke="rgba(67,160,71,.3)" stroke-width=".7"/>
-  <text x="18" y="186" font-size="5" fill="rgba(255,255,255,.55)">Annual return:</text>
-  <text x="88" y="186" text-anchor="end" font-size="5.5" fill="#66BB6A" font-weight="700">+18,4%  ▲</text>
-  <!-- Bottom navigation -->
-  <rect x="0" y="196" width="102" height="18" fill="#031205"/>
-  <line x1="0" y1="196" x2="102" y2="196" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
-  <text x="13" y="207" text-anchor="middle" font-size="5" fill="#66BB6A" font-weight="600">Portfolio</text>
-  <text x="33" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Trade</text>
-  <text x="54" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Market</text>
-  <text x="75" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Watchlist</text>
-  <text x="93" y="207" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.4)">Profile</text>
-  <rect x="5" y="194" width="16" height="2" rx="1" fill="#43A047"/>
-</svg></div></svg></div></div><div class="pgl"></div><div class="pno"></div><div class="pca"></div><div class="pri"></div></div>
+          <div class="ed">Shipped features across SBAB's consumer banking app covering savings, mortgages, and insurance. Served as security lead for the Android codebase and drove recruitment alongside feature delivery.</div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">Security</span><span class="xcl">Android security lead · threat modeling</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Banking</span><span class="xcl">Mortgages, savings & insurance</span><span class="xcb">Domain</span></div><div class="xcs"><span class="xcn">Architecture</span><span class="xcl">MVVM + Clean, tested codebase</span><span class="xcb">Tech</span></div><div class="xcs"><span class="xcn">Recruitment</span><span class="xcl">Grew the Android team</span><span class="xcb">Leadership</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="xf"><div class="tags"><span class="tag">Banking</span><span class="tag">Security</span><span class="tag">Architecture</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.sbab.bankapp" target="_blank">▸ Google Play</a><a class="lnk" href="https://sbab.se" target="_blank">↗ sbab.se</a></div></div>
         </div>
       </div>
 
-    </div>
+      <!-- AVANZA -->
+      <div class="ec g r">
+        <div class="eb">
+          <div class="et">
+            <div class="logo" style="background:#ffffff"><img src="https://investors.avanza.se/files/Avanza_ir_logo.svg" style="width:100%;height:100%;object-fit:contain;padding:7px;display:block;box-sizing:border-box;"/></div>
+            <div class="em"><a class="en" href="https://avanza.se" target="_blank">Avanza Bank</a><div class="ep">Jun 2014 – Apr 2019</div><div class="er">Lead Android Developer · Stockholm</div></div>
+          </div>
+          <div class="ed">Built Avanza's Android app from scratch. Among the first in Sweden to adopt Kotlin and Material Design. Led hiring, migrated the entire codebase, achieved top Play Store ratings. Stocks, funds, dividends, loans, payments.</div>
+          <div class="xc"><div class="xct"><div class="xcs"><span class="xcn">4+ years</span><span class="xcl">Lead Android Developer</span><span class="xcb">Tenure</span></div><div class="xcs"><span class="xcn">Built 0→1</span><span class="xcl">App from scratch · full team lead</span><span class="xcb">Impact</span></div><div class="xcs"><span class="xcn">Kotlin</span><span class="xcl">First adopter in Sweden · full migration</span><span class="xcb">Pioneer</span></div><div class="xcs"><span class="xcn">Fintech</span><span class="xcl">Stocks, funds, loans & payments</span><span class="xcb">Domain</span></div></div><div class="xcds"><span class="xcd a"></span><span class="xcd"></span><span class="xcd"></span><span class="xcd"></span></div></div>
+          <div class="xf"><div class="tags"><span class="tag hi">Lead</span><span class="tag">Kotlin Pioneer</span><span class="tag">Fintech</span><span class="tag">4+ years</span></div><div class="lnks"><a class="lnk" href="https://play.google.com/store/apps/details?id=se.avanza.phone" target="_blank">▸ Google Play</a><a class="lnk" href="https://avanza.se" target="_blank">↗ avanza.se</a></div></div>
+        </div>
+      </div>
+
+        </div>
   </div>
 </section>
 
@@ -969,6 +454,27 @@ footer{position:relative;z-index:4;padding:18px max(52px,env(safe-area-inset-rig
 <div id="cur"></div><div id="cur-r"></div>
 
 <script>
+
+// ── Carousels: update dot indicators on scroll ────────────────────────
+document.querySelectorAll('.xct').forEach(track => {
+  const dots = track.nextElementSibling?.querySelectorAll('.xcd');
+  if(!dots || !dots.length) return;
+  const slides = track.querySelectorAll('.xcs');
+  if(!slides.length) return;
+  function updateDots(){
+    const scrollLeft = track.scrollLeft;
+    const slideW = slides[0].offsetWidth + 10; // width + gap
+    const active = Math.round(scrollLeft / slideW);
+    dots.forEach((d,i) => d.classList.toggle('a', i === active));
+  }
+  track.addEventListener('scroll', updateDots, {passive:true});
+  // Also allow clicking dots to scroll
+  dots.forEach((d,i) => d.addEventListener('click', () => {
+    const slideW = slides[0].offsetWidth + 10;
+    track.scrollTo({left: i * slideW, behavior:'smooth'});
+  }));
+});
+
 // Elements
 const nlEl  = document.getElementById('nl');
 const heroEl= document.getElementById('hero');
