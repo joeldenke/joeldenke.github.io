@@ -95,8 +95,7 @@ h1 em{font-style:italic;color:var(--ac)}
 @keyframes sp{0%,100%{opacity:.15}50%{opacity:.75}}
 /* EXP */
 #exp{padding:140px 0}@media(max-width:640px){#exp{padding:80px 0}}
-.exp-car{position:relative;margin-left:-52px;margin-right:-52px;background:transparent}@media(max-width:640px){.exp-car{margin-left:-20px;margin-right:-20px}}.exp-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding:0 0 0 52px;scroll-padding-left:52px;-webkit-overflow-scrolling:touch;background:transparent}@media(max-width:640px){.exp-track{padding:0 0 0 20px;scroll-padding-left:20px}}.exp-track::-webkit-scrollbar{display:none}.ec-slide{flex:0 0 min(520px,76vw);scroll-snap-align:start;min-height:0}@media(max-width:640px){.ec-slide{flex:0 0 78vw}}.exp-dots{display:flex;justify-content:center;gap:6px;margin-top:24px}.exp-dot{width:16px;height:3px;border-radius:2px;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}.exp-dot.a{background:var(--ac);width:32px}
-.ec-slide.g{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.exp-car{position:relative;margin-left:-52px;margin-right:-52px;overflow:hidden}@media(max-width:640px){.exp-car{margin-left:-20px;margin-right:-20px}}.exp-track{display:flex;gap:14px;padding:0 0 0 52px;will-change:transform;user-select:none;-webkit-user-select:none;cursor:grab;touch-action:pan-y}@media(max-width:640px){.exp-track{padding:0 0 0 20px}}.exp-track.dragging{cursor:grabbing;transition:none!important}.ec-slide{flex:0 0 min(520px,76vw);flex-shrink:0}@media(max-width:640px){.ec-slide{flex:0 0 78vw}}.exp-dots{display:flex;justify-content:center;gap:6px;margin-top:24px}.exp-dot{width:16px;height:3px;border-radius:2px;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}.exp-dot.a{background:var(--ac);width:32px}
 @media(max-width:640px){.ec-slide .eb{padding:20px 18px!important}}
 /* Card content */
 .eb{padding:26px 28px;position:relative;z-index:2}
@@ -432,24 +431,58 @@ function updateNavGlass(){
 window.addEventListener('scroll', updateNavGlass, {passive:true});
 updateNavGlass();
 
-// ── Experience carousel ──────────────────────────────────────────────────
+// ── Experience carousel (transform-based — no overflow compositor layer) ─
 (function(){
-  const track = document.querySelector('.exp-track');
-  const dots  = document.querySelectorAll('.exp-dot');
-  const slides= document.querySelectorAll('.ec-slide');
-  if(!track || !dots.length || !slides.length) return;
-  function updateDots(){
-    const gap    = 16;
-    const slideW = slides[0].offsetWidth + gap;
-    const active = Math.min(Math.round(track.scrollLeft / slideW), slides.length - 1);
-    dots.forEach((d,i) => d.classList.toggle('a', i === active));
+  const track  = document.querySelector('.exp-track');
+  const dots   = document.querySelectorAll('.exp-dot');
+  const slides = document.querySelectorAll('.ec-slide');
+  if(!track || !slides.length) return;
+
+  const GAP = 14;
+  let cur = 0, tx = 0, startX = 0, dragging = false;
+
+  function slideW(){ return slides[0].offsetWidth + GAP; }
+  function maxIdx(){ return slides.length - 1; }
+
+  function goTo(idx, animate){
+    cur = Math.max(0, Math.min(idx, maxIdx()));
+    tx  = -cur * slideW();
+    if(animate !== false) track.style.transition = 'transform .38s cubic-bezier(.25,.46,.45,.94)';
+    track.style.transform = 'translateX(' + tx + 'px)';
+    dots.forEach((d,i) => d.classList.toggle('a', i === cur));
   }
-  track.addEventListener('scroll', updateDots, {passive:true});
-  dots.forEach((d,i) => d.addEventListener('click', () => {
-    const slideW = slides[0].offsetWidth + 16;
-    track.scrollTo({left: i * slideW, behavior:'smooth'});
-  }));
-  updateDots();
+
+  // Dots
+  dots.forEach((d,i) => d.addEventListener('click', () => goTo(i)));
+
+  // Touch / pointer drag
+  function onStart(e){
+    dragging = true; startX = e.touches ? e.touches[0].clientX : e.clientX;
+    track.classList.add('dragging');
+    track.style.transition = 'none';
+  }
+  function onMove(e){
+    if(!dragging) return;
+    const x = e.touches ? e.touches[0].clientX : e.clientX;
+    track.style.transform = 'translateX(' + (tx + x - startX) + 'px)';
+  }
+  function onEnd(e){
+    if(!dragging) return; dragging = false;
+    track.classList.remove('dragging');
+    const x = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+    const delta = x - startX;
+    const sw = slideW();
+    goTo(Math.abs(delta) > sw * 0.25 ? (delta < 0 ? cur + 1 : cur - 1) : cur);
+  }
+
+  track.addEventListener('touchstart', onStart, {passive:true});
+  track.addEventListener('touchmove',  onMove,  {passive:true});
+  track.addEventListener('touchend',   onEnd,   {passive:true});
+  track.addEventListener('mousedown',  onStart);
+  window.addEventListener('mousemove', e => { if(dragging) onMove(e); });
+  window.addEventListener('mouseup',   onEnd);
+
+  goTo(0, false);
 })();
 
 // video background active
